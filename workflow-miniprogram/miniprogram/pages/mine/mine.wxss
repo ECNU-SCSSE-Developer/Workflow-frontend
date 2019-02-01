@@ -1,0 +1,67 @@
+/* pages/mine/mine.wxss */
+
+.msgbox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin:20px 0;
+  padding:10px 0;
+}
+
+.msgbox_in{
+  display: flex;
+  margin: 2px 1px;
+  flex-direction: column;
+  align-items:center;
+
+}
+.msgbox_in_img{
+  margin: 0 auto;
+  width: 60px;
+  height:60px;
+  border-radius: 60rpx;
+}
+.msgbox_in_text_title{
+font-size: 20px;
+}
+
+
+.msgbox_in_text_desc{
+  font-size:12px;
+  color: grey;
+}
+
+.list{
+  position: static;
+  line-height: 20px;
+  background-color: white;
+}
+.list_item{
+  display: flex;
+  position: static;
+  flex-direction: row;
+}
+.list_item_text{
+  text-align: left;
+  font-size: 16px;
+  line-height: 17px;
+  padding: 23px 0;
+  width: 75%;
+}
+.list_item_img{
+  margin: 10px;
+  width: 40px;
+  height:40px;
+  border-radius: 50%;
+}
+
+#userinfo{
+  width: 60px;
+  height:60px;
+  border-radius:50%;
+  display: flex;
+  overflow:hidden;
+  text-align: center;
+  margin: 0 auto;
+}

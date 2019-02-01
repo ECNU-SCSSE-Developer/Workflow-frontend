@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/recruit/recruit",
+    "pages/workflow/workflow",
+    "pages/match/match",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "学生工作",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#74B9FF",
+    "borderStyle": "white",
+    "backgroudColor": "white",
+    "list": [
+      {
+        "pagePath": "pages/recruit/recruit",
+        "text": "招聘",
+        "iconPath": "image/7.png",
+        "selectedIconPath": "image/8.png"
+      },
+      {
+        "pagePath": "pages/workflow/workflow",
+        "text": "工作流",
+        "iconPath": "image/6.png",
+        "selectedIconPath": "image/3.png"
+      },
+      {
+        "pagePath": "pages/match/match",
+        "text": "比赛",
+        "iconPath": "image/4.png",
+        "selectedIconPath": "image/1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "image/5.png",
+        "selectedIconPath": "image/2.png"
+      }
+    ]
+  }
+}
