@@ -1,27 +1,57 @@
 <view class='page'>
-  <navigator class="msgbox">
-    <view class="msgbox_in">
-      <view class="msgbox_in_img">
+  <view class="msgbox">
+    <view>
+      <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
         <open-data type="userAvatarUrl" class="msgbox_in_img" id="userinfo"></open-data>
-      </view>
-      <view class="msgbox_in_text_title">{{man.studentName}}</view>
-      <view class="msgbox_in_text_desc">孙雨晶</view>
-      <view class="msgbox_in_text_desc">软件工程</view>
+      </navigator>
     </view>
-  </navigator>
+    <view class='msg_right'>
+      <view class="msgbox_in_text_title">
+        <open-data type="userNickName"></open-data>
+      </view>
+      <view class="msgbox_in_text_desc">{{motto}}</view>
+    </view>
+  </view>
+
+  <view>
+    <navigator url='/pages/notify/notify' class="msgbox notify">
+      <view class="weui-cell__bd">
+        <image src='/image/ring.png' class='notify_img'></image>
+        <view class='notify_text'>通知</view>
+        <view class="weui-badge" style="margin-left: 5px;">8</view>
+      </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+
+  <view class='info-module'>
+    <view class='info-module-detail'>
+      <image src='/image/work.png' class='info-module-img'></image>
+      <view class='info-module-text'>
+        我的工作
+      </view>
+    </view>
+    <view class='info-module-detail'>
+      <image src='/image/recruit.png' class='info-module-img'></image>
+      <view class='info-module-text'>
+        我的应聘
+      </view>
+    </view>
+    <view class='info-module-detail'>
+      <image src='/image/focus.png' class='info-module-img'></image>
+      <view class='info-module-text'>
+        我的关注
+      </view>
+    </view>
+    <view class='info-module-detail'>
+      <image src='/image/create.png' class='info-module-img'></image>
+      <view class='info-module-text'>
+        我的队伍
+      </view>
+    </view>
+  </view>
 
   <view class="page__bd">
-    <!--view class="weui-cells__title">新消息提示跟摘要信息后，统一在列表右侧</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">单行列表</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 0">
-          <view style="display: inline-block;vertical-align:middle; font-size: 17px;">详细信息</view>
-          <view class="weui-badge weui-badge_dot" style="margin-left: 5px;margin-right: 5px;"></view>
-        </view>
-      </view>
-    </view-->
-
     <view class="weui-cells__title">个人基本信息</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_access">
@@ -68,7 +98,6 @@
         <view class="weui-cell__bd">
           <view style="display: inline-block; vertical-align: middle">我应聘的招聘</view>
           <view class="weui-badge" style="margin-left: 5px;">New</view>
-          <!--view class="weui-badge" style="margin-left: 5px;">New</view-->
         </view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </view>

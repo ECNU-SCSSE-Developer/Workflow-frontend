@@ -1,4 +1,4 @@
-// pages/recruit/recruit.js
+// pages/selfInfo/selfInfo.js
 Page({
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  
-  toDetail: function () {
-    setTimeout(()=>{wx.navigateTo({
-      url: '/pages/recruitDetail/recruitDetail',
-    })}, 500)
-  },
+  }
 })

@@ -1,9 +1,12 @@
 {
   "pages":[
+    "pages/mine/mine",
     "pages/recruit/recruit",
+    "pages/recruitDetail/recruitDetail",
     "pages/workflow/workflow",
     "pages/match/match",
-    "pages/mine/mine"
+    "pages/selfInfo/selfInfo",
+    "pages/notify/notify"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -13,7 +16,7 @@
   },
   "tabBar": {
     "color": "#dddddd",
-    "selectedColor": "#74B9FF",
+    "selectedColor": "#4a69bd",
     "borderStyle": "white",
     "backgroudColor": "white",
     "list": [

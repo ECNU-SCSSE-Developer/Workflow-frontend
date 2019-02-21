@@ -1,0 +1,5 @@
+<!--pages/recruitDetail/recruitDetail.wxml-->
+<text>pages/recruitDetail/recruitDetail.wxml</text>
+<navigator open-type="navigateBack">
+  <button>返回</button>
+</navigator>

@@ -1,4 +1,4 @@
-// pages/recruit/recruit.js
+// pages/recruitDetail/recruitDetail.js
 Page({
 
   /**
@@ -12,7 +12,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -62,11 +61,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  
-  toDetail: function () {
-    setTimeout(()=>{wx.navigateTo({
-      url: '/pages/recruitDetail/recruitDetail',
-    })}, 500)
-  },
+  }
 })

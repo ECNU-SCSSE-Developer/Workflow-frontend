@@ -1,0 +1,50 @@
+<!--pages/selfInfo/selfInfo.wxml-->
+<view class='page'>
+  <view class='top-show'>
+    <view>
+      <image src='/image/edit.png' class='top-kit'></image>
+    </view>
+    <open-data type="userAvatarUrl" class="top-avatar" id="userinfo"></open-data>
+    <open-data type="userNickName" class="top-name"></open-data>
+  </view>
+  <view class='social'>
+    <view class='social-item'>
+      <view class='social-text'>同事</view>
+      <view class='social-num'>0</view>
+    </view>
+    <view class='social-item'>
+      <view class='social-text'>关注</view>
+      <view class='social-num'>0</view>
+    </view>
+    <view class='social-item'>
+      <view class='social-text'>粉丝</view>
+      <view class='social-num'>0</view>
+    </view>
+  </view>
+  <view class='info'>
+    <view class='info-item'>
+      <view class='info-title'>性别</view>
+      <view class='info-desc'>男</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>院系</view>
+      <view class='info-desc'>计软院</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>年级</view>
+      <view class='info-desc'>16级</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>擅长职位</view>
+      <view class='info-desc'>JAVA后端</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>兴趣方向</view>
+      <view class='info-desc'>大数据</view>
+    </view>
+    <view class='info-item-intro'>
+      <view class='info-title'>个人简介</view>
+      <view class='info-desc'>Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day </view>
+    </view>
+  </view>
+</view>

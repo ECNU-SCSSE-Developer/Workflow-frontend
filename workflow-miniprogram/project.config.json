@@ -1,7 +1,7 @@
 {
-  "miniprogramRoot": "miniprogram/",
-  "pluginRoot": "plugin/",
-  "complireType": "plugin",
+	"miniprogramRoot": "miniprogram/",
+	"pluginRoot": "plugin/",
+	"complireType": "plugin",
 	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
@@ -16,7 +16,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.1",
 	"appid": "wx0a0ebdd345e4d552",
-	"projectname": "workflow-v1",
+	"projectname": "%E5%B7%A5%E4%BD%9C%E6%B5%81",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
