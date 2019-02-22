@@ -1,0 +1,7 @@
+<!--pages/myWorkMate/myWorkMate.wxml-->
+<view class='page'>
+  <view class='none'>
+    <image src='/image/meh.png' class='none-img'></image>
+    <view class='none-text'>你还没参与过任何工作哦</view>
+  </view>
+</view>

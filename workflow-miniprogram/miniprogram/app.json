@@ -6,7 +6,16 @@
     "pages/workflow/workflow",
     "pages/match/match",
     "pages/selfInfo/selfInfo",
-    "pages/notify/notify"
+    "pages/notify/notify",
+    "pages/myWork/myWork",
+    "pages/myRecruit/myRecruit",
+    "pages/myFocus/myFocus",
+    "pages/myTeam/myTeam",
+    "pages/editMyInfo/editMyInfo",
+    "pages/myFans/myFans",
+    "pages/myWorkMate/myWorkMate",
+    "pages/feedback/feedback",
+    "pages/aboutUs/aboutUs"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -21,16 +30,16 @@
     "backgroudColor": "white",
     "list": [
       {
-        "pagePath": "pages/recruit/recruit",
-        "text": "招聘",
-        "iconPath": "image/7.png",
-        "selectedIconPath": "image/8.png"
-      },
-      {
         "pagePath": "pages/workflow/workflow",
         "text": "工作流",
         "iconPath": "image/6.png",
         "selectedIconPath": "image/3.png"
+      },
+      {
+        "pagePath": "pages/recruit/recruit",
+        "text": "招聘",
+        "iconPath": "image/7.png",
+        "selectedIconPath": "image/8.png"
       },
       {
         "pagePath": "pages/match/match",

@@ -1,0 +1,7 @@
+<!--pages/myFocus/myFocus.wxml-->
+<view class='page'>
+  <view class='none'>
+    <image src='/image/frown-fill.png' class='none-img'></image>
+    <view class='none-text'>还没有人关注你哦</view>
+  </view>
+</view>

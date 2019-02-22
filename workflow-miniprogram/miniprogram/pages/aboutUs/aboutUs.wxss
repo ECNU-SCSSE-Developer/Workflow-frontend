@@ -1,0 +1,31 @@
+/* pages/aboutUs/aboutUs.wxss */
+.card{
+  height: 60%;
+  width: 80%;
+  margin: 200rpx auto;
+  padding: 20rpx;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-text{
+  color: gray;
+}
+
+.card-text-foot{
+  margin-top: 50rpx;
+  text-align: right;
+  color: gainsboro;
+  font-size: 30rpx;
+}
+
+.card-foot-img{
+  text-align: center;
+  width: 50rpx;
+  height: 50rpx;
+}

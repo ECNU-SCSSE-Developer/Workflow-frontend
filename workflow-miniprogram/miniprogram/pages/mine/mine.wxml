@@ -1,5 +1,5 @@
 <view class='page'>
-  <view class="msgbox">
+  <view class="card">
     <view>
       <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
         <open-data type="userAvatarUrl" class="msgbox_in_img" id="userinfo"></open-data>
@@ -25,82 +25,62 @@
   </view>
 
   <view class='info-module'>
-    <view class='info-module-detail'>
+    <navigator class='info-module-detail' url='/pages/myWork/myWork'>
       <image src='/image/work.png' class='info-module-img'></image>
       <view class='info-module-text'>
         我的工作
       </view>
-    </view>
-    <view class='info-module-detail'>
+    </navigator>
+    <navigator class='info-module-detail' url='/pages/myRecruit/myRecruit'>
       <image src='/image/recruit.png' class='info-module-img'></image>
       <view class='info-module-text'>
         我的应聘
       </view>
-    </view>
-    <view class='info-module-detail'>
+    </navigator>
+    <navigator class='info-module-detail' url='/pages/myFocus/myFocus'>
       <image src='/image/focus.png' class='info-module-img'></image>
       <view class='info-module-text'>
         我的关注
       </view>
-    </view>
-    <view class='info-module-detail'>
+    </navigator>
+    <navigator class='info-module-detail' url='/pages/myTeam/myTeam'>
       <image src='/image/create.png' class='info-module-img'></image>
       <view class='info-module-text'>
         我的队伍
       </view>
-    </view>
+    </navigator>
   </view>
 
-  <view class="page__bd">
-    <view class="weui-cells__title">个人基本信息</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">基本信息</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  <view>
+    <navigator url='/pages/selfInfo/selfInfo' class="msgbox notify">
+      <view class="weui-cell__bd">
+        <view class='notify_text'>个人主页</view>
       </view>
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">个人标签</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </view>
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">最近提醒</view>
-          <view class="weui-badge" style="margin-left: 5px;">8</view>
-          <!--view class="weui-badge" style="margin-left: 5px;">New</view-->
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </view>
-    </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
   </view>
-
-  <view class="page__bd">
-    <view class="weui-cells__title">招聘信息</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">我创建的招聘</view>
-          <view class="weui-badge" style="margin-left: 5px;">New</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  <view>
+    <navigator url='/pages/editMyInfo/editMyInfo' class="msgbox notify">
+      <view class="weui-cell__bd">
+        <view class='notify_text'>修改信息</view>
       </view>
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">我关注的招聘</view>
-          <view class="weui-badge" style="margin-left: 5px;">New</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <view>
+    <navigator url='/pages/feedback/feedback' class="msgbox notify">
+      <view class="weui-cell__bd">
+        <view class='notify_text'>帮助与反馈</view>
       </view>
-      <view class="weui-cell weui-cell_access">
-        <view class="weui-cell__bd">
-          <view style="display: inline-block; vertical-align: middle">我应聘的招聘</view>
-          <view class="weui-badge" style="margin-left: 5px;">New</view>
-        </view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <view>
+    <navigator url='/pages/aboutUs/aboutUs' class="msgbox notify">
+      <view class="weui-cell__bd">
+        <view class='notify_text'>关于我们</view>
       </view>
-    </view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
   </view>
 </view>

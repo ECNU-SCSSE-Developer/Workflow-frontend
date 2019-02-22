@@ -1,10 +1,17 @@
 /* pages/mine/mine.wxss */
 
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-bottom: 40rpx;
+  padding: 40rpx 40rpx;
+}
+
 .msgbox {
   display: flex;
   flex-direction: row;
   background-color: white;
-  margin: 40rpx 0;
   padding: 20rpx 20rpx;
 }
 
@@ -34,15 +41,19 @@
 }
 
 .info-module {
+  margin: 40rpx auto;
   display: flex;
   flex-direction: row;
   background-color: white;
-  padding: 20rpx 0;
+  height: 150rpx;
+  align-items: center;
 }
 
 .info-module-detail {
+  width: 100%;
+  height: 100%;
   align-items: center;
-  margin: 0 auto;
+  justify-content: space-around;
   display: flex;
   flex-direction: column;
 }
@@ -97,4 +108,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.weui-cell__ft{
+  color: #4a69bd;
 }

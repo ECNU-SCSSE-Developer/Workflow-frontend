@@ -1,4 +1,4 @@
-/* pages/notify/notify.wxss */
+/* pages/myWorkMate/myWorkMate.wxss */
 .none{
   margin-top: 200rpx;
   height: 100%;
