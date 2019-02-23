@@ -15,7 +15,9 @@
     "pages/myFans/myFans",
     "pages/myWorkMate/myWorkMate",
     "pages/feedback/feedback",
-    "pages/aboutUs/aboutUs"
+    "pages/aboutUs/aboutUs",
+    "pages/help/help",
+    "pages/othersInfo/othersInfo"
   ],
   "window":{
     "backgroundTextStyle":"light",

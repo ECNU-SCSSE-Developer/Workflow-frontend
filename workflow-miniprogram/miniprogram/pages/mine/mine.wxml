@@ -46,7 +46,7 @@
     <navigator class='info-module-detail' url='/pages/myTeam/myTeam'>
       <image src='/image/create.png' class='info-module-img'></image>
       <view class='info-module-text'>
-        我的队伍
+        我的团队
       </view>
     </navigator>
   </view>
@@ -68,7 +68,7 @@
     </navigator>
   </view>
   <view>
-    <navigator url='/pages/feedback/feedback' class="msgbox notify">
+    <navigator url='/pages/help/help' class="msgbox notify">
       <view class="weui-cell__bd">
         <view class='notify_text'>帮助与反馈</view>
       </view>

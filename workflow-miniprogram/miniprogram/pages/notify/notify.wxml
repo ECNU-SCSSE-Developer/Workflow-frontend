@@ -1,7 +1,7 @@
 <!--pages/notify/notify.wxml-->
-<view class='page'>
+<view class='page container' bindtap='changeImg'>
   <view class='none'>
-    <image src="{{imgFlag == 0 ? '/image/meh.png' : '/image/frown-fill.png'}}" class='none-img' bindtap='changeImg'></image>
+    <image src="{{imgFlag == 0 ? '/image/meh.png' : '/image/frown-fill.png'}}" class='none-img'></image>
     <view class='none-text'>暂无通知</view>
   </view>
 </view>

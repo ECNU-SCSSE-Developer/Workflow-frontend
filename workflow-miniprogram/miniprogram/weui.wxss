@@ -331,7 +331,7 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
-  color: #3cc51f;
+  color: #4a69bd;
   text-align: center;
 }
 
@@ -359,7 +359,7 @@ icon {
 }
 
 .weui-form-preview__btn_primary {
-  color: #0bb20c;
+  color: #4a69bd;
 }
 
 .weui-cell_select {
@@ -418,12 +418,12 @@ icon {
   border-left: 1px solid #e5e5e5;
   line-height: 2.58823529em;
   font-size: 17px;
-  color: #3cc51f;
+  color: #4a69bd;
   white-space: nowrap;
 }
 
 .weui-vcode-btn:active {
-  color: #52a341;
+  color: #4a69bd;
 }
 
 .weui-cell_switch {
@@ -1084,7 +1084,7 @@ icon {
 }
 
 .weui-navbar__item.weui-bar__item_on {
-  color: #1aad19;
+  color: #4a69bd;
 }
 
 .weui-navbar__slider {
@@ -1094,7 +1094,7 @@ icon {
   bottom: 0;
   width: 6em;
   height: 3px;
-  background-color: #1aad19;
+  background-color: #4a69bd;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -1204,6 +1204,6 @@ icon {
 .weui-search-bar__cancel-btn {
   margin-left: 10px;
   line-height: 28px;
-  color: #09bb07;
+  color: #4a69bd;
   white-space: nowrap;
 }

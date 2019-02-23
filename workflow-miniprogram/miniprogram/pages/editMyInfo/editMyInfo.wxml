@@ -1,3 +1,13 @@
 <!--pages/editMyInfo/editMyInfo.wxml-->
 <view class='page'>
+  <view class='top-show'>
+    <view class='top-edit'>
+      <view class='top-edit-text'>修改个人资料</view>
+      <image src='/image/submit.png' class='top-edit-img'></image>
+    </view>
+    <navigator url='/pages/selfInfo/selfInfo' hover-class='none'>
+    <open-data type="userAvatarUrl" class="top-avatar" id="userinfo"></open-data>
+    </navigator>
+    <open-data type="userNickName" class="top-name"></open-data>
+  </view>
 </view>

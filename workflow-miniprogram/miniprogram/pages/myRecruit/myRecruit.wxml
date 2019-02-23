@@ -1,3 +1,7 @@
 <!--pages/myRecruit/myRecruit.wxml-->
 <view class='page'>
+  <view class='none' hidden='{{hasWork != 0}}'>
+    <image src='/image/meh.png' class='none-img'></image>
+    <view class='none-text'>暂无应聘中的队伍</view>
+  </view>
 </view>

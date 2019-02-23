@@ -1,3 +1,16 @@
 <!--pages/feedback/feedback.wxml-->
 <view class='page'>
+  <view class="weui-cells__title">描述</view>
+  <view class=" weui-cells_after-title card">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" placeholder="请描述你遇到的问题或写下你的想法" />
+        <view class="weui-textarea-counter">0/200</view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <image src='/image/icon_delete.png' class='footer-img'></image>
+    <image src='/image/icon_send.png' class='footer-img'></image>
+  </view>
 </view>

@@ -1,3 +1,9 @@
 <!--pages/myTeam/myTeam.wxml-->
-<view class='page'>
+<view class='page container' bindtap='changeImg'>
+  <view class='none'>
+    <image src="{{imgFlag == 0 ? '/image/frown.png' : '/image/frown-fill.png'}}" class='none-img'></image>
+    <view class='none-text'>你还没任何团队哦</view>
+    <view class='none-text'>你可以选择：</view>
+    <navigator class='common-btn' url='/pages/match/match' open-type='switchTab'>发布招聘</navigator>
+  </view>
 </view>

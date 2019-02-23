@@ -65,7 +65,6 @@ Page({
   },
 
   changeImg: function() {
-    console.info("click")
     if (this.data.imgFlag == 1) {
       this.setData({
         imgFlag: 0

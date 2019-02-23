@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgFlag: 0
   },
 
   /**
@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  changeImg: function () {
+    if (this.data.imgFlag == 1) {
+      this.setData({
+        imgFlag: 0
+      });
+    } else {
+      this.setData({
+        imgFlag: 1
+      });
+    }
   }
 })

@@ -1,1 +1,33 @@
 /* pages/myTeam/myTeam.wxss */
+.container{
+  height: 100vh;
+}
+
+.none{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.none-img{
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.none-text{
+  font-size: 30rpx;
+  color: #707070;
+}
+
+.common-btn{
+  margin-top: 20rpx;
+  width: 150rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  border: 5rpx solid #707070;
+  color: #707070;
+  font-size: 30rpx;
+  text-align: center;
+}

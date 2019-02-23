@@ -1,7 +1,7 @@
 <!--pages/myWorkMate/myWorkMate.wxml-->
-<view class='page'>
+<view class='page container' bindtap='changeImg'>
   <view class='none'>
-    <image src='/image/meh.png' class='none-img'></image>
+    <image src="{{imgFlag == 0 ? '/image/frown.png' : '/image/frown-fill.png'}}" class='none-img'></image>
     <view class='none-text'>你还没参与过任何工作哦</view>
   </view>
 </view>
