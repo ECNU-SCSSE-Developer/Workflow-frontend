@@ -1,5 +1,18 @@
 /* pages/myRecruit/myRecruit.wxss */
-.none{
+page, .page, .page__bd {
+  height: 100%;
+}
+
+.page__bd {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.none {
   margin-top: 200rpx;
   height: 100%;
   width: 100%;
@@ -8,12 +21,84 @@
   align-items: center;
 }
 
-.none-img{
+.none-img {
   height: 150rpx;
   width: 150rpx;
 }
 
-.none-text{
+.none-text {
   font-size: 30rpx;
   color: #707070;
+}
+
+.weui-tab__content{
+  padding-top: 0rpx;
+}
+
+.focus-item{
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 20rpx 20rpx;
+  padding: 10rpx 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.focus-img-out{
+  width: 20%;
+}
+
+.focus-img{
+  height: 110rpx;
+  width: 110rpx;
+  border-radius: 50%;
+}
+
+.focus-text{
+  text-align: start;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.focus-name{
+  font-size: 40rpx;
+}
+
+.focus-desc{
+  color: gray;
+  font-size: 26rpx;
+}
+
+.focus-btn{
+  width: 25%;
+}
+
+.focus-btn-in{
+  padding: 10rpx 0;
+  width: 150rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #4a69bd;
+  background-color: white;
+  color: #4a69bd;
+  font-size: 30rpx;
+}
+
+.focus-btn-in:active{
+  background-color: #F8F8F8;
+}
+
+.common-btn{
+  margin-top: 20rpx;
+  width: 150rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  border: 5rpx solid #707070;
+  color: #707070;
+  font-size: 30rpx;
 }

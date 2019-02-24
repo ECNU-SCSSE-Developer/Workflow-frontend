@@ -1,7 +1,56 @@
 <!--pages/myRecruit/myRecruit.wxml-->
-<view class='page'>
-  <view class='none' hidden='{{hasWork != 0}}'>
-    <image src='/image/meh.png' class='none-img'></image>
-    <view class='none-text'>暂无应聘中的队伍</view>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+
+        <!-- tab1 -->
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class='page' hidden="{{hasRecruit != 0}}">
+            <view class='none'>
+              <image src='/image/meh.png' class='none-img'></image>
+              <view class='none-text'>你还没有应聘队伍哦</view>
+              <navigator class='common-btn' url='/pages/recruit/recruit' open-type='switchTab'>去应聘</navigator>
+            </view>
+          </view>
+
+          <view class='page' hidden="{{hasRecruit == 0}}">
+            <view wx:for="{{recruitList}}" wx:key="id">
+              <view class='focus-item'>
+                <navigator class='focus-img-out' url='/pages/othersInfo/othersInfo' hover-class='none'>
+                  <image src='/image/tia.png' class='focus-img'></image>
+                </navigator>
+                <view class='focus-text'>
+                  <view class='focus-name'>{{item.name}}</view>
+                  <view class='focus-desc'>{{item.motto}}</view>
+                </view>
+                <view class='focus-btn'>
+                  <view class="focus-btn-in">已关注</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- tab2 -->
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class='page' hidden="{{hasApply != 0}}">
+            <view class='none'>
+              <image src='/image/meh.png' class='none-img'></image>
+              <view class='none-text'>还没有人应聘你的队伍哦</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
   </view>
 </view>

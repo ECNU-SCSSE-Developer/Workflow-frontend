@@ -33,3 +33,7 @@
   height: 50rpx;
   width: 50rpx;
 }
+
+placeholder{
+  border-bottom: 2px solid #000;
+}

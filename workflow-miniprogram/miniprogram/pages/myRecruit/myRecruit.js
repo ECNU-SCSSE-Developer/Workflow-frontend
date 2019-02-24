@@ -1,18 +1,45 @@
 // pages/myRecruit/myRecruit.js
+var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hasWork : 0,
+    tabs: ["应聘", "申请"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0,
+    hasRecruit: 0,
+    hasApply: 0,
+    recruitList: [],
+    applyList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
 
+    if (that.data.recruitList.length != 0) {
+      that.setData({
+        hasRecruit: 1
+      })
+    }
+    if (that.data.applyList.length != 0) {
+      that.setData({
+        hasApply: 1
+      })
+    }
   },
 
   /**
@@ -62,5 +89,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   }
 })
