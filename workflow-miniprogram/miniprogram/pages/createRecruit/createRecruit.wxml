@@ -1,0 +1,37 @@
+<!--pages/createRecruit/createRecruit.wxml-->
+<view class='page'>
+  <view class='form-info'>
+    <view class='form-title'>招 聘 信 息 📃</view>
+    <view class='form-item'>
+      <view class='item-title'>名称:</view>
+      <input placeholder="请输入该条招聘名称"></input>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>待招职位:</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>所属比赛:</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+         {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>所需人数:</view>
+      <input placeholder="请输入所需人数"></input>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>简介:</view>
+      <textarea placeholder="这边填写简介"></textarea>
+    </view>
+  </view>
+  <view class='tia-btn'>
+    发布招聘
+  </view>
+</view>

@@ -51,10 +51,10 @@
 
         <!-- tab3 -->
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-          <view class='page' hidden="{{hasFocusTeam != 0}}">
+          <view class='page' hidden="{{hasFocusRecruit != 0}}">
             <view class='none'>
               <image src='/image/meh.png' class='none-img'></image>
-              <view class='none-text'>你还没有关注的队伍哦</view>
+              <view class='none-text'>你还没有关注的应聘哦</view>
               <navigator class='common-btn' url='/pages/recruit/recruit' open-type='switchTab'>去关注</navigator>
             </view>
           </view>

@@ -17,7 +17,7 @@
           <view class='page' hidden="{{hasRecruit != 0}}">
             <view class='none'>
               <image src='/image/meh.png' class='none-img'></image>
-              <view class='none-text'>你还没有应聘队伍哦</view>
+              <view class='none-text'>你还没有应聘职位哦</view>
               <navigator class='common-btn' url='/pages/recruit/recruit' open-type='switchTab'>去应聘</navigator>
             </view>
           </view>
@@ -45,7 +45,7 @@
           <view class='page' hidden="{{hasApply != 0}}">
             <view class='none'>
               <image src='/image/meh.png' class='none-img'></image>
-              <view class='none-text'>还没有人应聘你的队伍哦</view>
+              <view class='none-text'>还没有人应聘哦</view>
             </view>
           </view>
         </view>

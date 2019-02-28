@@ -1,12 +1,11 @@
-// pages/feedback/feedback.js
+// pages/createRecruit/createRecruit.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    deleteImg: "/image/icon_delete.png",
-    sendImg: "/image/icon_send.png"
+
   },
 
   /**
@@ -63,32 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  clickDelete: function(){
-    this.setData({
-      deleteImg: "/image/icon_delete_active.png"
-    })
-  },
-  clickDeleteEnd: function(){
-    this.setData({
-      deleteImg: "/image/icon_delete.png"
-    })
-  },
-  delete: function (){
-
-  },
-
-  send: function (){
-  },
-  
-  clickSend: function(){
-    this.setData({
-      sendImg: "/image/icon_send_active.png"
-    })
-  },
-  clickSendEnd: function(){
-    this.setData({
-      sendImg: "/image/icon_send.png"
-    })
   }
 })

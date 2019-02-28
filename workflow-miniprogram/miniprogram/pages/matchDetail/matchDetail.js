@@ -1,12 +1,18 @@
-// pages/feedback/feedback.js
+// pages/matchDetail/matchDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    deleteImg: "/image/icon_delete.png",
-    sendImg: "/image/icon_send.png"
+    match:{
+      url: "/image/1.jpg",
+      title: "这是一个比赛",
+      place: "华东师范大学中山北路校区",
+      endTime: new Date,
+      matchTime: new Date,
+      summary: "这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介"
+    }
   },
 
   /**
@@ -63,32 +69,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  clickDelete: function(){
-    this.setData({
-      deleteImg: "/image/icon_delete_active.png"
-    })
-  },
-  clickDeleteEnd: function(){
-    this.setData({
-      deleteImg: "/image/icon_delete.png"
-    })
-  },
-  delete: function (){
-
-  },
-
-  send: function (){
-  },
-  
-  clickSend: function(){
-    this.setData({
-      sendImg: "/image/icon_send_active.png"
-    })
-  },
-  clickSendEnd: function(){
-    this.setData({
-      sendImg: "/image/icon_send.png"
-    })
   }
 })

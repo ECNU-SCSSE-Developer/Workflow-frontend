@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class='footer'>
-    <image src='/image/icon_delete.png' class='footer-img'></image>
-    <image src='/image/icon_send.png' class='footer-img'></image>
+    <image src='{{deleteImg}}' class='footer-img' bindtap='delete' bindtouchstart='clickDelete' bindtouchend='clickDeleteEnd'></image>
+    <image src='{{sendImg}}' class='footer-img' bindtap='send' bindtouchstart='clickSend' bindtouchend='clickSendEnd'></image>
   </view>
 </view>

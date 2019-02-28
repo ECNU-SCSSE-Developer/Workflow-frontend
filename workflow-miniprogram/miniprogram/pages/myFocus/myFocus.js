@@ -6,19 +6,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["同学", "比赛", "队伍"],
+    tabs: ["同学", "比赛", "招聘"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
     hasFocusPerson: 0,
     hasFocusMatch: 0,
-    hasFocusTeam: 0,
+    hasFocusRecruit: 0,
     focusPerson: [{
       id: 1,
       name: "xxx",
       motto: "好好学习，天天向上"
     }, {
       id: 2,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 3,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 4,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 5,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 6,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 7,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 8,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 9,
+      name: "xxx",
+      motto: "我是一个学生"
+    }, {
+      id: 10,
       name: "xxx",
       motto: "我是一个学生"
     }]

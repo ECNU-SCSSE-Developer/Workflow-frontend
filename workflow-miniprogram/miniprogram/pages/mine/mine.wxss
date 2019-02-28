@@ -9,6 +9,7 @@
 }
 
 .msgbox {
+  border-left: 10rpx solid #4a69bd;
   display: flex;
   flex-direction: row;
   background-color: white;

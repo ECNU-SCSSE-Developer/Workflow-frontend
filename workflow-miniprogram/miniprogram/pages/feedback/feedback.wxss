@@ -30,10 +30,6 @@
 
 .footer-img{
   margin: 0 20rpx;
-  height: 50rpx;
-  width: 50rpx;
-}
-
-placeholder{
-  border-bottom: 2px solid #000;
+  height: 70rpx;
+  width: 70rpx;
 }
