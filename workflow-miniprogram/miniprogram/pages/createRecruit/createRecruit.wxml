@@ -8,17 +8,17 @@
     </view>
     <view class='form-item'>
       <view class='item-title'>待招职位:</view>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <picker bindchange="positionChange" value="{{posIndex}}" range="{{positionArr}}">
         <view class="picker">
-          {{array[index]}}
+          {{positionArr[posIndex]}}
         </view>
       </picker>
     </view>
     <view class='form-item'>
       <view class='item-title'>所属比赛:</view>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <picker bindchange="matchChange" value="{{matchIndex}}" range="{{matchArr}}">
         <view class="picker">
-         {{array[index]}}
+         {{matchArr[matchIndex]}}
         </view>
       </picker>
     </view>

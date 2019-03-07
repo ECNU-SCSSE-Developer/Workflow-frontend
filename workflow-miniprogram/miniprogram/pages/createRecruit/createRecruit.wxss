@@ -47,6 +47,12 @@
 }
 
 input{
+  height: 60rpx;
+  border-bottom: 5rpx solid #4a69bd;
+}
+
+picker{
+  height: 60rpx;
   border-bottom: 5rpx solid #4a69bd;
 }
 

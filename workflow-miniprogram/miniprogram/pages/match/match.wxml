@@ -3,12 +3,14 @@
     <swiper indicator-dots="true" autoplay="true" circular="true">
       <block wx:for="{{imgUrls}}" wx:key="*this">
         <swiper-item>
-        <navigator url='/pages/matchDetail/matchDetail' class="slide-image">
-          <image src="/image/1.jpg" class="slide-image"/>
-        </navigator>
+          <navigator url='/pages/matchDetail/matchDetail' class="slide-image">
+            <image src="/image/1.jpg" class="slide-image" />
+          </navigator>
         </swiper-item>
       </block>
     </swiper>
+  </view>
+  <view class='col'>近 期 比 赛
   </view>
   <view class='page-match'>
     <block wx:for="{{matchs}}" wx:key="id">
@@ -26,5 +28,46 @@
         </view>
       </navigator>
     </block>
+    <navigator url='/pages/matchList/matchList' class='footer' hover-class='none'>查看更多...</navigator>
+  </view>
+  <view class='col'>已 截 止
+  </view>
+  <view class='page-match'>
+    <block wx:for="{{cutoffMatchs}}" wx:key="id">
+      <navigator url='/pages/matchCutoffDetail/matchCutoffDetail' class='match-item'>
+        <view class='match-img-out'>
+          <image class='match-img' src='/image/1.jpg'></image>
+        </view>
+        <view class='match-text'>
+          <view class='text-title'>
+            {{item.title}}
+          </view>
+          <view class='text-time'>
+            已截止
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <navigator url='/pages/matchCutoff/matchCutoff' class='footer' hover-class='none'>查看更多...</navigator>
+  </view>
+  <view class='col'>历 史 比 赛
+  </view>
+  <view class='page-match'>
+    <block wx:for="{{historyMatchs}}" wx:key="id">
+      <navigator url='/pages/matchHistoryDetail/matchHistoryDetail' class='match-item'>
+        <view class='match-img-out'>
+          <image class='match-img' src='/image/1.jpg'></image>
+        </view>
+        <view class='match-text'>
+          <view class='text-title'>
+            {{item.title}}
+          </view>
+          <view class='text-time'>
+            {{item.time}}截止
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <navigator url='/pages/matchHistory/matchHistory' class='footer' hover-class='none'>查看更多...</navigator>
   </view>
 </view>

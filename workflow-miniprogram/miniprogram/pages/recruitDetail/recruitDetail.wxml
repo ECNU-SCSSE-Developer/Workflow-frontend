@@ -1,5 +1,28 @@
 <!--pages/recruitDetail/recruitDetail.wxml-->
-<text>pages/recruitDetail/recruitDetail.wxml</text>
-<navigator open-type="navigateBack">
-  <button>返回</button>
-</navigator>
+<view class='page'>
+  <view class='form-info'>
+    <view class='form-title'>招 聘 信 息 📃</view>
+    <view class='form-item'>
+      <view class='item-title'>名称:</view>
+      <view class='item-detail'>这是一个名字</view>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>待招职位:</view>
+      <view>全栈</view>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>所属比赛:</view>
+      
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>所需人数:</view>
+    </view>
+    <view class='form-item'>
+      <view class='item-title'>简介:</view>
+      <textarea disabled='true'>嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻</textarea>
+    </view>
+  </view>
+  <view class='tia-btn'>
+    应  聘
+  </view>
+</view>

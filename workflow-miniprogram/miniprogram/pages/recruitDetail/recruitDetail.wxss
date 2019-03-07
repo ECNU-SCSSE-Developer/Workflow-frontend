@@ -1,1 +1,59 @@
 /* pages/recruitDetail/recruitDetail.wxss */
+
+.tia-btn {
+  width: 50%;
+  margin: 50rpx auto;
+  padding: 15rpx;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 20rpx;
+  color: #4a69bd;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-info {
+  background-color: white;
+  width: 85%;
+  padding: 0rpx 20rpx;
+  margin: 80rpx auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20rpx;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 60rpx;
+  color: #4a69bd;
+}
+
+.form-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-item:last-child{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title{
+  margin: 10rpx 0;
+  width: 30%;
+}
+
+.item-detail{
+  height: 60rpx;
+}
+
+textarea{
+  border: 5rpx solid #4a69bd;
+  padding: 10rpx;
+  width: 95%;
+  margin: 10rpx auto;
+  margin-bottom: 20rpx;
+}

@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/recruit/recruit",
     "pages/match/match",
+    "pages/recruit/recruit",
     "pages/mine/mine",
     "pages/recruitDetail/recruitDetail",
     "pages/workflow/workflow",
@@ -19,7 +19,12 @@
     "pages/help/help",
     "pages/othersInfo/othersInfo",
     "pages/createRecruit/createRecruit",
-    "pages/matchDetail/matchDetail"
+    "pages/matchDetail/matchDetail",
+    "pages/matchHistory/matchHistory",
+    "pages/matchCutoff/matchCutoff",
+    "pages/matchList/matchList",
+    "pages/matchHistoryDetail/matchHistoryDetail",
+    "pages/matchCutoffDetail/matchCutoffDetail"
   ],
   "window":{
     "backgroundTextStyle":"light",

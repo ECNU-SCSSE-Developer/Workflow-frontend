@@ -1,14 +1,18 @@
-// pages/createRecruit/createRecruit.js
+// pages/matchHistoryDetail/matchHistoryDetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    positionArr:['职位1', '职位2', '职位3', '职位4'],
-    matchArr:['比赛1','比赛2','比赛3'],
-    posIndex: 0,
-    matchIndex: 0
+    match: {
+      url: "/image/1.jpg",
+      title: "这是一个比赛",
+      place: "华东师范大学中山北路校区",
+      endTime: new Date,
+      matchTime: new Date,
+      summary: "这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介"
+    }
   },
 
   /**
@@ -64,16 +68,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
-  },
-  positionChange: function(e){
-    this.setData({
-      posIndex: e.detail.value 
-    })
-  },
-  matchChange: function(e){
-    this.setData({
-      matchIndex: e.detail.value
-    })
+
   }
 })

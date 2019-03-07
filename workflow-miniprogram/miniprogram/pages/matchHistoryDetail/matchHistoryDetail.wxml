@@ -1,0 +1,33 @@
+<!--pages/matchHistoryDetail/matchHistoryDetail.wxml-->
+<view class='page'>
+  <image src='/image/tip.png' class='tip'></image>
+  <!-- <view class='strings'></view>
+  <view class='top-dot'></view>
+  <view class='left-dot'></view>
+  <view class='right-dot'></view> -->
+  <view class='match-detail'>
+    <view class='detail-top'>
+      <view>
+        <image src='{{match.url}}' class='detail-img'></image>
+      </view>
+      <view class='top-text'>
+      <view class='match-title'>{{match.title}}</view>
+      <view class='match-place'>{{match.place}}</view>
+      </view>
+    </view>
+    <view class='detail-text'>
+      <view class='detail-title'>比赛时间:
+      </view>
+      <view class='detail-content'>{{match.matchTime}}
+      </view>
+      <view class='detail-title'>报名截止时间:
+      </view>
+      <view class='detail-content'>{{match.endTime}}
+      </view>
+      <view class='detail-title'>简介:
+      </view>
+      <textarea class='summary' disabled='true'>{{match.summary}}
+      </textarea>
+    </view>
+  </view>
+</view>
