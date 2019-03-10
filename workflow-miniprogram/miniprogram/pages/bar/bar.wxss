@@ -1,0 +1,8 @@
+/* pages/bar/bar.wxss */
+.container{
+  padding: 0;
+}
+ec-canvas {
+  width: 100%;
+  height: 100vh;
+}

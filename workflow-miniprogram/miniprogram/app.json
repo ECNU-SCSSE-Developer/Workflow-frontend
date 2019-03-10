@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/match/match",
-    "pages/recruit/recruit",
     "pages/mine/mine",
+    "pages/match/match",
+    "pages/bar/bar",
+    "pages/recruit/recruit",
     "pages/recruitDetail/recruitDetail",
     "pages/workflow/workflow",
     "pages/selfInfo/selfInfo",

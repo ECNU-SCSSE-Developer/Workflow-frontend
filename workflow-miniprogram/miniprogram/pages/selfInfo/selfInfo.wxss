@@ -37,6 +37,13 @@
   padding: 20rpx 0;
 }
 
+.bar {
+  margin-top: 20rpx;
+  background-color: white;
+  padding: 20rpx;
+  text-align: center;
+}
+
 .social-item {
   align-items: center;
   margin: 0 auto;
