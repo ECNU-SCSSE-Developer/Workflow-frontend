@@ -1,9 +1,9 @@
 .recruit-item {
-  border-left: 20rpx solid #4a69bd;
+  /* border-left: 20rpx solid #4a69bd; */
   margin: 20rpx 20rpx;
   border-radius: 20rpx;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(74, 105, 189, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(74, 105, 189, 0.2); */
 }
 
 .recruit-item:active {
@@ -65,4 +65,43 @@
   font-size: 30rpx;
   text-align: center;
   font-weight: bold;
+}
+
+.placeholder{
+    margin: 5px;
+  
+    /* padding: 0 10px; */
+    text-align: left;
+    /* background-color: #EBEBEB; */
+    height: 40rpx;
+    line-height: 40rpx;
+    /* color: #cfcfcf; */
+}
+
+.placeholder_left{
+    margin: 5px;
+    /* padding: 0 10px; */
+    text-align: left;
+    /* background-color: #EBEBEB; */
+    height: 50rpx;
+    line-height: 50rpx;
+    /* color: #cfcfcf; */
+    align-self: left;
+}
+
+.msgbox_in_img {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  align-self: left;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 
 }

@@ -1,8 +1,27 @@
 <view class="page">
   <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
     <view class="weui-media-box__desc">
-      第六届创新创业大赛
+      <view class="weui-flex">
+        <view class="weui-flex__item info">
+          <view class="placeholder ">
+            <open-data type="userAvatarUrl" url="/pages/selfInfo/selfInfo" class="msgbox_in_img" id="userinfo"></open-data>
+          </view>
+          <view>jjj</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder"></view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-media-box__desc">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="weui-media-box__desc">第六届创新创业大赛</view>
+        </view>
+      </view>
     </view>
   </view>
   <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
