@@ -42,6 +42,9 @@
                   {{item.title}}
                 </view>
               </view>
+              <view class='text-level'>
+                {{item.level}}
+              </view>
               <view class='text-time'>
                 {{item.time}}截止
               </view>
@@ -64,6 +67,9 @@
                 {{item.title}}
               </view>
             </view>
+            <view class='text-level'>
+              {{item.level}}
+            </view>
             <view class='text-time'>
               {{item.time}}截止
             </view>
@@ -74,23 +80,8 @@
 
       <!-- tab3 -->
       <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-        <block wx:for="{{historyMatchs}}" wx:key="id">
-          <navigator url='/pages/matchDetail/matchDetail' class='match-item'>
-            <view class='match-img-out'>
-              <image class='match-img' src='/image/1.jpg'></image>
-            </view>
-            <view class='match-text'>
-              <image class='match-mini-img' src='/image/match.png'></image>
-              <view class='text-title'>
-                {{item.title}}
-              </view>
-            </view>
-            <view class='text-time'>
-              {{item.time}}截止
-            </view>
-            <view class='random' hidden='{{(item.id % 4 != 2) || (item.id % 4 != 3)}}'></view>
-          </navigator>
-        </block>
+        <view>
+        </view>
       </view>
     </view>
   </view>

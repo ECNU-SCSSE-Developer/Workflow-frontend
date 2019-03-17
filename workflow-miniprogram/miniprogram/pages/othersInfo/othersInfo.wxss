@@ -5,6 +5,7 @@
   flex-direction: column;
   padding-top: 50rpx;
   background-size: 100% 100%;
+  background-color: #4a69bd;
 }
 
 .top-avatar {

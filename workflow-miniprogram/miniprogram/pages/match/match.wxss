@@ -1,11 +1,10 @@
-.page-swiper{
+.page-swiper {
   z-index: 999;
   width: 100%;
   height: 350rpx;
 }
 
-
-.slide-image{
+.slide-image {
   width: 100%;
   height: 100%;
 }
@@ -15,7 +14,7 @@ swiper {
   height: 100%;
 }
 
-.match-item{
+.match-item {
   /* border-left: 20rpx solid #4a69bd; */
   display: inline-block;
   width: 45%;
@@ -26,10 +25,10 @@ swiper {
   /* box-shadow: 0 4px 8px 0 rgba(74, 105, 189, 0.2); */
 }
 
-.match-text{
+.match-text {
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 .match-item:active {
@@ -37,18 +36,18 @@ swiper {
   left: 5rpx;
 }
 
-.match-img{
+.match-img {
   width: 100%;
   height: 300rpx;
   border-top-left-radius: 20rpx;
   border-top-right-radius: 20rpx;
 }
 
-.text-title{
+.text-title {
   font-size: 30rpx;
 }
 
-.text-time{
+.text-time {
   margin-bottom: 20rpx;
   padding: 0 10rpx;
   text-align: left;
@@ -56,11 +55,11 @@ swiper {
   font-size: 25rpx;
 }
 
-.match-img-out{
+.match-img-out {
   width: 100%;
 }
 
-.col{
+.col {
   margin-top: 10rpx;
   margin-left: 10rpx;
   padding-left: 30rpx;
@@ -69,7 +68,7 @@ swiper {
   /* font-weight: bold; */
 }
 
-.footer{
+.footer {
   width: 30%;
   margin: 10rpx auto;
   margin-right: 55rpx;
@@ -78,7 +77,6 @@ swiper {
   text-align: right;
   font-size: 20rpx;
 }
-
 
 .weui-tab__content {
   padding-top: 60px;
@@ -104,11 +102,11 @@ swiper {
   color: #707070;
 }
 
-.weui-tab__content{
+.weui-tab__content {
   padding-top: 0rpx;
 }
 
-.focus-item{
+.focus-item {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -121,17 +119,17 @@ swiper {
   align-items: center;
 }
 
-.focus-img-out{
+.focus-img-out {
   width: 20%;
 }
 
-.focus-img{
+.focus-img {
   height: 110rpx;
   width: 110rpx;
   border-radius: 50%;
 }
 
-.focus-text{
+.focus-text {
   text-align: start;
   width: 55%;
   display: flex;
@@ -139,20 +137,20 @@ swiper {
   justify-content: space-around;
 }
 
-.focus-name{
+.focus-name {
   font-size: 40rpx;
 }
 
-.focus-desc{
+.focus-desc {
   color: gray;
   font-size: 26rpx;
 }
 
-.focus-btn{
+.focus-btn {
   width: 25%;
 }
 
-.focus-btn-in{
+.focus-btn-in {
   padding: 10rpx 0;
   width: 150rpx;
   border-radius: 10rpx;
@@ -162,11 +160,11 @@ swiper {
   font-size: 30rpx;
 }
 
-.focus-btn-in:active{
-  background-color: #F8F8F8;
+.focus-btn-in:active {
+  background-color: #f8f8f8;
 }
 
-.common-btn{
+.common-btn {
   margin-top: 20rpx;
   width: 150rpx;
   padding: 10rpx;
@@ -176,21 +174,27 @@ swiper {
   font-size: 30rpx;
 }
 
-.weui-navbar{
-  background-color: #F8F8F8;
+.weui-navbar {
+  background-color: #f8f8f8;
 }
 
-.match-mini-img{
+.match-mini-img {
   width: 30rpx;
   height: 30rpx;
   margin: 0 10rpx;
   align-self: center;
 }
 
-.random{
+.random {
   height: 30rpx;
 }
 
-.weui-navbar{
+.weui-navbar {
   font-weight: bold;
+}
+
+.text-level {
+  padding: 0 10rpx;
+  text-align: left;
+  font-size: 25rpx;
 }

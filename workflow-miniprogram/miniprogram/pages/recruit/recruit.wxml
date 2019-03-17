@@ -1,77 +1,38 @@
 <view class="page">
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__desc">
-      <view class="weui-flex">
-        <view class="weui-flex__item info">
-          <view class="placeholder ">
+  <view class='top-bd'>
+    <view class='search'>
+      <image class="search-img" src='/image/search.png'></image>
+      <input placeholder='请输入' class='serch-item' placeholder-class='iconfont icon-sousuo mid-font ' placeholder-style='color:#999999;font-size:14px'></input>
+      <view class="filter">筛选</view>
+    </view>
+  </view>
+
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover">
+      <view class="top-item">
+        <view class='info'>
+          <view>
             <open-data type="userAvatarUrl" url="/pages/selfInfo/selfInfo" class="msgbox_in_img" id="userinfo"></open-data>
           </view>
-          <view>jjj</view>
+          <view>
+            <open-data type="userNickName" class="username"></open-data>
+          </view>
         </view>
-        <view class="weui-flex__item">
-          <view class="placeholder"></view>
-        </view>
-      </view>
-    </view>
-    <view class="weui-media-box__desc">
-      <view class="weui-flex">
-        <view class="weui-flex__item">
-          <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-        </view>
-        <view class="weui-flex__item">
-          <view class="weui-media-box__desc">第六届创新创业大赛</view>
+        <view>
+          <image src='{{item.focus == 1 ? "/image/focus.png" : "/image/unfocus.png"}}' data-id='{{item}}' catchtap='changeFocus' hover-class="none" class='img'></image>
+          <image src='/image/delete.png' class='img'></image>
         </view>
       </view>
+      <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
+      <view class="weui-media-box__desc">
+        {{item.match}}
+      </view>
+      <view class='footer'>
+        <view class='footer-text'>招聘情况：{{item.now}}/{{item.total}}名</view>
+        <image src='/image/more.png' class='more'></image>
+      </view>
     </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
-  <view class="box recruit-item ripple" bindtap='toDetail' hover-class="navigator-hover">
-    <view class="weui-media-box__title weui-media-box__title_in-text">启事B</view>
-    <view class="weui-media-box__desc">
-      第六届创新创业大赛
-    </view>
-  </view>
+  </block>
 
   <navigator class='tia-btn' url='/pages/createRecruit/createRecruit'>
     发布招聘
