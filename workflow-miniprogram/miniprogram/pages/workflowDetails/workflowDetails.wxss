@@ -18,7 +18,6 @@ page,
   padding-top: 10px;
 }
 
-
 ec-canvas {
   padding-top: 0px;
   width: 100%;

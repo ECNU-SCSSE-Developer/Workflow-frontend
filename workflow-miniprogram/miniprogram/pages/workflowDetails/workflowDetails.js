@@ -12,90 +12,126 @@ function initChart(canvas, width, height) {
   });
   canvas.setChart(chart);
   var data1 = {
-    "name": "root",
-
+    "name": "基于微信小程序的可视化工作流",
     "symbol": 'roundRect',
     "itemStyle": {
       borderColor: 'rgb(255, 190, 118)',
-      color: '#fff'
+      color: 'rgb(255, 190, 118)'
     },
-
-
     "children": [{
-      "name": "a",
-      
+      "name": "前期准备",
+      "symbol": 'rect',
+      "itemStyle": {
+        borderColor: 'rgb(120, 224, 143)',
+        color: 'rgb(120, 224, 143)'
+      },
+
+      "children": [{
+        "name": "开题报告",
+        "symbol": 'rect',
+        "itemStyle": {
+          borderColor: 'rgb(120, 224, 143)',
+          color: 'rgb(120, 224, 143)'
+        }
+      }, {
+        "name": "需求分析",
+        "symbol": 'rect',
+        "itemStyle": {
+          borderColor: 'rgb(120, 224, 143)',
+          color: 'rgb(120, 224, 143)'
+        }
+
+      }, {
+        "name": "架构设计",
+        "symbol": 'rect',
+        "itemStyle": {
+          borderColor: 'rgb(120, 224, 143)',
+          color: 'rgb(120, 224, 143)'
+        }
+      }, {
+        "name": "程序框架搭建",
+        "symbol": 'rect',
+        "itemStyle": {
+          borderColor: 'rgb(120, 224, 143)',
+          color: 'rgb(120, 224, 143)'
+        }
+      }]
+    }, {
+      "name": "中期实现",
+      "children": [
+        {
+          name: "精化需求+调研",
+          description: 'test',
+          "symbol": 'rect',
+          "itemStyle": {
+            borderColor: 'rgb(120, 224, 143)',
+            color: 'rgb(120, 224, 143)'
+          }
+        }, {
+          "name": "功能实现",
+          "symbol": 'rect',
+          "itemStyle": {
+            borderColor: 'rgb(120, 224, 143)',
+            color: 'rgb(120, 224, 143)'
+          }
+
+        }, {
+          "name": "答辩准备",
+          "symbol": 'rect',
+          "itemStyle": {
+            borderColor: 'rgb(120, 224, 143)',
+            color: 'rgb(120, 224, 143)'
+          }
+        }, {
+          "name": "Alpha版本测试"
+        }],
       "symbol": 'roundRect',
       "itemStyle": {
         borderColor: 'rgb(255, 190, 118)',
-        color: '#fff'
+        color: 'rgb(255, 190, 118)',
       },
-
-
+    }, {
+      "name": "后期完善",
       "children": [{
-        "name": "a1",
-        "symbol":'rect',
-        "itemStyle":{
-          borderColor:'rgb(106, 176, 76)',
-          color:'#fff'
-        }
-      }, {
-          "name": "a2",
-          "symbol": 'rect',
-          "itemStyle": {
-            borderColor: 'rgb(106, 176, 76)',
-            color: '#fff'
-          }
-        
-      }, {
-          "name": "a3",
-          "symbol": 'rect',
-          "itemStyle": {
-            borderColor: 'rgb(106, 176, 76)',
-            color: '#fff'
-          }
-      }, {
-        "name": "a4"
+        "name": "结项答辩"
       }]
     }, {
-      "name": "b",
+      "name": "正式上线",
       "children": [{
-        "name": "b1"
-      }, {
-        "name": "b2"
-      }, {
-        "name": "b3"
-      }, {
-        "name": "b4"
-      }]
-    }, {
-      "name": "c",
-      "children": [{
-        "name": "c1"
-      }]
-    }, {
-      "name": "d",
-      "children": [{
-        "name": "d1"
+        "name": "系统测试"
       }]
     }]
   };
 
   var option = {
-    legend:{
-      data: [{
-        name: '系列1',
-        // 强制设置图形为圆。
-        icon: 'circle',
-        // 设置文本为红色
-        textStyle: {
-          color: 'red'
-        }
-      }]
+    
+
+ 
+    tooltip: {
+      trigger: "item",
+      formatter: (params) => {
+        return params.data.description;
+      }
+    },
+
+    label: {
+      
+      formatter: (params) => {
+        return '{a|' + params.data.name+ '}';
+      },
+      rich:{
+        a: {
+          color: '#4b6584',
+          fontWeight: 'lighter',
+          backgroundColor: '#f5f6fa',
+          fontSize:'13',
+        },
+      }
+
     },
 
     series: [{
       type: 'tree',
-
       initialTreeDepth: -1,
 
       name: 'tree1',
@@ -111,10 +147,10 @@ function initChart(canvas, width, height) {
       symbolSize: 15,
       symbol: 'circle',
 
-      
+
       itemStyle:{
-        color: '#fff',
-        borderColor:'rgb(255, 121, 121)'
+        color: 'rgb(252, 92, 101)',
+        borderColor:'rgb(252, 92, 101)'
       },
 
       label: {
@@ -128,12 +164,12 @@ function initChart(canvas, width, height) {
 
     }],
     title:{
-      text:'很长很长的测试标题',
+      text:'可视化工作流',
       textStyle:{
         fontWeight:'lighter',
         fontSize:'18'
       },
-      subtext:'测试子标题✌️',
+      subtext:'展示项目的预计生命周期以及实际状态✌️',
       left:'3%'
     },
     
