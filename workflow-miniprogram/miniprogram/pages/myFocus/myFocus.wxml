@@ -24,7 +24,7 @@
             <view wx:for="{{focusPerson}}" wx:key="id">
               <view class='focus-item'>
                 <navigator class='focus-img-out' url='/pages/othersInfo/othersInfo' hover-class='none'>
-                  <image src='/image/tia.png' class='focus-img'></image>
+                  <image src='{{item.url}}' class='focus-img'></image>
                 </navigator>
                 <view class='focus-text'>
                   <view class='focus-name'>{{item.name}}</view>

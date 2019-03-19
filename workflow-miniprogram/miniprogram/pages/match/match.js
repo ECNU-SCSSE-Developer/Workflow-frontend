@@ -6,9 +6,9 @@ Page({
    */
   data: {
     imgUrls: [
-      '/image/1.jpg',
-      '/image/1.jpg',
-      '/image/1.jpg'
+      'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg',
+      'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m2.jpg',
+      'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg'
     ],
     tabs: ["近 期 比 赛", "已 截 止", "比 赛 年 鉴"],
     activeIndex: 0,
@@ -17,75 +17,65 @@ Page({
     hasMatch: 1, //是否有近期比赛
     matchs: [{
       id: 1,
-      title: "比赛1",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg",
+      title: "第16届“大夏杯”大学生创业大赛",
       level: "校级",
       time: "2019年2月28日",
     }, {
       id: 2,
-      title: "比赛2",
-      level: "校级",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m2.jpg",
+        title: "R3全球大学生区块链商业计划竞赛",
+      level: "国家级",
       time: "2019年2月28日",
     }, {
       id: 3,
-      title: "比赛3",
-      level: "校级",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg",
+      title: "上海市大学生计算机应用能力大赛",
+      level: "市级",
       time: "2019年2月28日",
     }, {
       id: 4,
-      title: "比赛4",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m4.jpg",
+      title: "(第十一届)华师大本科生计算机应用能力大赛",
       level: "校级",
       time: "2019年2月28日",
     }, {
       id: 5,
-      title: "比赛5",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m6.jpg",
+      title: "互联网+",
       level: "校级",
       time: "2019年2月28日",
     }, {
       id: 6,
-      title: "比赛6",
-      level: "校级",
-      time: "2019年2月28日",
-    }, {
-      id: 7,
-      title: "比赛7",
-      level: "校级",
-      time: "2019年2月28日",
-    }, {
-      id: 8,
-      title: "比赛8",
-      level: "校级",
-      time: "2019年2月28日",
-    }, {
-      id: 9,
-      title: "比赛9",
-      level: "校级",
-      time: "2019年2月28日",
-    }, {
-      id: 10,
-      title: "比赛10",
-      level: "校级",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m5.png",
+      title: "创青春市赛",
+      level: "市级",
       time: "2019年2月28日",
     }],
 
     cutoffMatchs: [{
         id: 1,
-        title: "比赛1",
-        level: "校级",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m5.png",
+      title: "创青春国赛",
+        level: "国家级",
         time: "2019年2月28日",
       }, {
         id: 2,
-        title: "比赛2",
-        level: "校级",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m4.jpg",
+        title: "互联网+",
+        level: "市级",
         time: "2019年2月28日",
       }, {
         id: 3,
-        title: "比赛3",
-        level: "校级",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg",
+        title: "第2届计算机科学与软件工程学院双创比赛",
+        level: "院级",
         time: "2019年2月28日",
       },
       {
         id: 4,
-        title: "比赛3",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg",
+        title: "第15届“大夏杯”大学生创业大赛",
         level: "校级",
         time: "2019年2月28日",
       }
@@ -98,7 +88,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         that.setData({
           sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex

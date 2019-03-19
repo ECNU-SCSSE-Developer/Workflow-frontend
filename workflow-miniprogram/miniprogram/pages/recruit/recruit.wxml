@@ -2,7 +2,7 @@
   <view class='top-bd'>
     <view class='search'>
       <image class="search-img" src='/image/search.png'></image>
-      <input placeholder='请输入' class='serch-item' placeholder-class='iconfont icon-sousuo mid-font ' placeholder-style='color:#999999;font-size:14px'></input>
+      <input placeholder='请输入具体招聘信息' class='serch-item' placeholder-class='iconfont icon-sousuo mid-font ' placeholder-style='color:#999999;font-size:14px'></input>
       <view class="filter">筛选</view>
     </view>
   </view>
@@ -11,11 +11,11 @@
     <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover">
       <view class="top-item">
         <view class='info'>
-          <view>
-            <open-data type="userAvatarUrl" url="/pages/selfInfo/selfInfo" class="msgbox_in_img" id="userinfo"></open-data>
+          <view catchtap='toOthersInfo'>
+            <image class="msgbox_in_img" id="userinfo" src='{{item.img}}'></image>
           </view>
           <view>
-            <open-data type="userNickName" class="username"></open-data>
+            <view class="username">{{item.creator}}</view>
           </view>
         </view>
         <view>
@@ -28,12 +28,13 @@
         {{item.match}}
       </view>
       <view class='footer'>
-        <view class='footer-text'>招聘情况：{{item.now}}/{{item.total}}名</view>
+        <view class='footer-text'>申请情况：{{item.now}}/{{item.total}}名</view>
         <image src='/image/more.png' class='more'></image>
       </view>
     </view>
   </block>
 
+  <view class='divider'></view>
   <navigator class='tia-btn' url='/pages/createRecruit/createRecruit'>
     发布招聘
   </navigator>

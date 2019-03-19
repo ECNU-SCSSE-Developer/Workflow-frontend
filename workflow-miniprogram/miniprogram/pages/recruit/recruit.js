@@ -7,45 +7,57 @@ Page({
   data: {
     list: [{
       id: 1,
-      name: "xxx小队需要JAVA后端若干名",
-      match: "第六届创新创业大赛",
-      now: 5,
-      total: 10,
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a1.jpg",
+      creator: "Knight",
+      name: "本小队需要JAVA后端若干名",
+      match: "第16届“大夏杯”大学生创业大赛",
+      now: 1,
+      total: 3,
       focus: 0,
     }, {
       id: 2,
-      name: "xxx小队需要JAVA后端若干名",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
+        creator: "Weird",
+      name: "本小队需要PHP后端两名",
       match: "第六届创新创业大赛",
-      now: 5,
-      total: 10,
+      now: 1,
+      total: 2,
       focus: 1,
     }, {
       id: 3,
-      name: "xxx小队需要JAVA后端若干名",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
+        creator: "三眼皮猴子",
+      name: "需要web前端若干名,福利满满",
       match: "第六届创新创业大赛",
-      now: 5,
-      total: 10,
+      now: 2,
+      total: 3,
       focus: 1,
     }, {
       id: 4,
-      name: "xxx小队需要JAVA后端若干名",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg",
+        creator: "布里",
+      name: "招全栈",
       match: "第六届创新创业大赛",
-      now: 5,
-      total: 10,
+      now: 4,
+      total: 3,
       focus: 0,
     }, {
       id: 5,
-      name: "xxx小队需要JAVA后端若干名",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg",
+        creator: "咕叽",
+      name: "需要设计学院的同学..",
       match: "第六届创新创业大赛",
-      now: 5,
-      total: 10,
+      now: 0,
+      total: 1,
       focus: 1,
     }, {
       id: 6,
-      name: "xxx小队需要JAVA后端若干名",
+        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg",
+        creator: "Type1551 ASDIC⚓🦇",
+      name: "JAVAer WANTED",
       match: "第六届创新创业大赛",
-      now: 5,
-      total: 10,
+      now: 1,
+      total: 3,
       focus: 0,
     }, ]
   },
@@ -114,7 +126,11 @@ Page({
     }, 500)
   },
 
-  changeFocus: function(e) {
-    console.info(e.currentTarget.dataset.id)
-  },
+  changeFocus: function(e) {},
+
+  toOthersInfo: function(){
+    wx.navigateTo({
+      url: '/pages/othersInfo/othersInfo',
+    })
+  }
 })

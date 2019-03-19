@@ -15,44 +15,19 @@ Page({
     hasFocusRecruit: 0,
     focusPerson: [{
       id: 1,
-      name: "xxx",
-      motto: "好好学习，天天向上"
+      name: "三眼皮猴子",
+      url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
+      motto: "好好睡觉"
     }, {
       id: 2,
-      name: "xxx",
-      motto: "我是一个学生"
+        url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
+        name: "Weird",
+      motto: "我爱学习"
     }, {
       id: 3,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 4,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 5,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 6,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 7,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 8,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 9,
-      name: "xxx",
-      motto: "我是一个学生"
-    }, {
-      id: 10,
-      name: "xxx",
-      motto: "我是一个学生"
+        url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg",
+        name: "布里",
+      motto: "学习爱我"
     }]
   },
 

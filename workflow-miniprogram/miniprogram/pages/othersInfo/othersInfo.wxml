@@ -1,22 +1,22 @@
 <!--pages/othersInfo/othersInfo.wxml-->
 <view class='page'>
   <view class='top-show'>
-    <open-data type="userAvatarUrl" class="top-avatar" id="userinfo"></open-data>
-    <open-data type="userNickName" class="top-name"></open-data>
+    <image class="top-avatar" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
+    <view class="top-name">Weird</view>
     <button class="weui-btn" type="default" size="mini" class="top-btn">关注</button>
   </view>
   <view class='social'>
     <view class='social-item'>
       <view class='social-text'>同事</view>
-      <view class='social-num'>0</view>
+      <view class='social-num'>5</view>
     </view>
     <view class='social-item'>
       <view class='social-text'>关注</view>
-      <view class='social-num'>0</view>
+      <view class='social-num'>6</view>
     </view>
     <view class='social-item'>
       <view class='social-text'>粉丝</view>
-      <view class='social-num'>0</view>
+      <view class='social-num'>26</view>
     </view>
   </view>
   <view class='info'>
@@ -42,7 +42,7 @@
     </view>
     <view class='info-item-intro'>
       <view class='info-title'>个人简介</view>
-      <view class='info-desc'>Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day </view>
+      <view class='info-desc'>我爱学习 学习爱我~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~</view>
     </view>
   </view>
 </view>

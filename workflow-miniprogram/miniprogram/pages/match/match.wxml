@@ -34,16 +34,16 @@
           <block wx:for="{{matchs}}" wx:key="id">
             <navigator url='/pages/matchDetail/matchDetail' class='match-item'>
               <view class='match-img-out'>
-                <image class='match-img' src='/image/1.jpg'></image>
+                <image class='match-img' src='{{item.img}}'></image>
+              </view>
+              <view class='text-title'>
+                {{item.title}}
               </view>
               <view class='match-text'>
                 <image class='match-mini-img' src='/image/match.png'></image>
-                <view class='text-title'>
-                  {{item.title}}
+                <view class='text-level'>
+                  {{item.level}}
                 </view>
-              </view>
-              <view class='text-level'>
-                {{item.level}}
               </view>
               <view class='text-time'>
                 {{item.time}}截止
@@ -59,7 +59,7 @@
         <block wx:for="{{cutoffMatchs}}" wx:key="id">
           <navigator url='/pages/matchDetail/matchDetail' class='match-item'>
             <view class='match-img-out'>
-              <image class='match-img' src='/image/1.jpg'></image>
+              <image class='match-img' src='{{item.img}}'></image>
             </view>
             <view class='match-text'>
               <image class='match-mini-img' src='/image/match.png'></image>

@@ -3,26 +3,34 @@
   <view class='form-info'>
     <view class='form-title'>招 聘 信 息 📃</view>
     <view class='form-item'>
+      <view class='item-title-creator'>发布者:</view>
+      <navigator url='/pages/othersInfo/othersInfo' hover-class='none'>
+        <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class="msgbox_in_img" id="userinfo"></image>
+      </navigator>
+      <view class='item-detail-creator'>Weird</view>
+    </view>
+    <view class='form-item'>
       <view class='item-title'>名称:</view>
-      <view class='item-detail'>这是一个名字</view>
+      <view class='item-detail'>本小队需要JAVA后端若干名</view>
     </view>
     <view class='form-item'>
       <view class='item-title'>待招职位:</view>
-      <view>全栈</view>
+      <view class='item-detail'>JAVA后端</view>
     </view>
     <view class='form-item'>
       <view class='item-title'>所属比赛:</view>
-      
+      <view class='item-detail'>第16届“大夏杯”大学生创业大赛</view>
     </view>
     <view class='form-item'>
       <view class='item-title'>所需人数:</view>
+      <view class='item-detail'>3名</view>
     </view>
     <view class='form-item'>
       <view class='item-title'>简介:</view>
-      <textarea disabled='true'>嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻</textarea>
+      <textarea disabled='true'>诚聘JAVA后端开发人员，小白与大牛都欢迎</textarea>
     </view>
   </view>
   <view class='tia-btn'>
-    应  聘
+    应 聘
   </view>
 </view>

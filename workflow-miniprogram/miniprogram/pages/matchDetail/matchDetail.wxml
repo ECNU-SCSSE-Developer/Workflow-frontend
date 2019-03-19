@@ -28,6 +28,7 @@
       </view>
       <textarea class='summary' disabled='true'>{{match.summary}}
       </textarea>
+      <view class='in-btn'>感 兴 趣</view>
     </view>
 
   </view>
