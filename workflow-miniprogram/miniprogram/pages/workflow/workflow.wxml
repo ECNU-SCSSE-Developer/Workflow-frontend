@@ -5,11 +5,11 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__bd">
         <navigator url='/pages/workflowDetails/workflowDetails' class="weui-media-box weui-media-box_text">
-          <view class="weui-media-box__title weui-media-box__title_in-text">工作任务1</view>
+          <view class="weui-media-box__title weui-media-box__title_in-text">工作流项目</view>
           <view class="weui-media-box__desc">第五届创新创业大赛</view>
         </navigator>
         <view class="weui-media-box weui-media-box_text">
-          <view class="weui-media-box__title weui-media-box__title_in-text">工作任务2</view>
+          <view class="weui-media-box__title weui-media-box__title_in-text">活动相关准备</view>
           <view class="weui-media-box__desc">科技英才评选活动</view>
         </view>
       </view>

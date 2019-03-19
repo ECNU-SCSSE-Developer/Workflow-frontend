@@ -245,7 +245,7 @@ Page({
    */
   data: {
     tabs: ["状态展示", "信息汇总", "团队成员"],
-    activeIndex: 1,
+    activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
     ec: {
