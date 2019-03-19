@@ -35,7 +35,7 @@ function initChart(canvas, width, height) {
           max: 10
         },
         {
-          name: '编程能力',
+          name: '后端',
           max: 10
         },
         {
@@ -43,16 +43,24 @@ function initChart(canvas, width, height) {
           max: 10
         },
         {
-          name: '后端',
+          name: '移动端',
           max: 10
         },
+        {
+          name: '算法',
+          max: 10
+        },
+        {
+          name:'数据',
+          max: 10
+        }
       ]
     },
     series: [{
       name: '具体数值',
       type: 'radar',
       data: [{
-        value: [5, 5, 5, 5, 5],
+        value: [6, 8, 7, 9, 5, 6, 10],
         name: '数值'
       }]
     }]
