@@ -12,93 +12,151 @@ function initChart(canvas, width, height) {
   });
   canvas.setChart(chart);
   var data1 = {
-    "name": "基于微信小程序的可视化工作流",
-    "symbol": 'roundRect',
-    "itemStyle": {
+    name: "基于微信小程序的可视化工作流",
+    symbol: 'roundRect',
+    description: '创新创业项目',
+    itemStyle: {
       borderColor: 'rgb(255, 190, 118)',
       color: 'rgb(255, 190, 118)'
     },
-    "children": [{
-      "name": "前期准备",
-      "symbol": 'rect',
-      "itemStyle": {
+    children: [{
+      name: "前期准备",
+      description: '立项前期准备',
+      symbol: 'rect',
+      itemStyle: {
         borderColor: 'rgb(120, 224, 143)',
         color: 'rgb(120, 224, 143)'
       },
 
-      "children": [{
-        "name": "开题报告",
-        "symbol": 'rect',
-        "itemStyle": {
+      children: [{
+        name: "开题报告",
+        description: '准备相关资料及开题报告',
+        symbol: 'rect',
+        itemStyle: {
           borderColor: 'rgb(120, 224, 143)',
           color: 'rgb(120, 224, 143)'
-        }
+        },
+        children: [
+          {
+            name: "资料收集",
+            description: '准备相关资料',
+            itemStyle: {
+              borderColor: 'rgb(120, 224, 143)',
+              color: 'rgb(120, 224, 143)'
+            },
+          },
+          {
+            name: "PPT制作",
+            description: '制作PPT',
+            itemStyle: {
+              borderColor: 'rgb(120, 224, 143)',
+              color: 'rgb(120, 224, 143)'
+            },
+          },
+          {
+            name: "视频录制",
+            description: '录制',
+            itemStyle: {
+              borderColor: 'rgb(120, 224, 143)',
+              color: 'rgb(120, 224, 143)'
+            },
+          },
+        ]
       }, {
-        "name": "需求分析",
-        "symbol": 'rect',
-        "itemStyle": {
+        name: "需求分析",
+        description: '查找资料，问卷调查',
+        symbol: 'rect',
+        itemStyle: {
           borderColor: 'rgb(120, 224, 143)',
           color: 'rgb(120, 224, 143)'
         }
 
       }, {
-        "name": "架构设计",
-        "symbol": 'rect',
-        "itemStyle": {
+        name: "架构设计",
+        description: '设计系统架构',
+        symbol: 'rect',
+        itemStyle: {
           borderColor: 'rgb(120, 224, 143)',
           color: 'rgb(120, 224, 143)'
         }
       }, {
-        "name": "程序框架搭建",
-        "symbol": 'rect',
-        "itemStyle": {
+        name: "程序框架搭建",
+        description: '初始化Git仓库及程序框架',
+        symbol: 'rect',
+        itemStyle: {
           borderColor: 'rgb(120, 224, 143)',
           color: 'rgb(120, 224, 143)'
-        }
+        },
+        children: [
+          {
+            name: "前端",
+            description: '搭建框架',
+            itemStyle: {
+              borderColor: 'rgb(120, 224, 143)',
+              color: 'rgb(120, 224, 143)'
+            },
+          },
+          {
+            name: "后端",
+            description: '搭建框架',
+            itemStyle: {
+              borderColor: 'rgb(120, 224, 143)',
+              color: 'rgb(120, 224, 143)'
+            },
+          },
+        ],
       }]
     }, {
-      "name": "中期实现",
-      "children": [
+      name: "中期实现",
+      description: '中期答辩前的相关工作',
+      children: [
         {
           name: "精化需求+调研",
-          description: 'test',
-          "symbol": 'rect',
-          "itemStyle": {
+          description: '精化需求',
+          symbol: 'rect',
+          itemStyle: {
             borderColor: 'rgb(120, 224, 143)',
             color: 'rgb(120, 224, 143)'
           }
         }, {
-          "name": "功能实现",
-          "symbol": 'rect',
-          "itemStyle": {
+          name: "功能实现",
+          description: '实现功能',
+          symbol: 'rect',
+          itemStyle: {
             borderColor: 'rgb(120, 224, 143)',
             color: 'rgb(120, 224, 143)'
           }
 
         }, {
-          "name": "答辩准备",
-          "symbol": 'rect',
-          "itemStyle": {
+          name: "答辩准备",
+          description: '准备相关材料：报告PPT等',
+          symbol: 'rect',
+          itemStyle: {
             borderColor: 'rgb(120, 224, 143)',
             color: 'rgb(120, 224, 143)'
           }
         }, {
-          "name": "Alpha版本测试"
+          name: "Alpha版本测试",
+          description: '集成测试',
         }],
-      "symbol": 'roundRect',
-      "itemStyle": {
+      symbol: 'roundRect',
+      itemStyle: {
         borderColor: 'rgb(255, 190, 118)',
         color: 'rgb(255, 190, 118)',
       },
     }, {
-      "name": "后期完善",
-      "children": [{
-        "name": "结项答辩"
+      name: "后期完善",
+      description: '进一步完善功能',
+      children: [{
+        name: "结项答辩",
+        description: '准备相关材料',
       }]
     }, {
-      "name": "正式上线",
-      "children": [{
-        "name": "系统测试"
+      name: "正式上线",
+      description: '关于上线的相关工作',
+      children: [{
+        name: "系统测试"
+
       }]
     }]
   };
@@ -106,7 +164,7 @@ function initChart(canvas, width, height) {
   var option = {
     
 
- 
+    
     tooltip: {
       trigger: "item",
       formatter: (params) => {
@@ -187,12 +245,13 @@ Page({
    */
   data: {
     tabs: ["状态展示", "信息汇总", "团队成员"],
-    activeIndex: 0,
+    activeIndex: 1,
     sliderOffset: 0,
     sliderLeft: 0,
     ec: {
       onInit: initChart
-    }
+    },
+    motto: "Seize the day"
 
   },
 

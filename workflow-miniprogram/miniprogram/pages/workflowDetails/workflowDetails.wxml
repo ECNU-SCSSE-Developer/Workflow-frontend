@@ -13,7 +13,7 @@
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
 
 
-       
+
           <view class="container">
             <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}">
             </ec-canvas>
@@ -21,13 +21,99 @@
           </view>
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-          信息汇总
+
+
         </view>
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
 
-          <view class="container members">
+          <view class="card">
+            <view>
+              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a1.jpg' class="msgbox_in_img" id="userinfo">
+                </image>
+              </navigator>
+            </view>
+            <view class='msg_right'>
+              <view class="msgbox_in_text_title">
+                Knight
+              </view>
+              <view class="msgbox_in_text_desc">{{motto}}</view>
+            </view>
+          </view>
 
+          <view class="card">
+            <view>
+              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class="msgbox_in_img" id="userinfo">
+                </image>
+              </navigator>
+            </view>
+            <view class='msg_right'>
+              <view class="msgbox_in_text_title">
+                Fuhy
+              </view>
+              <view class="msgbox_in_text_desc">{{motto}}</view>
+            </view>
+          </view>
 
+          <view class="card">
+            <view>
+              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg' class="msgbox_in_img" id="userinfo">
+                </image>
+              </navigator>
+            </view>
+            <view class='msg_right'>
+              <view class="msgbox_in_text_title">
+                三眼皮猴子
+              </view>
+              <view class="msgbox_in_text_desc">{{motto}}</view>
+            </view>
+          </view>
+
+          <view class="card">
+            <view>
+              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg' class="msgbox_in_img" id="userinfo">
+                </image>
+              </navigator>
+            </view>
+            <view class='msg_right'>
+              <view class="msgbox_in_text_title">
+                布里
+              </view>
+              <view class="msgbox_in_text_desc">{{motto}}</view>
+            </view>
+          </view>
+
+          <view class="card">
+            <view>
+              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg' class="msgbox_in_img" id="userinfo">
+                </image>
+              </navigator>
+            </view>
+            <view class='msg_right'>
+              <view class="msgbox_in_text_title">
+                咕叽
+              </view>
+              <view class="msgbox_in_text_desc">{{motto}}</view>
+            </view>
+          </view>
+
+          <view class="card">
+            <view>
+              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg' class="msgbox_in_img" id="userinfo">
+                </image>
+              </navigator>
+            </view>
+            <view class='msg_right'>
+              <view class="msgbox_in_text_title">
+                小羊
+              </view>
+              <view class="msgbox_in_text_desc">{{motto}}</view>
+            </view>
           </view>
 
 
