@@ -122,7 +122,7 @@
               <view class="msgbox_in_text_title">
                 Fuhy
               </view>
-              <view class="msgbox_in_text_desc">{{motto}}</view>
+              <view class="msgbox_in_text_desc">学习爱我</view>
             </view>
           </view>
 
@@ -137,7 +137,7 @@
               <view class="msgbox_in_text_title">
                 三眼皮猴子
               </view>
-              <view class="msgbox_in_text_desc">{{motto}}</view>
+              <view class="msgbox_in_text_desc">我爱ECNU</view>
             </view>
           </view>
 
@@ -152,7 +152,7 @@
               <view class="msgbox_in_text_title">
                 布里
               </view>
-              <view class="msgbox_in_text_desc">{{motto}}</view>
+              <view class="msgbox_in_text_desc">我爱JAVA</view>
             </view>
           </view>
 
@@ -167,7 +167,7 @@
               <view class="msgbox_in_text_title">
                 咕叽
               </view>
-              <view class="msgbox_in_text_desc">{{motto}}</view>
+              <view class="msgbox_in_text_desc">认真吃饭</view>
             </view>
           </view>
 
@@ -182,7 +182,7 @@
               <view class="msgbox_in_text_title">
                 Type1551 ASDIC⚓🦇
               </view>
-              <view class="msgbox_in_text_desc">{{motto}}</view>
+              <view class="msgbox_in_text_desc">好好睡觉</view>
             </view>
           </view>
 

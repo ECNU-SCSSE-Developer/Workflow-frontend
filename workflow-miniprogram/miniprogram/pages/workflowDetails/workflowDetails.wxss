@@ -72,11 +72,15 @@ ec-canvas {
 
 .msgbox_in_text_title {
   font-size: 40rpx;
+  align-self: left;
+  text-align: left;
 }
 
 .msgbox_in_text_desc {
   font-size: 25rpx;
   color: grey;
+  align-self: left;
+  text-align: left;
 }
 
 .graph {
