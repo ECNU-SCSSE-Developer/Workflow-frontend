@@ -155,8 +155,8 @@ function initChart(canvas, width, height) {
       name: "正式上线",
       description: '关于上线的相关工作',
       children: [{
-        name: "系统测试"
-
+        name: "系统测试",
+        description: '系统测试'
       }]
     }]
   };
