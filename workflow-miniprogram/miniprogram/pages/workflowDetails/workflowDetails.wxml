@@ -10,6 +10,7 @@
         <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
       <view class="weui-tab__panel">
+
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
           <view class='titleContainer'>
             <view class='workflowTitle'>
@@ -19,26 +20,68 @@
               展示项目的预计生命周期以及实际状态✌️
             </view>
           </view>
-          <view>
-            <image src='/image/legend.jpg'></image>
+          <view class='graph'>
+            <view class='unstart'></view>
+            <view class='graph-text'>未开始</view>
+            <view class='running'></view>
+            <view class='graph-text'>正在进行</view>
+            <view class='finish'></view>
+            <view class='graph-text'>已完成</view>
           </view>
-
-
           <view class="container">
             <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}">
             </ec-canvas>
-
           </view>
         </view>
+
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class='wf'>
+            <view class='bar'>
+              工作流
+              <view class='bg-color'></view>
+            </view>
+            <view class="cu-timeline">
+              <view class="cu-time">03-20</view>
+              <view class="cu-item cur icon-noticefill">
+                <view class="content">
+                  <text>01:30</text> 【Knight】 PPT制作 <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
+                </view>
+              </view>
+            </view>
+            <view class="cu-timeline">
+              <view class="cu-time">03-19</view>
+              <view class="cu-item cur icon-noticefill">
+                <view class="content">
+                  <text>05:30</text> 【咕叽】 开题报告 <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
+                </view>
+              </view>
+            </view>
+            <view class="cu-timeline">
+              <view class="cu-time">03-18</view>
+              <view class="cu-item cur icon-noticefill">
+                <view class="content">
+                  <text>09:30</text> 【系统】 前期准备 <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
+                </view>
+              </view>
+            </view>
+            
+          </view>
+          <view class='my-work'>
+            <view class='bar'>
+              我的任务
+              <view class='bg-color'></view>
+            </view>
 
-
+          </view>
+          <view>
+          </view>
         </view>
+
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
 
           <view class="card">
             <view>
-              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+              <navigator url="/pages/othersInfo/othersInfos" hover-class="none">
                 <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a1.jpg' class="msgbox_in_img" id="userinfo">
                 </image>
               </navigator>
@@ -53,7 +96,7 @@
 
           <view class="card">
             <view>
-              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
                 <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class="msgbox_in_img" id="userinfo">
                 </image>
               </navigator>
@@ -68,7 +111,7 @@
 
           <view class="card">
             <view>
-              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
                 <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg' class="msgbox_in_img" id="userinfo">
                 </image>
               </navigator>
@@ -83,7 +126,7 @@
 
           <view class="card">
             <view>
-              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
                 <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg' class="msgbox_in_img" id="userinfo">
                 </image>
               </navigator>
@@ -98,7 +141,7 @@
 
           <view class="card">
             <view>
-              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
                 <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg' class="msgbox_in_img" id="userinfo">
                 </image>
               </navigator>
@@ -113,21 +156,24 @@
 
           <view class="card">
             <view>
-              <navigator url="/pages/selfInfo/selfInfo" hover-class="none">
+              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
                 <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg' class="msgbox_in_img" id="userinfo">
                 </image>
               </navigator>
             </view>
             <view class='msg_right'>
               <view class="msgbox_in_text_title">
-                小羊
+                Type1551 ASDIC⚓🦇
               </view>
               <view class="msgbox_in_text_desc">{{motto}}</view>
             </view>
           </view>
 
 
-
+          <view class='divider'></view>
+          <navigator class='tia-btn' url='/pages/myFocus/myFocus'>
+            添加组员
+          </navigator>
 
         </view>
       </view>

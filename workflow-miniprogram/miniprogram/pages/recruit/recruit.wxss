@@ -1,8 +1,9 @@
 .recruit-item {
   /* border-left: 20rpx solid #4a69bd; */
   margin: 20rpx 20rpx;
-  border-radius: 20rpx;
+  border-radius: 10rpx;
   background-color: white;
+  box-shadow:0 1rpx 6rpx rgba(0, 0, 0, 0.1);
   /* box-shadow: 0 4px 8px 0 rgba(74, 105, 189, 0.2); */
 }
 

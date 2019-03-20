@@ -1,36 +1,37 @@
-page,
-.page,
-.page__bd{
-    height: 100%;
-}
-.page__bd{
-    padding-bottom: 0;
+page, .page, .page__bd {
+  height: 100%;
+  background-color: white;
 }
 
-.titleContainer{
+.page__bd {
+  padding-bottom: 0;
+}
+
+.titleContainer {
   text-align: left;
   padding: 5px 10px;
 }
 
-.workflowTitle{
+.workflowTitle {
   font-weight: normal;
   font-size: 40rpx;
 }
-.workflowSubTitle{
+
+.workflowSubTitle {
   font-weight: lighter;
   font-size: 30rpx;
 }
 
-
-
-.weui-navbar{
+.weui-navbar {
   background-color: white;
 }
-.weui-tab__content{
-    padding-top: 0px;
-    text-align: center;
+
+.weui-tab__content {
+  padding-top: 0px;
+  text-align: center;
 }
-.container{
+
+.container {
   padding-top: 10px;
 }
 
@@ -40,11 +41,6 @@ ec-canvas {
   height: 100vh;
 }
 
-
-
-
-
-
 .card {
   display: flex;
   flex-direction: row;
@@ -53,7 +49,7 @@ ec-canvas {
   margin-bottom: 20rpx;
   margin-left: 20rpx;
   margin-right: 20rpx;
-  padding: 40rpx ;
+  padding: 40rpx;
   border-radius: 40rpx;
 }
 
@@ -66,8 +62,6 @@ ec-canvas {
   text-align: center;
   margin: 0 auto;
 }
-
-
 
 .msg_right {
   padding-left: 25rpx;
@@ -85,5 +79,112 @@ ec-canvas {
   color: grey;
 }
 
+.graph {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.graph-text {
+  margin: 0 10rpx;
+  font-weight: lighter;
+  font-size: 30rpx;
+}
 
+.unstart {
+  margin-left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: rgb(252, 92, 101);
+}
+
+.running {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30%;
+  background-color: rgb(255, 190, 118);
+}
+
+.finish {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: rgb(120, 224, 143);
+}
+
+.tia-btn {
+  position: fixed;
+  width: 20%;
+  left: 40%;
+  right: 40%;
+  bottom: 1.5%;
+  z-index: 1000;
+  padding: 15rpx;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 5px;
+  color: #4a69bd;
+  font-size: 30rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.divider {
+  height: 100rpx;
+}
+
+.cu-bar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  min-height: 100rpx;
+  justify-content: space-between;
+}
+
+.bg-white {
+  background-color: #fff;
+  color: #666;
+}
+
+.wf{
+}
+
+.my-work{
+}
+
+.bar{
+  color: #4a69bd;
+  text-align: left;
+  margin: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.bg-color{
+  position: relative;
+  background-color: #6184e6;
+  height: 15rpx;
+  border-radius: 5rpx;
+  width: 120rpx;
+  top: -15rpx;
+  left: 30rpx;
+  z-index: -1;
+}
+
+.cu-timeline>.cu-item {
+padding:10rpx 30rpx 10rpx 120rpx;
+position:relative;
+display:block;
+z-index:0;
+}
+
+.content{
+  font-size: 30rpx;
+  text-align: left;
+}
+
+.cu-timeline{
+  background-color: white;
+}
