@@ -11,7 +11,17 @@
       </view>
       <view class="weui-tab__panel">
         <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-
+          <view class='titleContainer'>
+            <view class='workflowTitle'>
+              可视化工作流
+            </view>
+            <view class='workflowSubTitle'>
+              展示项目的预计生命周期以及实际状态✌️
+            </view>
+          </view>
+          <view>
+            <image src='/image/legend.jpg'></image>
+          </view>
 
 
           <view class="container">

@@ -222,12 +222,12 @@ function initChart(canvas, width, height) {
 
     }],
     title:{
-      text:'可视化工作流',
+      // text:'可视化工作流',
       textStyle:{
         fontWeight:'lighter',
         fontSize:'18'
       },
-      subtext:'展示项目的预计生命周期以及实际状态✌️',
+      // subtext:'展示项目的预计生命周期以及实际状态✌️',
       left:'3%'
     },
     

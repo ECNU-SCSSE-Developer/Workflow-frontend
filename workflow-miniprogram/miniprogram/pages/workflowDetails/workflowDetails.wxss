@@ -7,6 +7,22 @@ page,
     padding-bottom: 0;
 }
 
+.titleContainer{
+  text-align: left;
+  padding: 5px 10px;
+}
+
+.workflowTitle{
+  font-weight: normal;
+  font-size: 40rpx;
+}
+.workflowSubTitle{
+  font-weight: lighter;
+  font-size: 30rpx;
+}
+
+
+
 .weui-navbar{
   background-color: white;
 }
