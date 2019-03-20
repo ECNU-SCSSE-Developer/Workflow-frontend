@@ -1,11 +1,31 @@
-// pages/workflow/workflow.js
+// pages/recruit/recruit.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: [{
+      id: 1,
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a1.jpg",
+      creator: "Knight",
+      name: "workflow小组",
+      match: "第16届“大夏杯”大学生创业大赛",
+      now: 3,
+      total: 10,
+      focus: 0,
+      time: "5分钟前",
+    }, {
+      id: 2,
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
+      creator: "Weird",
+      name: "BAS团队",
+      match: "第六届创新创业大赛",
+      now: 5,
+      total: 6,
+      focus: 1,
+        time: "2小时前",
+    }]
   },
 
   /**
@@ -62,5 +82,21 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  toDetail: function () {
+    setTimeout(() => {
+      wx.navigateTo({
+        url: '/pages/workflowDetails/workflowDetails',
+      })
+    }, 500)
+  },
+
+  changeFocus: function (e) { },
+
+  toOthersInfo: function () {
+    wx.navigateTo({
+      url: '/pages/othersInfo/othersInfo',
+    })
   }
 })
