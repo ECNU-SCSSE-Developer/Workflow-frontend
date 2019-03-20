@@ -26,6 +26,6 @@
 
   <view class='divider'></view>
   <navigator class='tia-btn'>
-    创建工作流
+    创建工作
   </navigator>
 </view>
