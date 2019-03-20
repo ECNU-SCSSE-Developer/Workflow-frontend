@@ -9,8 +9,8 @@ Page({
       url: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg",
       title: "第16届“大夏杯”大学生创业大赛",
       place: "华东师范大学中山北路校区",
-      endTime: new Date,
-      matchTime: new Date,
+      endTime: "2019年4月28日",
+      matchTime: "2019年9月15日",
       summary: "这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介这是一个比较长的简介"
     }
   },

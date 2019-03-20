@@ -199,3 +199,44 @@ swiper {
   text-align: left;
   font-size: 25rpx;
 }
+
+.cal {
+    padding: 15px;
+}
+
+.cal-calendar {
+    background-color: white;
+    padding-top: 10px;
+    border-radius: 15px;
+}
+
+.cal-header {
+    font-size: large;
+    color: #59518d;    
+}
+
+.cal-board {
+    color: #c7cbe2;
+    font-weight: bold;
+}
+
+.act-line{
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.act-img{
+  margin: 0 20rpx 0 50rpx;
+  background-color: #4a69bd;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.act-text{
+  color: #999;
+  font-weight: bold;
+  font-size: 30rpx;
+}
