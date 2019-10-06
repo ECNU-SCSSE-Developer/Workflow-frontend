@@ -40,6 +40,62 @@ Page({
         hasApply: 1
       })
     }
+
+    wx.request({
+      url: 'http://localhost:8081/recruit/applied',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          recruitList: res.data
+        });
+        if (res.data.lenght == 0) {
+          that.setData({  
+            hasRecruit: 0
+          })
+        }
+        else {
+          that.setData({
+            hasRecruit: 1
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    })
+
+    wx.request({
+      url: 'http://localhost:8081/recruit/assigned',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          applyList: res.data
+        });
+        if (res.data.lenght == 0) {
+          that.setData({
+            hasApply: 0
+          })
+        }
+        else {
+          that.setData({
+            hasApply: 1
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    })
   },
 
   /**

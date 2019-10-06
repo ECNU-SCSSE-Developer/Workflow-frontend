@@ -19,7 +19,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    // console.log(activeId);
+    wx.request({
+      url: 'http://localhost:8081//activity/' + wx.getStorageSync('matchId'),
+      method: 'GET',
+      header:{
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res);
+        wx.setData({
+          match: res.data
+        })
+      },
+      fail: function(res){
+        console.log("fail");
+      }
+    })
   },
 
   /**

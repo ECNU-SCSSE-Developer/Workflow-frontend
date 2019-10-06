@@ -5,14 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgFlag: 0
+    imgFlag: 0,
+    hasTeam: 0,
+    myTeams:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var test = wx.getStorageSync(hasNew);
+    console.log(test);
+    wx.request({
+      url: '',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync(openid)
+      },
+      success: function(res){
+        console.log(res);
+        that.setData({
+          myTeam: res.data
+        });
+        if(res.data.lenght==0){
+          that.setData({
+            hasTeam: 0
+          })
+        }
+        else{
+          that.setData({
+            hasTeam: 1
+          })
+        }
+      },
+      fail: function(res){
+        console.log("fail!");
+      }
+    })
   },
 
   /**

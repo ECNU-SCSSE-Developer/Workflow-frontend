@@ -5,6 +5,34 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        //获取凭证
+        var code = res.code;
+        if(code){
+          console.log("获取用户登录凭证：" + code);
+          wx.request({
+            url: 'http://localhost:8081/login',
+            data: {
+              code: code
+            },
+            method: 'GET',
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function(res){
+              if(res.statusCode == 200){
+                console.log("openid: " + res.data);
+                wx.setStorageSync('openid', res.data);
+              }else{
+                console.log("fail!");
+              }
+            },
+            fail: function(res){
+              console.log("fail!");
+            }
+          })
+        }else{
+          console.log("fail! " + res.errMsg);
+        }
       }
     })
     // 获取用户信息

@@ -32,7 +32,7 @@
 
         <view class='page' hidden="{{hasMatch == 0}}">
           <block wx:for="{{matchs}}" wx:key="id">
-            <navigator url='/pages/matchDetail/matchDetail' class='match-item'>
+            <navigator url='/pages/matchDetail/matchDetail' class='match-item' bindtap="matchClick" id="{{item.id}}">
               <view class='match-img-out'>
                 <image class='match-img' src='{{item.img}}'></image>
               </view>
@@ -57,7 +57,7 @@
       <!-- tab2 -->
       <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
         <block wx:for="{{cutoffMatchs}}" wx:key="id">
-          <navigator url='/pages/matchDetail/matchDetail' class='match-item'>
+          <navigator url='/pages/matchDetail/matchDetail' class='match-item' bindtap="matchClick" id="{{item.id}}">
             <view class='match-img-out'>
               <image class='match-img' src='{{item.img}}'></image>
             </view>

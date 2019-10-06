@@ -12,13 +12,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/recruit/' + wx.getStorageSync('recruitId'),
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res);
+        that.setData({
+          // recruit: res.data
+        })
+      },
+      fail: function(res){
+        console.log("fail!");
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

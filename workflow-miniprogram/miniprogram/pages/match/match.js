@@ -161,6 +161,60 @@ Page({
       cal_style: cal_style
     });
 
+    wx.request({
+      url: 'http://localhost:8081/activity/all?type=fresh',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function(res){
+        // console.log(res);
+        that.setData({
+          matchs: res.data
+        })
+        if(that.data.matchs.length == 0){
+          that.setData({
+            hasMatch: 0
+          })
+        }
+        else{
+          that.setData({
+            hasMatch: 1
+          })
+        }
+      },
+      fail: function(res){
+        console.log("fail!");
+      }
+    });
+
+    wx.request({
+      url: 'http://localhost:8081/activity/all?type=expire',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        // console.log(res);
+        that.setData({
+          cutoffMatchs: res.data
+        })
+        if(that.data.cutoffMatchs.length==0){
+          that.setData({
+
+          })
+        }
+        else{
+          that.setData({
+            
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    })
   },
 
   /**
@@ -220,5 +274,11 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+  },
+
+  matchClick: function(e){
+    // console.log(e.currentTarget.id);
+    wx.setStorageSync('matchId', e.currentTarget.id);
   }
+  
 })

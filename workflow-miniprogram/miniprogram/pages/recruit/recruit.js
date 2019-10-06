@@ -1,4 +1,5 @@
 // pages/recruit/recruit.js
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -59,21 +60,55 @@ Page({
       now: 1,
       total: 3,
       focus: 0,
-    }, ]
+    }, ],
+    time: util.formatTime(new Date()),
+    offset: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    var app = getApp();
+    console.log(app.globalData);
+    console.log(this.data.time);
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/recruit/all?name=java?recruitPosition=java_backend&&time=' + that.data.time + '&&offset=0',
+      method: 'GET',
+      header: {
+        'content-type':'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res);
+        that.setData({
+          list: res.data,
+          offset: 1
+        })
+        if (that.data.list.length != 0) {
+          that.setData({
+            hasRecruit: 1
+          })
+        }
+        else{
+          that.setData({
+            hasRecruit: 0,
+            offset: 0
+          })
+        }
+      },
+      fail: function(res){
+        console.log("fail");
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
@@ -101,14 +136,64 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    var that = this;
+    var nowTime = util.formatTime(new Date());
+    console.log("fresh! Time: "+that.data.time);
+    wx.request({
+      url: 'http://localhost:8081/recruit/all?name=java?recruitPosition=java_backend&&time=' + nowTime + '&&offset=0',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          list: res.data,
+          time: nowTime,
+          offset: 1
+        })
+        if (that.data.list.length != 0) {
+          that.setData({
+            hasRecruit: 1
+          })
+        }
+        else {
+          that.setData({
+            hasRecruit: 0,
+            offset: 0
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail");
+      }
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    console.log("reach bottom! Time: " + this.data.time + ". offset: " + this.data.offset);
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/recruit/all?recruitPosition=java_backend&&time='+ that.data.time +'&&offset=' + that.data.offset,
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res);
+        that.setData({
+          list: that.data.list.concat(res.data),
+          offset: that.data.offset+1
+        })
+      },
+      fail: function(res){
+        console.log("fail");
+      }
+    })
   },
 
   /**
@@ -119,6 +204,7 @@ Page({
   },
 
   toDetail: function() {
+    wx.setStorageSync('recruitId', e.currentTarget.id);
     setTimeout(() => {
       wx.navigateTo({
         url: '/pages/recruitDetail/recruitDetail',
@@ -126,7 +212,9 @@ Page({
     }, 500)
   },
 
-  changeFocus: function(e) {},
+  changeFocus: function(e) {
+    
+  },
 
   toOthersInfo: function(){
     wx.navigateTo({

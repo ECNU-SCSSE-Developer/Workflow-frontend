@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -74,6 +74,35 @@ Page({
   matchChange: function(e){
     this.setData({
       matchIndex: e.detail.value
+    })
+  },
+
+  formSubmit: function(e){
+    console.log(e.detail.value);
+    wx.request({
+      url: 'http://localhost:8081/recruit',
+      method: 'POST',
+      data: {
+        name: e.detail.value.name,
+        position: e.detail.value.position,
+        match: e.detail.value.match,
+        personNum: e.detail.value.personNum,
+        intro: e.detail.value.intro
+      },
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        setTimeout(() => {
+          wx.navigateTo({
+            url: '/pages/recruit/recruit',
+          })
+        }, 500)
+      },
+      fail: function (res) {
+        console.log("fail");
+      }
     })
   }
 })

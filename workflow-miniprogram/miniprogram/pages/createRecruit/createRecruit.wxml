@@ -1,37 +1,40 @@
 <!--pages/createRecruit/createRecruit.wxml-->
 <view class='page'>
-  <view class='form-info'>
-    <view class='form-title'>招 聘 信 息 📃</view>
-    <view class='form-item'>
-      <view class='item-title'>名称:</view>
-      <input placeholder="请输入该条招聘名称"></input>
+  <form bindsubmit="formSubmit">
+    <view class='form-info'>
+      <view class='form-title'>招 聘 信 息 📃</view>
+      <view class='form-item'>
+        <view class='item-title'>名称:</view>
+        <input name="name" placeholder="请输入该条招聘名称"></input>
+      </view>
+      <view class='form-item'>
+        <view class='item-title'>待招职位:</view>
+        <picker name="position" bindchange="positionChange" value="{{posIndex}}" range="{{positionArr}}">
+          <view class="picker">
+            {{positionArr[posIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class='form-item'>
+        <view class='item-title'>所属比赛:</view>
+        <picker name="match" bindchange="matchChange" value="{{matchIndex}}" range="{{matchArr}}">
+          <view class="picker">
+            {{matchArr[matchIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class='form-item'>
+        <view class='item-title'>所需人数:</view>
+        <input name="personNum" placeholder="请输入所需人数"></input>
+      </view>
+      <view class='form-item'>
+        <view class='item-title'>简介:</view>
+        <textarea name="intro" placeholder="这边填写简介"></textarea>
+      </view>
     </view>
-    <view class='form-item'>
-      <view class='item-title'>待招职位:</view>
-      <picker bindchange="positionChange" value="{{posIndex}}" range="{{positionArr}}">
-        <view class="picker">
-          {{positionArr[posIndex]}}
-        </view>
-      </picker>
+
+    <view class='tia-btn'>
+      <button form-type='submit'>发布招聘</button>
     </view>
-    <view class='form-item'>
-      <view class='item-title'>所属比赛:</view>
-      <picker bindchange="matchChange" value="{{matchIndex}}" range="{{matchArr}}">
-        <view class="picker">
-         {{matchArr[matchIndex]}}
-        </view>
-      </picker>
-    </view>
-    <view class='form-item'>
-      <view class='item-title'>所需人数:</view>
-      <input placeholder="请输入所需人数"></input>
-    </view>
-    <view class='form-item'>
-      <view class='item-title'>简介:</view>
-      <textarea placeholder="这边填写简介"></textarea>
-    </view>
-  </view>
-  <view class='tia-btn'>
-    发布招聘
-  </view>
+  </form>
 </view>

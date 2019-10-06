@@ -5,14 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgFlag: 0
+    imgFlag: 0,
+    hasWork: 0,
+    workList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.request({
+      url: '',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync(openid)
+      },
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          workList: res.data
+        });
+        if (res.data.lenght == 0) {
+          that.setData({
+            hasWork: 0
+          })
+        }
+        else {
+          that.setData({
+            hasWork: 1
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    })
   },
 
   /**
