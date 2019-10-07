@@ -146,83 +146,97 @@ Page({
     }
 
     wx.request({
-      url: 'http://localhost:8081/user/follower',
-      method: '',
+      url: 'http://localhost:8081/user/myself',
+      method: 'GET',
       header: {
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
       success: function(res){
-        console.log(res);
-        that.setData({
-          focusPerson: res.data
-        });
-        if(that.data.focusPerson.length==0){
-          that.setData({
-            hasFocusPerson: 0
-          })
-        }else{
-          that.setData({
-            hasFocusPerson: 1
-          })
-        }
-      },
-      fail:function(res){
-        console.log("fail!");
-      }
-    })
+        // console.log(res.data);
+        wx.request({
+          url: 'http://localhost:8081/user/' + res.data.data + '/followingUser',
+          method: 'GET',
+          header: {
+            'content-type': 'application/json',
+            'openid': wx.getStorageSync('openid')
+          },
+          success: function (res2) {
+            console.log(res2.data);
+            that.setData({
+              focusPerson: res2.data.data
+            });
+            // if (that.data.focusPerson.length == 0) {
+              if(that.data.foocusPerson == null){
+              that.setData({
+                hasFocusPerson: 0
+              })
+            } else {
+              that.setData({
+                hasFocusPerson: 1
+              })
+            }
+          },
+          fail: function (res2) {
+            console.log("fail!");
+          }
+        })
 
-    wx.request({
-      url: 'http://localhost:8081//activity/followed',
-      method: '',
-      header: {
-        'content-type': 'application/json',
-        'openid': wx.getStorageSync('openid')
-      },
-      success: function (res) {
-        console.log(res);
-        that.setData({
-          focusMatchs: res.data
-        });
-        if (that.data.focusMatchs.length == 0) {
-          that.setData({
-            hasFocusMatch: 0
-          })
-        } else {
-          that.setData({
-            hasFocusMatch: 1
-          })
-        }
-      },
-      fail: function (res) {
-        console.log("fail!");
-      }
-    })
+        wx.request({
+          url: 'http://localhost:8081/user/' + res.data.data + '/followedActivity',
+          method: 'GET',
+          header: {
+            'content-type': 'application/json',
+            'openid': wx.getStorageSync('openid')
+          },
+          success: function (res2) {
+            console.log(res.data);
+            that.setData({
+              focusMatchs: res2.data.data
+            });
+            // if (that.data.focusMatchs.length == 0) {
+              if(that.data.focusMatchs == null){
+              that.setData({
+                hasFocusMatch: 0
+              })
+            } else {
+              that.setData({
+                hasFocusMatch: 1
+              })
+            }
+          },
+          fail: function (res2) {
+            console.log("fail!");
+          }
+        })
 
-    wx.request({
-      url: 'http://localhost:8081/recruit/followed',
-      method: '',
-      header: {
-        'content-type': 'application/json',
-        'openid': wx.getStorageSync('openid')
-      },
-      success: function (res) {
-        console.log(res);
-        that.setData({
-          focusRecruit: res.data
-        });
-        if (that.data.focusRecruits.length == 0) {
-          that.setData({
-            hasFocusRecruit: 0
-          })
-        } else {
-          that.setData({
-            hasFocusRecruit: 1
-          })
-        }
-      },
-      fail: function (res) {
-        console.log("fail!");
+        wx.request({
+          url: 'http://localhost:8081/user/' + res.data.data + '/followedRecruit',
+          method: 'GET',
+          header: {
+            'content-type': 'application/json',
+            'openid': wx.getStorageSync('openid')
+          },
+          success: function (res2) {
+            console.log(res2.data.data);
+            that.setData({
+              focusRecruits: res2.data.data
+            });
+            if (that.data.focusRecruits.length == 0) {
+              that.setData({
+                hasFocusRecruit: 0
+              })
+            } else {
+              that.setData({
+                hasFocusRecruit: 1
+              })
+            }
+          },
+          fail: function (res2) {
+            console.log("fail!");
+          }
+        })
+      
       }
     })
   },

@@ -30,30 +30,19 @@ Page({
       }
     });
 
-    if (that.data.recruitList.length != 0) {
-      that.setData({
-        hasRecruit: 1
-      })
-    }
-    if (that.data.applyList.length != 0) {
-      that.setData({
-        hasApply: 1
-      })
-    }
-
     wx.request({
-      url: 'http://localhost:8081/recruit/applied',
+      url: 'http://localhost:8081/recruit/assignedRecruit',
       method: 'GET',
       header: {
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          recruitList: res.data
+          recruitList: res.data.data
         });
-        if (res.data.lenght == 0) {
+        if (that.data.recruitList.length == 0) {
           that.setData({  
             hasRecruit: 0
           })
@@ -70,18 +59,18 @@ Page({
     })
 
     wx.request({
-      url: 'http://localhost:8081/recruit/assigned',
+      url: 'http://localhost:8081/recruit/appliedRecruit',
       method: 'GET',
       header: {
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          applyList: res.data
+          applyList: res.data.data
         });
-        if (res.data.lenght == 0) {
+        if (that.data.applyList.length == 0) {
           that.setData({
             hasApply: 0
           })

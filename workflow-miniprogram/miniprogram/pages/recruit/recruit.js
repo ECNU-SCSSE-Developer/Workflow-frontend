@@ -69,21 +69,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var app = getApp();
-    console.log(app.globalData);
     console.log(this.data.time);
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/recruit/all?name=java?recruitPosition=java_backend&&time=' + that.data.time + '&&offset=0',
+      url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&offset=0',
       method: 'GET',
       header: {
         'content-type':'application/json',
         'openid': wx.getStorageSync('openid')
       },
       success: function(res){
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          list: res.data,
+          list: res.data.data,
           offset: 1
         })
         if (that.data.list.length != 0) {
@@ -140,15 +138,16 @@ Page({
     var nowTime = util.formatTime(new Date());
     console.log("fresh! Time: "+that.data.time);
     wx.request({
-      url: 'http://localhost:8081/recruit/all?name=java?recruitPosition=java_backend&&time=' + nowTime + '&&offset=0',
+      url: 'http://localhost:8081/recruit/all?currentTime=' + nowTime + '&&offset=0',
       method: 'GET',
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          list: res.data,
+          list: res.data.data,
           time: nowTime,
           offset: 1
         })
@@ -177,16 +176,16 @@ Page({
     console.log("reach bottom! Time: " + this.data.time + ". offset: " + this.data.offset);
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/recruit/all?recruitPosition=java_backend&&time='+ that.data.time +'&&offset=' + that.data.offset,
+      url: 'http://localhost:8081/recruit/all?currentTime='+ that.data.time +'&&offset=' + that.data.offset,
       method: 'GET',
       header: {
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
       success: function(res){
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          list: that.data.list.concat(res.data),
+          list: that.data.list.concat(res.data.data),
           offset: that.data.offset+1
         })
       },
@@ -203,7 +202,7 @@ Page({
 
   },
 
-  toDetail: function() {
+  toDetail: function(e) {
     wx.setStorageSync('recruitId', e.currentTarget.id);
     setTimeout(() => {
       wx.navigateTo({
@@ -219,6 +218,39 @@ Page({
   toOthersInfo: function(){
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
+    })
+  },
+
+  screen: function(e){
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/recruit/all?recruitName=' + e.detail.value.recruitName + '&currentTime=' + that.data.time + '&offset=0',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          list: res.data.data,
+          offset: 1
+        })
+        if (that.data.list.length != 0) {
+          that.setData({
+            hasRecruit: 1
+          })
+        }
+        else {
+          that.setData({
+            hasRecruit: 0,
+            offset: 0
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail");
+      }
     })
   }
 })

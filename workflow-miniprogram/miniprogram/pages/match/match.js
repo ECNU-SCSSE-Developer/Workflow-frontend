@@ -16,6 +16,7 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     hasMatch: 1, //是否有近期比赛
+    hasCutoffMatch: 1, //是否有已截至的比赛
     cal_style: [],
     year: new Date().getFullYear(), // 年份
     month: new Date().getMonth() + 1, // 月份
@@ -165,12 +166,13 @@ Page({
       url: 'http://localhost:8081/activity/all?type=fresh',
       method: 'GET',
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
       },
       success: function(res){
-        // console.log(res);
+        // console.log(res.data.data);
         that.setData({
-          matchs: res.data
+          matchs: res.data.data
         })
         if(that.data.matchs.length == 0){
           that.setData({
@@ -189,25 +191,26 @@ Page({
     });
 
     wx.request({
-      url: 'http://localhost:8081/activity/all?type=expire',
+      url: 'http://localhost:8081/activity/all?type=finish',
       method: 'GET',
       header: {
         'content-type': 'application/json',
+        // 'content-type': 'application/x-www-form-urlencoded',
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        // console.log(res);
+        console.log(res.data.data);
         that.setData({
-          cutoffMatchs: res.data
+          cutoffMatchs: res.data.data
         })
         if(that.data.cutoffMatchs.length==0){
           that.setData({
-
+            hasCutoffMatch: 0
           })
         }
         else{
           that.setData({
-            
+            hasCotoffMatch: 1
           })
         }
       },

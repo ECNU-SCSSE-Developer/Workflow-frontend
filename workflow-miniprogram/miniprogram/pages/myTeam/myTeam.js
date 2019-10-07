@@ -15,21 +15,19 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var test = wx.getStorageSync(hasNew);
-    console.log(test);
     wx.request({
-      url: '',
+      url: 'http://localhost:8081/team/joinedTeam',
       method: 'GET',
       header: {
         'content-type': 'application/json',
-        'openid': wx.getStorageSync(openid)
+        'openid': wx.getStorageSync('openid')
       },
       success: function(res){
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          myTeam: res.data
+          myTeam: res.data.data
         });
-        if(res.data.lenght==0){
+        if(that.data.myTeam.length==0){
           that.setData({
             hasTeam: 0
           })

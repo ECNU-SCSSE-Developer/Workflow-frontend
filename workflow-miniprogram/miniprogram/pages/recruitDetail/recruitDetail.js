@@ -21,7 +21,7 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function(res){
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
           // recruit: res.data
         })
