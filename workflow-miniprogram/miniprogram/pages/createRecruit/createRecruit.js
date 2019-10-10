@@ -6,16 +6,53 @@ Page({
    */
   data: {
     positionArr:['职位1', '职位2', '职位3', '职位4'],
-    matchArr:['比赛1','比赛2','比赛3'],
+    matchs:['比赛1','比赛2','比赛3'],
+    teams: ['team1','team2'],
     posIndex: 0,
-    matchIndex: 0
+    matchIndex: 0,
+    teamIndex: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/activity/all?type=finish',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        // console.log(res.data.data);
+        that.setData({
+          matchs: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    });
+
+    wx.request({
+      url: 'http://localhost:8081/team/joinedTeam',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          teams: res.data.data
+        });
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    })
   },
 
   /**
@@ -79,30 +116,63 @@ Page({
 
   formSubmit: function(e){
     console.log(e.detail.value);
-    wx.request({
-      url: 'http://localhost:8081/recruit',
-      method: 'POST',
-      data: {
-        name: e.detail.value.name,
-        position: e.detail.value.position,
-        match: e.detail.value.match,
-        personNum: e.detail.value.personNum,
-        intro: e.detail.value.intro
-      },
-      header: {
-        'content-type': 'application/json',
-        'openid': wx.getStorageSync('openid')
-      },
-      success: function (res) {
-        setTimeout(() => {
-          wx.navigateTo({
-            url: '/pages/recruit/recruit',
+    if(e.detail.value.name==""||e.detail.value.personNum==""||e.detail.value.intro==""){
+      wx.showModal({
+        title: '请补充完整招聘信息',
+        showCancel: false
+      })
+    }else{
+      var that = this;
+      wx.request({
+        url: 'http://localhost:8081/user/myself',
+        method: 'GET',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          wx.request({
+            url: 'http://localhost:8081/recruit',
+            method: 'POST',
+            data: {
+              "recruitName": e.detail.value.name,
+              "recruitPosition": that.data.positionArr[e.detail.value.position],
+              "activity": {
+                "activityId": that.data.matchs[e.detail.value.match].activityId
+              },
+              // "Team": {
+              //   "teamId": teams[e.detail.value.team].teamId
+              // },
+              "recruitWillingNumber": e.detail.value.personNum,
+              "recruitDescription": e.detail.value.intro,
+              "manager": {
+                "userId": res.data.data
+              }
+            },
+            header: {
+              'content-type': 'application/json',
+              'openid': wx.getStorageSync('openid')
+            },
+            success: function (res) {
+              wx.showToast({
+                title: '发布成功',
+                icon: 'success'
+              })
+              setTimeout(() => {
+                wx.navigateTo({
+                  url: '/pages/recruit/recruit',
+                })
+              }, 500)
+            },
+            fail: function (res) {
+              console.log("create fail");
+            }
           })
-        }, 500)
-      },
-      fail: function (res) {
-        console.log("fail");
-      }
-    })
+        },
+        fail: function (res) {
+          console.log("get userId fail!");
+        }
+      })
+    }
   }
 })

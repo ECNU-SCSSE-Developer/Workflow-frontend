@@ -71,6 +71,7 @@ Page({
           applyList: res.data.data
         });
         if (that.data.applyList.length == 0) {
+          console.log("==0")
           that.setData({
             hasApply: 0
           })
@@ -141,5 +142,20 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
+  },
+
+  toDetail: function (e) {
+    wx.setStorageSync('recruitId', e.currentTarget.id);
+    setTimeout(() => {
+      wx.navigateTo({
+        url: '/pages/recruitDetail/recruitDetail',
+      })
+    }, 500)
+  },
+
+  toOthersInfo: function () {
+    wx.navigateTo({
+      url: '/pages/othersInfo/othersInfo',
+    })
   }
 })

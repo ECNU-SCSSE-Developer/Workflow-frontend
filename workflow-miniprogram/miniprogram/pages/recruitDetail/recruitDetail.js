@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    recruit: []
   },
 
   /**
@@ -23,7 +23,7 @@ Page({
       success: function(res){
         console.log(res.data.data);
         that.setData({
-          // recruit: res.data
+           recruit: res.data.data
         })
       },
       fail: function(res){

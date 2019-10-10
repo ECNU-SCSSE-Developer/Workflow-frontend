@@ -22,8 +22,47 @@
             </view>
           </view>
 
-          <view class='page' hidden="{{hasRecruit == 0}}">
-            <view wx:for="{{recruitList}}" wx:key="id">
+          <view class="weui-tab__content" hidden="{{hasRecruit != 1}}">
+            <block wx:for="{{recruitList}}" wx:key="id">
+              <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover" id="{{item.recruitId}}">
+                <view class="top-item">
+                  <view class='info'>
+                    <view catchtap='toOthersInfo'>
+                      <image class="msgbox_in_img" id="userinfo" src='{{item.organizer.img}}'></image>
+                    </view>
+                    <view>
+                      <view class="username">{{item.organizer.creator}}</view>
+                    </view>
+                  </view>
+                  <view>
+                    <image src='{{item.followed == true ? "/image/focus.png" : "/image/unfocus.png"}}' data-id='{{item}}' catchtap='changeFocus' hover-class="none" class='img'></image>
+                    <image src='/image/delete.png' class='img'></image>
+                  </view>
+                </view>
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{item.recruitName}}</view>
+                <view class="weui-media-box__desc">
+                  {{item.activityName}}
+                </view>
+                <view class='footer'>
+                  <view class='footer-text'>申请情况：{{item.recruitRegisteredNumber}}/{{item.recruitWillingNumber}}名</view>
+                  <image src='/image/more.png' class='more'></image>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+        
+        <!-- tab2 -->
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class='page' hidden="{{hasApply != 0}}">
+            <view class='none'>
+              <image src='/image/meh.png' class='none-img'></image>
+              <view class='none-text'>还没有人应聘哦</view>
+            </view>
+          </view>
+
+          <view class='page' hidden="{{hasApply == 0}}">
+            <view wx:for="{{ApplyList}}" wx:key="id">
               <view class='focus-item'>
                 <navigator class='focus-img-out' url='/pages/othersInfo/othersInfo' hover-class='none'>
                   <image src='/image/tia.png' class='focus-img'></image>
@@ -39,17 +78,6 @@
             </view>
           </view>
         </view>
-
-        <!-- tab2 -->
-        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-          <view class='page' hidden="{{hasApply != 0}}">
-            <view class='none'>
-              <image src='/image/meh.png' class='none-img'></image>
-              <view class='none-text'>还没有人应聘哦</view>
-            </view>
-          </view>
-        </view>
-
       </view>
     </view>
   </view>

@@ -18,16 +18,6 @@ Page({
       name: "三眼皮猴子",
       url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
       motto: "好好睡觉"
-    }, {
-      id: 2,
-        url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
-        name: "Weird",
-      motto: "我爱学习"
-    }, {
-      id: 3,
-        url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg",
-        name: "布里",
-      motto: "学习爱我"
     }],
 
     focusRecruits: [{
@@ -39,88 +29,13 @@ Page({
       now: 1,
       total: 3,
       focus: 1,
-    }, {
-      id: 2,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
-      creator: "Weird",
-      name: "本小队需要PHP后端两名",
-      match: "第六届创新创业大赛",
-      now: 1,
-      total: 2,
-      focus: 1,
-    }, {
-      id: 3,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
-      creator: "三眼皮猴子",
-      name: "需要web前端若干名,福利满满",
-      match: "第六届创新创业大赛",
-      now: 2,
-      total: 3,
-      focus: 1,
-    }, {
-      id: 4,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg",
-      creator: "布里",
-      name: "招全栈",
-      match: "第六届创新创业大赛",
-      now: 4,
-      total: 3,
-      focus: 1,
-    }, {
-      id: 5,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg",
-      creator: "咕叽",
-      name: "需要设计学院的同学..",
-      match: "第六届创新创业大赛",
-      now: 0,
-      total: 1,
-      focus: 1,
-    }, {
-      id: 6,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg",
-      creator: "Type1551 ASDIC⚓🦇",
-      name: "JAVAer WANTED",
-      match: "第六届创新创业大赛",
-      now: 1,
-      total: 3,
-      focus: 1,
-    },],
+    }],
 
     focusMatchs: [{
       id: 1,
       img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg",
       title: "第16届“大夏杯”大学生创业大赛",
       level: "校级",
-      time: "2019年4月28日",
-    }, {
-      id: 2,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m2.jpg",
-      title: "R3全球大学生区块链商业计划竞赛",
-      level: "国家级",
-      time: "2019年4月28日",
-    }, {
-      id: 3,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg",
-      title: "上海市大学生计算机应用能力大赛",
-      level: "市级",
-      time: "2019年4月28日",
-    }, {
-      id: 4,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m4.jpg",
-      title: "(第十一届)华师大本科生计算机应用能力大赛",
-      level: "校级",
-      time: "2019年4月28日",
-    }, {
-      id: 5,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m6.jpg",
-      title: "互联网+",
-      level: "校级",
-      time: "2019年4月28日",
-    }, {
-      id: 6,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m5.png",
-      title: "创青春市赛",
-      level: "市级",
       time: "2019年4月28日",
     }]
   },
