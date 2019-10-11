@@ -1,2 +1,4 @@
-/workflow-miniprogram/miniprogram/app.json
-/workflow-miniprogram/project.config.json
+workflow-miniprogram/project.config.json
+workflow-miniprogram/miniprogram/app.json
+.DS_Store
+workflow-miniprogram/miniprogram/sitemap*.json
