@@ -17,8 +17,8 @@ Page({
       focus: 0,
     }, {
       id: 2,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
-        creator: "Weird",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg",
+      creator: "Weird",
       name: "本小队需要PHP后端两名",
       match: "第六届创新创业大赛",
       now: 1,
@@ -26,8 +26,8 @@ Page({
       focus: 1,
     }, {
       id: 3,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
-        creator: "三眼皮猴子",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
+      creator: "三眼皮猴子",
       name: "需要web前端若干名,福利满满",
       match: "第六届创新创业大赛",
       now: 2,
@@ -35,8 +35,8 @@ Page({
       focus: 1,
     }, {
       id: 4,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg",
-        creator: "布里",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg",
+      creator: "布里",
       name: "招全栈",
       match: "第六届创新创业大赛",
       now: 4,
@@ -44,8 +44,8 @@ Page({
       focus: 0,
     }, {
       id: 5,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg",
-        creator: "咕叽",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg",
+      creator: "咕叽",
       name: "需要设计学院的同学..",
       match: "第六届创新创业大赛",
       now: 0,
@@ -53,14 +53,14 @@ Page({
       focus: 1,
     }, {
       id: 6,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg",
-        creator: "Type1551 ASDIC⚓🦇",
+      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg",
+      creator: "Type1551 ASDIC⚓🦇",
       name: "JAVAer WANTED",
       match: "第六届创新创业大赛",
       now: 1,
       total: 3,
       focus: 0,
-    }, ],
+    },],
     time: util.formatTime(new Date()),
     offset: 0
   },
@@ -68,17 +68,17 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     console.log(this.data.time);
     var that = this;
     wx.request({
       url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&offset=0',
       method: 'GET',
       header: {
-        'content-type':'application/json',
+        'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function(res){
+      success: function (res) {
         console.log(res.data.data);
         that.setData({
           list: res.data.data,
@@ -89,14 +89,14 @@ Page({
             hasRecruit: 1
           })
         }
-        else{
+        else {
           that.setData({
             hasRecruit: 0,
             offset: 0
           })
         }
       },
-      fail: function(res){
+      fail: function (res) {
         console.log("fail");
       }
     })
@@ -105,38 +105,38 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    
+  onReady: function () {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     var that = this;
     var nowTime = util.formatTime(new Date());
-    console.log("fresh! Time: "+that.data.time);
+    console.log("fresh! Time: " + that.data.time);
     wx.request({
       url: 'http://localhost:8081/recruit/all?currentTime=' + nowTime + '&&offset=0',
       method: 'GET',
@@ -172,24 +172,24 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     console.log("reach bottom! Time: " + this.data.time + ". offset: " + this.data.offset);
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/recruit/all?currentTime='+ that.data.time +'&&offset=' + that.data.offset,
+      url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&&offset=' + that.data.offset,
       method: 'GET',
       header: {
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function(res){
+      success: function (res) {
         console.log(res.data.data);
         that.setData({
           list: that.data.list.concat(res.data.data),
-          offset: that.data.offset+1
+          offset: that.data.offset + 1
         })
       },
-      fail: function(res){
+      fail: function (res) {
         console.log("fail");
       }
     })
@@ -198,11 +198,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
-  toDetail: function(e) {
+  toDetail: function (e) {
     wx.setStorageSync('recruitId', e.currentTarget.id);
     setTimeout(() => {
       wx.navigateTo({
@@ -211,94 +211,105 @@ Page({
     }, 500)
   },
 
-  changeFocus: function(e) {
+  changeFocus: function (e) {
     var that = this;
-    for(var i=0;i<this.data.list.length;++i){
-      if(wx.getStorageSync('recruitId') == this.data.list[i].recruitId){
-        if (this.data.list[i].followed==true){
-          wx.request({
-            url: 'http://localhost:8081/user/recruit/' + wx.getStorageSync('recruitId'),
-            method: 'delete',
-            header: {
-              'content-type': 'application/json',
-              'openid': wx.getStorageSync('openid')
-            },
-            success: function(res){
-              wx.showToast({
-                title: '取消收藏',
-                icon: 'success'
-              })
-              that.onLoad();
-            },
-            fail: function(res){
-              wx.showToast({
-                title: '操作失败',
-                icon: 'success'
-              })
-            }
+    if (e.currentTarget.dataset.id.followed == true) {
+      wx.request({
+        url: 'http://localhost:8081/user/recruit/' + e.currentTarget.dataset.id.recruitId,
+        method: 'delete',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '取消收藏',
+            icon: 'success'
+          })
+          that.onLoad();
+        },
+        fail: function (res) {
+          wx.showToast({
+            title: '操作失败',
+            icon: 'success'
           })
         }
-        else{
-          wx.request({
-            url: 'http://localhost:8081/user/recruit/' + wx.getStorageSync('recruitId'),
-            method: 'put',
-            header: {
-              'content-type': 'application/json',
-              'openid': wx.getStorageSync('openid')
-            },
-            success: function (res) {
-              wx.showToast({
-                title: '收藏成功',
-                icon: 'success'
-              })
-              that.onLoad();
-            },
-            fail: function (res) {
-              wx.showToast({
-                title: '操作失败',
-                icon: 'success'
-              })
-            }
-          })
-        }
-        this.onLoad();
-        break;
-      }
+      })
     }
+    else {
+      wx.request({
+        url: 'http://localhost:8081/user/recruit/' + e.currentTarget.dataset.id.recruitId,
+        method: 'put',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '收藏成功',
+            icon: 'success'
+          })
+          that.onLoad();
+        },
+        fail: function (res) {
+          wx.showToast({
+            title: '操作失败',
+            icon: 'success'
+          })
+        }
+      })
+    }
+    this.onLoad();
   },
 
-  toOthersInfo: function(){
+  toOthersInfo: function () {
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
     })
   },
 
-  deleteRecruit: function(e){
+  deleteRecruit: function (e) {
     var that = this;
-    wx.request({
-      url: 'http://localhost:8081/recruit/' + wx.getStorageSync('recruitId'),
-      method: 'delete',
-      header: {
-        'content-type': 'application/json',
-        'openid': wx.getStorageSync('openid')
-      },
+    wx.showModal({
+      title: '是否确认删除？',
+      showCancel: true,
+      cancelText: '取消',
       success: function(res){
-        wx.showToast({
-          title: '删除成功！',
-          icon: 'success'
+        wx.request({
+          url: 'http://localhost:8081/recruit/' + e.currentTarget.dataset.id.recruitId,
+          method: 'delete',
+          header: {
+            'content-type': 'application/json',
+            'openid': wx.getStorageSync('openid')
+          },
+          success: function (res) {
+            if(res.confirm){
+              wx.showToast({
+                title: '删除成功！',
+                icon: 'success'
+              })
+              that.onLoad();
+            }
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '操作失败！',
+              icon: 'success'
+            })
+          }
         })
-        that.onLoad();
       },
       fail: function(res){
         wx.showToast({
-          title: '删除失败！',
+          title: '操作失败！',
           icon: 'success'
         })
       }
     })
+   
   },
 
-  screen: function(e){
+  screen: function (e) {
     var that = this;
     wx.request({
       url: 'http://localhost:8081/recruit/all?recruitName=' + e.detail.value.recruitName + '&currentTime=' + that.data.time + '&offset=0',

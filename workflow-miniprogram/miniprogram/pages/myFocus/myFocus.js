@@ -16,7 +16,7 @@ Page({
     focusPerson: [{
       id: 1,
       name: "三眼皮猴子",
-      url:"https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
+      url: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg",
       motto: "好好睡觉"
     }],
 
@@ -43,22 +43,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     var that = this;
     wx.getSystemInfo({
-      success: function(res) {
+      success: function (res) {
         that.setData({
           sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
         });
       }
     });
-
-    if (that.data.focusPerson.length != 0) {
-      that.setData({
-        hasFocusPerson: 1
-      })
-    }
 
     wx.request({
       url: 'http://localhost:8081/user/myself',
@@ -67,7 +61,7 @@ Page({
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function(res){
+      success: function (res) {
         // console.log(res.data);
         wx.request({
           url: 'http://localhost:8081/user/' + res.data.data + '/followingUser',
@@ -82,7 +76,7 @@ Page({
               focusPerson: res2.data.data
             });
             // if (that.data.focusPerson.length == 0) {
-              if(that.data.foocusPerson == null){
+            if (that.data.foocusPerson == null) {
               that.setData({
                 hasFocusPerson: 0
               })
@@ -110,7 +104,7 @@ Page({
               focusMatchs: res2.data.data
             });
             // if (that.data.focusMatchs.length == 0) {
-              if(that.data.focusMatchs == null){
+            if (that.data.focusMatchs == null) {
               that.setData({
                 hasFocusMatch: 0
               })
@@ -137,7 +131,8 @@ Page({
             that.setData({
               focusRecruits: res2.data.data
             });
-            if (that.data.focusRecruits.length == 0) {
+            // if (that.data.focusRecruits.length == 0) {
+              if(that.data.focusRecruits==null){
               that.setData({
                 hasFocusRecruit: 0
               })
@@ -151,7 +146,7 @@ Page({
             console.log("fail!");
           }
         })
-      
+
       }
     })
   },
@@ -159,54 +154,54 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
 
-  tabClick: function(e) {
+  tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
@@ -236,18 +231,26 @@ Page({
   changeFocus: function (e) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/user/' + userId + '/follower/'+e.currentTarget.id,
+      url: 'http://localhost:8081/user/recruit/' + e.currentTarget.dataset.id.recruitId,
       method: 'delete',
       header: {
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function(res){
-        console.log("success!");
+      success: function (res) {
+        wx.showToast({
+          title: '取消收藏',
+          icon: 'success'
+        })
+        that.onLoad();
       },
-      fail: function(res){
-        console.log("fail!");
+      fail: function (res) {
+        wx.showToast({
+          title: '操作失败',
+          icon: 'success'
+        })
       }
     })
+    this.onLoad();
   }
 })
