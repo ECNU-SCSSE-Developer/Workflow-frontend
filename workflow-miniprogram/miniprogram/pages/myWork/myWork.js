@@ -16,16 +16,16 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: '',
+      url: 'http://localhost:8081/team/joinedTeam',
       method: 'GET',
       header: {
         'content-type': 'application/json',
-        'openid': wx.getStorageSync(openid)
+        'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log(res);
+        console.log(res.data.data);
         that.setData({
-          workList: res.data
+          workList: res.data.data
         });
         if (res.data.lenght == 0) {
           that.setData({

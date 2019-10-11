@@ -212,12 +212,89 @@ Page({
   },
 
   changeFocus: function(e) {
-    
+    var that = this;
+    for(var i=0;i<this.data.list.length;++i){
+      if(wx.getStorageSync('recruitId') == this.data.list[i].recruitId){
+        if (this.data.list[i].followed==true){
+          wx.request({
+            url: 'http://localhost:8081/user/recruit/' + wx.getStorageSync('recruitId'),
+            method: 'delete',
+            header: {
+              'content-type': 'application/json',
+              'openid': wx.getStorageSync('openid')
+            },
+            success: function(res){
+              wx.showToast({
+                title: '取消收藏',
+                icon: 'success'
+              })
+              that.onLoad();
+            },
+            fail: function(res){
+              wx.showToast({
+                title: '操作失败',
+                icon: 'success'
+              })
+            }
+          })
+        }
+        else{
+          wx.request({
+            url: 'http://localhost:8081/user/recruit/' + wx.getStorageSync('recruitId'),
+            method: 'put',
+            header: {
+              'content-type': 'application/json',
+              'openid': wx.getStorageSync('openid')
+            },
+            success: function (res) {
+              wx.showToast({
+                title: '收藏成功',
+                icon: 'success'
+              })
+              that.onLoad();
+            },
+            fail: function (res) {
+              wx.showToast({
+                title: '操作失败',
+                icon: 'success'
+              })
+            }
+          })
+        }
+        this.onLoad();
+        break;
+      }
+    }
   },
 
   toOthersInfo: function(){
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
+    })
+  },
+
+  deleteRecruit: function(e){
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/recruit/' + wx.getStorageSync('recruitId'),
+      method: 'delete',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        wx.showToast({
+          title: '删除成功！',
+          icon: 'success'
+        })
+        that.onLoad();
+      },
+      fail: function(res){
+        wx.showToast({
+          title: '删除失败！',
+          icon: 'success'
+        })
+      }
     })
   },
 

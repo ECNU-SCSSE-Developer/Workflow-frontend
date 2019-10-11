@@ -28,36 +28,6 @@ Page({
       title: "第16届“大夏杯”大学生创业大赛",
       level: "校级",
       time: "2019年4月28日",
-    }, {
-      id: 2,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m2.jpg",
-      title: "R3全球大学生区块链商业计划竞赛",
-      level: "国家级",
-      time: "2019年4月28日",
-    }, {
-      id: 3,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg",
-      title: "上海市大学生计算机应用能力大赛",
-      level: "市级",
-      time: "2019年4月28日",
-    }, {
-      id: 4,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m4.jpg",
-      title: "(第十一届)华师大本科生计算机应用能力大赛",
-      level: "校级",
-      time: "2019年4月28日",
-    }, {
-      id: 5,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m6.jpg",
-      title: "互联网+",
-      level: "校级",
-      time: "2019年4月28日",
-    }, {
-      id: 6,
-      img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m5.png",
-      title: "创青春市赛",
-      level: "市级",
-      time: "2019年4月28日",
     }],
 
     cutoffMatchs: [{
@@ -65,25 +35,6 @@ Page({
         img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m5.png",
         title: "创青春国赛",
         level: "国家级",
-        time: "2019年4月28日",
-      }, {
-        id: 2,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m4.jpg",
-        title: "互联网+",
-        level: "市级",
-        time: "2019年4月28日",
-      }, {
-        id: 3,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg",
-        title: "第2届计算机科学与软件工程学院双创比赛",
-        level: "院级",
-        time: "2019年4月28日",
-      },
-      {
-        id: 4,
-        img: "https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg",
-        title: "第15届“大夏杯”大学生创业大赛",
-        level: "校级",
         time: "2019年4月28日",
       }
     ],
