@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -84,7 +84,9 @@ Page({
 
   },
 
-  toDetail: function () {
+  toDetail: function (e) {
+    wx.setStorageSync('teamId', e.currentTarget.id)
+    console.log(wx.getStorageSync('teamId'));
     setTimeout(() => {
       wx.navigateTo({
         url: '/pages/workflowDetails/workflowDetails',

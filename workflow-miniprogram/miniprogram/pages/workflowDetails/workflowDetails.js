@@ -251,8 +251,8 @@ Page({
     ec: {
       onInit: initChart
     },
-    motto: "Seize the day"
-
+    motto: "Seize the day",
+    teamMember: []
   },
 
   /**
@@ -268,6 +268,24 @@ Page({
         });
       }
     });
+
+    wx.request({
+      url: 'http://localhost:8081/team/' + wx.getStorageSync('teamId') + '/members',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          teamMember: res.data.data
+        })
+      },
+      fail: function (res) {
+        console.log("get team member fail!");
+      }
+    })
   },
 
   tabClick: function (e) {

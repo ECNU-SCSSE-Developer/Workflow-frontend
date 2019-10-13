@@ -23,7 +23,8 @@
     "pages/createRecruit/createRecruit",
     "pages/matchDetail/matchDetail",
     "pages/matchHistoryDetail/matchHistoryDetail",
-    "pages/matchCutoffDetail/matchCutoffDetail"
+    "pages/matchCutoffDetail/matchCutoffDetail",
+    "pages/createTeam/createTeam"
   ],
   "window":{
     "backgroundTextStyle":"light",

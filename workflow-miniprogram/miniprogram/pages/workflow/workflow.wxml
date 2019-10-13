@@ -1,7 +1,7 @@
 <view class="page">
 
   <block wx:for="{{list}}" wx:key="id">
-    <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover">
+    <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover" id='{{item.id}}'>
       <view class="top-item">
         <view class='info'>
           <view catchtap='toOthersInfo'>
