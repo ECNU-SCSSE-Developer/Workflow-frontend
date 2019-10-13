@@ -3,7 +3,7 @@
   <view class='top-show'>
     <image class="top-avatar" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
     <view class="top-name">Weird</view>
-    <button class="weui-btn" type="default" size="mini" class="top-btn">关注</button>
+    <button class="weui-btn" type="default" size="mini" class="top-btn" bindtap='follow'>关注</button>
   </view>
   <view class='social'>
     <view class='social-item'>

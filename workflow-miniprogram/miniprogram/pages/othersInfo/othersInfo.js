@@ -62,5 +62,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  follow: function(e){
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/user/follower/' + wx.getStorageSync('followedUserId'),
+      method: 'PUT',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        wx.showToast({
+          title: '关注成功！',
+          icon: 'success'
+        })
+      },
+      fail: function(res){
+        wx.showToast({
+          title: '关注失败！',
+          icon: 'loading'
+        })
+      }
+    })
   }
 })

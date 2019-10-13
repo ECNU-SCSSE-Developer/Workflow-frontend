@@ -241,6 +241,7 @@ Page({
   },
 
   toOthersInfo: function () {
+    wx.setStorageSync('followedUserId', e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
     })
