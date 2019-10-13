@@ -20,10 +20,10 @@ App({
             },
             success: function(res){
               if(res.statusCode == 200){
-                console.log("openid: " + res.data.data);
+                console.log("get openid success!");
                 wx.setStorageSync('openid', res.data.data);
               }else{
-                console.log("fail!");
+                console.log("get openid fail!");
               }
             },
             fail: function(res){

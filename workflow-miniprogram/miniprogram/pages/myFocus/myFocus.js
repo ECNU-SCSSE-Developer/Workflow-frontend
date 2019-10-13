@@ -71,7 +71,7 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
-            console.log(res2.data);
+            console.log("users: " + res2.data.data);
             that.setData({
               focusPerson: res2.data.data
             });
@@ -99,7 +99,7 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
-            console.log(res.data);
+            console.log("matchs: " + res2.data.data);
             that.setData({
               focusMatchs: res2.data.data
             });
@@ -127,7 +127,6 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
-            console.log(res2.data.data);
             that.setData({
               focusRecruits: res2.data.data
             });
@@ -146,7 +145,6 @@ Page({
             console.log("fail!");
           }
         })
-
       }
     })
   },

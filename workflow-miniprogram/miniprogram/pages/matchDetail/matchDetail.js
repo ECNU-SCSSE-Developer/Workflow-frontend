@@ -20,7 +20,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    // console.log(activeId);
     wx.request({
       url: 'http://localhost:8081//activity/' + wx.getStorageSync('matchId'),
       method: 'GET',
@@ -87,5 +86,27 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  changeFocus: function(e){
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/user/activity/' + that.data.match.activityId,
+      method: 'put',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res.data);
+        wx.showToast({
+          title: '收藏成功！',
+          icon: 'success'
+        })
+      },
+      fail: function(res){
+        console.log('focus fail!');
+      }
+    })
   }
 })

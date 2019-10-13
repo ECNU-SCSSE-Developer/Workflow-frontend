@@ -18,6 +18,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    //获取比赛
     wx.request({
       url: 'http://localhost:8081/activity/all?type=finish',
       method: 'GET',
@@ -26,7 +27,7 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        // console.log(res.data.data);
+        console.log("matchs: " + res.data.data);
         that.setData({
           matchs: res.data.data
         })
@@ -36,6 +37,7 @@ Page({
       }
     });
 
+    //获取团队
     wx.request({
       url: 'http://localhost:8081/team/joinedTeam',
       method: 'GET',
@@ -103,11 +105,13 @@ Page({
   onShareAppMessage: function () {
     
   },
+
   positionChange: function(e){
     this.setData({
       posIndex: e.detail.value 
     })
   },
+
   matchChange: function(e){
     this.setData({
       matchIndex: e.detail.value
@@ -137,23 +141,24 @@ Page({
             data: {
               "recruitName": e.detail.value.name,
               "recruitPosition": that.data.positionArr[e.detail.value.position],
+              "recruitDescription": e.detail.value.intro,
+              "recruitWillingNumber": e.detail.value.personNum,
+              "recruitRegisteredNumber": 0,
+              "manager": {
+                "userId": res.data.data
+              },
               "activity": {
                 "activityId": that.data.matchs[e.detail.value.match].activityId
-              },
+              }
               // "Team": {
               //   "teamId": teams[e.detail.value.team].teamId
               // },
-              "recruitWillingNumber": e.detail.value.personNum,
-              "recruitDescription": e.detail.value.intro,
-              "manager": {
-                "userId": res.data.data
-              }
             },
             header: {
               'content-type': 'application/json',
               'openid': wx.getStorageSync('openid')
             },
-            success: function (res) {
+            success: function (res2) {
               wx.showToast({
                 title: '发布成功',
                 icon: 'success'
@@ -164,7 +169,7 @@ Page({
                 })
               }, 500)
             },
-            fail: function (res) {
+            fail: function (res2) {
               console.log("create fail");
             }
           })
