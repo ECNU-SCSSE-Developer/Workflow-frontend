@@ -16,7 +16,7 @@ Page({
       total: 3,
       focus: 0,
     }],
-    time: util.formatTime(new Date()),
+    time: util.formatDateTime(new Date()),
     offset: 0,
     recruitName: "",
   },
@@ -91,7 +91,7 @@ Page({
    */
   onPullDownRefresh: function () {
     var that = this;
-    var nowTime = util.formatTime(new Date());
+    var nowTime = util.formatDateTime(new Date());
     console.log("fresh! Time: " + that.data.time);
     wx.request({
       url: 'http://localhost:8081/recruit/all?currentTime=' + nowTime + '&&offset=0',
