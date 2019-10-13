@@ -1,0 +1,16 @@
+<!--pages/createTeam/createTeam.wxml-->
+<view class='page'>
+  <form bindsubmit="formSubmit">
+    <view class='form-info'>
+      <view class='form-title'>团 队 信 息</view>
+      <view class='form-item'>
+        <view class='item-title'>名称:</view>
+        <input name="name" placeholder="请输入团队名称"></input>
+      </view>
+    </view>
+
+    <view class='tia-btn'>
+      <button form-type='submit'>创建</button>
+    </view>
+  </form>
+</view>

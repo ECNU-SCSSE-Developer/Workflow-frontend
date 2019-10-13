@@ -14,9 +14,6 @@
         <view>最近更新：{{item.time}}</view>
       </view>
       <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
-      <view class="weui-media-box__desc">
-        {{item.match}}
-      </view>
       <view class='footer'>
         <view class='footer-text'>工作进展情况：{{item.now}}/{{item.total}}</view>
         <image src='/image/more.png' class='more'></image>
@@ -25,7 +22,7 @@
   </block>
 
   <view class='divider'></view>
-  <navigator class='tia-btn'>
-    创建工作
+  <navigator class='tia-btn' url='/pages/createTeam/createTeam'>
+    创建团队
   </navigator>
 </view>

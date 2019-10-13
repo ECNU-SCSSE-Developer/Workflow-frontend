@@ -1,4 +1,5 @@
 var sliderWidth = 120; // 需要设置slider的宽度，用于计算中间位置
+var util = require('../../utils/util.js')
 const MONTHS = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'June.', 'July.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
 Page({
 
@@ -122,6 +123,11 @@ Page({
       },
       success: function(res){
         // console.log(res.data.data);
+        // 时间格式化
+        for (let i = 0; i < res.data.data.length; i++) {
+          res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
+          res.data.data[i].activityTime = util.formatTime(new Date(res.data.data[i].activityTime))
+        }
         that.setData({
           matchs: res.data.data
         })
@@ -150,7 +156,12 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log(res.data.data);
+        // console.log(res.data.data);
+        // 时间格式化
+        for (let i = 0; i < res.data.data.length; i++){
+          res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
+          res.data.data[i].activityTime = util.formatTime(new Date(res.data.data[i].activityTime))
+        }
         that.setData({
           cutoffMatchs: res.data.data
         })

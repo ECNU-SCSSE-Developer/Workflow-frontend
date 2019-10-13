@@ -65,7 +65,7 @@
 
         <view class='page' hidden="{{hasCutoffMatch == 0}}">
           <block wx:for="{{cutoffMatchs}}" wx:key="id">
-            <navigator url='/pages/matchDetail/matchDetail' class='match-item' bindtap="matchClick" id="{{item.activityId}}">
+            <navigator url='/pages/matchCutoffDetail/matchCutoffDetail' class='match-item' bindtap="matchClick" id="{{item.activityId}}">
               <view class='match-img-out'>
                 <image class='match-img' src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg'></image>
               </view>
@@ -89,7 +89,7 @@
 
       <!-- tab3 -->
       <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-        <view class="cal">
+        <!-- <view class="cal">
           <calendar cell-size="30" next="{{false}}" prev="{{false}}" show-more-days="{{false}}" calendar-style="cal-calendar" header-style="cal-header" board-style="cal-board" days-color="{{cal_style}}" />
         </view>
         <block wx:for="{{matchList}}" wx:key="id">
@@ -97,7 +97,7 @@
             <view class='act-img'></view>
             <view class='act-text'>{{item.time}}:{{item.name}}</view>
           </view>
-        </block>
+        </block> -->
       </view>
     </view>
   </view>

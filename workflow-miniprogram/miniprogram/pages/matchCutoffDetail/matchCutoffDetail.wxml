@@ -8,25 +8,25 @@
   <view class='match-detail'>
     <view class='detail-top'>
       <view>
-        <image src='{{match.url}}' class='detail-img'></image>
+        <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m1.jpg' class='detail-img'></image>
       </view>
       <view class='top-text'>
-      <view class='match-title'>{{match.title}}</view>
-      <view class='match-place'>{{match.place}}</view>
+      <view class='match-title'>{{match.activityName}}</view>
+      <view class='match-place'>{{match.activityPlace}}</view>
       </view>
     </view>
     <view class='detail-text'>
       <view class='detail-title'>比赛时间:
       </view>
-      <view class='detail-content'>{{match.matchTime}}
+      <view class='detail-content'>{{match.activityTime}}
       </view>
       <view class='detail-title'>报名截止时间:
       </view>
-      <view class='detail-content'>{{match.endTime}}
+      <view class='detail-content'>{{match.activitySignUpDeadline}}
       </view>
       <view class='detail-title'>简介:
       </view>
-      <textarea class='summary' disabled='true'>{{match.summary}}
+      <textarea class='summary' disabled='true'>{{match.activityDescription}}
       </textarea>
     </view>
   </view>
