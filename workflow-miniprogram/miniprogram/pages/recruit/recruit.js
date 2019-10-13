@@ -324,5 +324,31 @@ Page({
         console.log("fail");
       }
     })
+  },
+
+  createRecruit: function (e) {
+    // 判断是否已经有团队
+    wx.request({
+      url: 'http://localhost:8081/team/joinedTeam',
+      method: 'get',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        if (res.data.data.length == 0) {
+          wx.navigateTo({
+            url: '/pages/createTeam/createTeam',
+          })
+        } else {
+          wx.navigateTo({
+            url: '/pages/createRecruit/createRecruit',
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("fail");
+      }
+    })
   }
 })

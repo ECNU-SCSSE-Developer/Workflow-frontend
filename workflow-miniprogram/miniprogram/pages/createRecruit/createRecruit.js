@@ -27,7 +27,7 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log("matchs: " + res.data.data);
+        console.log(res.data.data);
         that.setData({
           matchs: res.data.data
         })
@@ -115,6 +115,12 @@ Page({
   matchChange: function(e){
     this.setData({
       matchIndex: e.detail.value
+    })
+  },
+
+  teamChange: function(e) {
+    this.setData({
+      teamIndex: e.detail.value
     })
   },
 

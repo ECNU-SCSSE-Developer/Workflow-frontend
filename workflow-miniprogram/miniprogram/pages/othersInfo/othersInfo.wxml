@@ -19,10 +19,15 @@
       <view class='social-num'>26</view>
     </view>
   </view>
+  
   <view class='info'>
     <view class='info-item'>
       <view class='info-title'>性别</view>
       <view class='info-desc'>男</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>学号</view>
+      <view class='info-desc'>1234567</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>院系</view>
@@ -30,19 +35,27 @@
     </view>
     <view class='info-item'>
       <view class='info-title'>年级</view>
-      <view class='info-desc'>16级</view>
+      <view class='info-desc'>本16级</view>
     </view>
     <view class='info-item'>
-      <view class='info-title'>擅长职位</view>
-      <view class='info-desc'>JAVA后端</view>
+      <view class='info-title'>电话</view>
+      <view class='info-desc'>1234567</view>
     </view>
     <view class='info-item'>
-      <view class='info-title'>兴趣方向</view>
-      <view class='info-desc'>大数据</view>
+      <view class='info-title'>邮箱</view>
+      <view class='info-desc'>1234567@126.com</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>专长</view>
+      <view class='info-desc'>吃饭</view>
+    </view>
+    <view class='info-item'>
+      <view class='info-title'>微信号</view>
+      <view class='info-desc'>1234567</view>
     </view>
     <view class='info-item-intro'>
       <view class='info-title'>个人简介</view>
-      <view class='info-desc'>我爱学习 学习爱我~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~</view>
+      <view class='info-desc'>Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day </view>
     </view>
   </view>
 </view>

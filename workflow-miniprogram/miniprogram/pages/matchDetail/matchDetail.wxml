@@ -32,7 +32,7 @@
     </view>
 
   </view>
-  <navigator class='tia-btn' url='/pages/createRecruit/createRecruit'>
+  <view class='tia-btn' catchtap='createRecruit'>
     发布招聘
-  </navigator>
+  </view>
 </view>

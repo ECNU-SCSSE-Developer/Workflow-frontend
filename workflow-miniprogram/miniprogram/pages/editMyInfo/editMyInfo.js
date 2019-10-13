@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    collegeArr: ['计算机学院', '软件工程学院', '数据学院', '其他'],
+    gradeArr: ['本16级', '本17级', '本18级', '本19级', '本20级', '本21级', '研17级', '研18级', '研19级', '研20级','研21级'],
+    genderArr: ['男', '女', '未知'],
+    collegeIndex: 0,
+    gradeIndex: 0,
+    genderIndex: 0
   },
 
   /**
@@ -62,5 +67,23 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  collegeChange: function (e) {
+    this.setData({
+      collegeIndex: e.detail.value
+    })
+  },
+
+  gradeChange: function (e) {
+    this.setData({
+      gradeIndex: e.detail.value
+    })
+  },
+
+  genderChange: function (e) {
+    this.setData({
+      genderIndex: e.detail.value
+    })
+  },
 })

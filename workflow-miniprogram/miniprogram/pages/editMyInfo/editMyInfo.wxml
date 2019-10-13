@@ -1,13 +1,78 @@
 <!--pages/editMyInfo/editMyInfo.wxml-->
 <view class='page'>
-  <view class='top-show'>
-    <view class='top-edit'>
-      <view class='top-edit-text'>修改个人资料</view>
-      <image src='/image/submit.png' class='top-edit-img'></image>
+    <view class='form-info'>
+      <view class='form-title'>个 人 信 息</view>
+
+      <view class='form-item'>
+        <navigator url='/pages/selfInfo/selfInfo' hover-class='none'>
+          <open-data type="userAvatarUrl" class="top-avatar" id="userinfo"></open-data>
+        </navigator>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>昵称:</view>
+        <input name="username"></input>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>性别:</view>
+        <picker name="gender" bindchange="genderChange" value="{{genderIndex}}" range="{{genderArr}}">
+          <view class="picker">
+            {{genderArr[genderIndex]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>学号:</view>
+        <input name="userNumber"></input>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>院系:</view>
+        <picker name="college" bindchange="collegeChange" value="{{collegeIndex}}" range="{{collegeArr}}">
+          <view class="picker">
+            {{collegeArr[collegeIndex]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>年级:</view>
+        <picker name="userGrade" bindchange="gradeChange" value="{{gradeIndex}}" range="{{gradeArr}}">
+          <view class="picker">
+            {{gradeArr[gradeIndex]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>电话:</view>
+        <input name="userPhone"></input>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>邮箱:</view>
+        <input name="userEmail"></input>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>专长:</view>
+        <input name="userSpecialty"></input>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>微信号:</view>
+        <input name="wxId"></input>
+      </view>
+
+      <view class='form-item'>
+        <view class='item-title'>简介:</view>
+        <textarea name="userResume"></textarea>
+      </view>
     </view>
-    <navigator url='/pages/selfInfo/selfInfo' hover-class='none'>
-    <open-data type="userAvatarUrl" class="top-avatar" id="userinfo"></open-data>
-    </navigator>
-    <open-data type="userNickName" class="top-name"></open-data>
-  </view>
+
+    <view class='tia-btn'>
+      <button form-type='submit'>提交修改</button>
+    </view>
 </view>

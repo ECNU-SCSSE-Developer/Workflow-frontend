@@ -5,7 +5,6 @@
   padding: 20rpx 60rpx;
   display: flex;
   flex-direction: column;
-  background-color: #4a69bd;
 }
 
 .top-avatar {
@@ -19,7 +18,7 @@
 }
 
 .top-name {
-  color: white;
+  color: black;
   margin-bottom: 260rpx;
 }
 
@@ -40,4 +39,80 @@
   align-self: center;
   height: 60rpx;
   width: 60rpx;
+}
+
+
+.tia-btn {
+  width: 50%;
+  margin: 50rpx auto;
+  padding: 15rpx;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 20rpx;
+  color: #4a69bd;
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-info {
+  background-color: white;
+  width: 85%;
+  padding: 0rpx 20rpx;
+  margin: 80rpx auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20rpx;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 60rpx;
+  color: #4a69bd;
+}
+
+.form-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.form-item:last-child{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title{
+  margin: 10rpx 0;
+  width: 30%;
+}
+
+input{
+  height: 60rpx;
+  border-bottom: 5rpx solid #4a69bd;
+}
+
+picker{
+  height: 60rpx;
+  border-bottom: 5rpx solid #4a69bd;
+}
+
+textarea{
+  border: 5rpx solid #4a69bd;
+  padding: 10rpx;
+  width: 95%;
+  margin: 10rpx auto;
+  margin-bottom: 20rpx;
+}
+
+.msgbox_in_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  align-self: left;
+  margin-bottom: 10rpx;
 }
