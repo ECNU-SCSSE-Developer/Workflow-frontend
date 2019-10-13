@@ -17,7 +17,8 @@ Page({
       focus: 0,
     }],
     time: util.formatTime(new Date()),
-    offset: 0
+    offset: 0,
+    recruitName: "",
   },
 
   /**
@@ -130,24 +131,46 @@ Page({
   onReachBottom: function () {
     console.log("reach bottom! Time: " + this.data.time + ". offset: " + this.data.offset);
     var that = this;
-    wx.request({
-      url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&&offset=' + that.data.offset,
-      method: 'GET',
-      header: {
-        'content-type': 'application/json',
-        'openid': wx.getStorageSync('openid')
-      },
-      success: function (res) {
-        console.log(res.data.data);
-        that.setData({
-          list: that.data.list.concat(res.data.data),
-          offset: that.data.offset + 1
-        })
-      },
-      fail: function (res) {
-        console.log("fail");
-      }
-    })
+    if(that.data.recruitName==""){
+      wx.request({
+        url: 'http://localhost:8081/recruit/all?' + that.data.recruitName + 'currentTime=' + that.data.time + '&&offset=' + that.data.offset,
+        method: 'GET',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          console.log(res.data.data);
+          that.setData({
+            list: that.data.list.concat(res.data.data),
+            offset: that.data.offset + 1
+          })
+        },
+        fail: function (res) {
+          console.log("fail");
+        }
+      })
+    }
+    else{
+      wx.request({
+        url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&&offset=' + that.data.offset,
+        method: 'GET',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          console.log(res.data.data);
+          that.setData({
+            list: that.data.list.concat(res.data.data),
+            offset: that.data.offset + 1
+          })
+        },
+        fail: function (res) {
+          console.log("fail");
+        }
+      })
+    }
   },
 
   /**
@@ -261,13 +284,19 @@ Page({
         })
       }
     })
-   
+  },
+
+  getRecruitName: function(e){
+    console.log(e.detail.value);
+    this.setData({
+      recruitName: e.detail.value
+    })
   },
 
   screen: function (e) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/recruit/all?recruitName=' + e.detail.value.recruitName + '&currentTime=' + that.data.time + '&offset=0',
+      url: 'http://localhost:8081/recruit/all?recruitName=' + that.data.recruitName + '&currentTime=' + that.data.time + '&offset=0',
       method: 'GET',
       header: {
         'content-type': 'application/json',

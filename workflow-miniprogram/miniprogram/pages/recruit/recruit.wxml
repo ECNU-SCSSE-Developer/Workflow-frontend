@@ -1,9 +1,10 @@
 <view class="page">
   <view class='top-bd'>
-    <view class='search'>
+    <view class='search' bindsubmit="screen">
       <image class="search-img" src='/image/search.png'></image>
-      <input placeholder='请输入具体招聘信息' class='serch-item' placeholder-class='iconfont icon-sousuo mid-font ' placeholder-style='color:#999999;font-size:14px' name='recruitName'></input>
-      <view class="filter" bindtap='screen'>筛选</view>
+      <input placeholder='请输入具体招聘信息' class='serch-item' placeholder-class='iconfont icon-sousuo mid-font ' placeholder-style='color:#999999;font-size:14px' name='recruitName' bindinput='getRecruitName'></input>
+        <view class="filter" bindtap='screen'>筛选</view> 
+       <!-- <button class="filter" form-type='submit'>筛选</button> -->
     </view>
   </view>
 
