@@ -28,7 +28,7 @@ Page({
     console.log(this.data.time);
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&offset=0',
+      url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&pageNum=0',
       method: 'GET',
       header: {
         'content-type': 'application/json',
@@ -94,7 +94,7 @@ Page({
     var nowTime = util.formatDateTime(new Date());
     console.log("fresh! Time: " + that.data.time);
     wx.request({
-      url: 'http://localhost:8081/recruit/all?currentTime=' + nowTime + '&&offset=0',
+      url: 'http://localhost:8081/recruit/all?currentTime=' + nowTime + '&&pageNum=0',
       method: 'GET',
       header: {
         'content-type': 'application/json',
@@ -133,7 +133,7 @@ Page({
     var that = this;
     if(that.data.recruitName==""){
       wx.request({
-        url: 'http://localhost:8081/recruit/all?' + that.data.recruitName + 'currentTime=' + that.data.time + '&&offset=' + that.data.offset,
+        url: 'http://localhost:8081/recruit/all?' + that.data.recruitName + 'currentTime=' + that.data.time + '&&pageNum=' + that.data.offset,
         method: 'GET',
         header: {
           'content-type': 'application/json',
@@ -153,7 +153,7 @@ Page({
     }
     else{
       wx.request({
-        url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&&offset=' + that.data.offset,
+        url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&&pageNum=' + that.data.offset,
         method: 'GET',
         header: {
           'content-type': 'application/json',
@@ -241,6 +241,7 @@ Page({
   },
 
   toOthersInfo: function () {
+    wx.setStorageSync('followedUserId', e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
     })
@@ -296,7 +297,7 @@ Page({
   screen: function (e) {
     var that = this;
     wx.request({
-      url: 'http://localhost:8081/recruit/all?recruitName=' + that.data.recruitName + '&currentTime=' + that.data.time + '&offset=0',
+      url: 'http://localhost:8081/recruit/all?recruitName=' + that.data.recruitName + '&currentTime=' + that.data.time + '&pageNum=0',
       method: 'GET',
       header: {
         'content-type': 'application/json',

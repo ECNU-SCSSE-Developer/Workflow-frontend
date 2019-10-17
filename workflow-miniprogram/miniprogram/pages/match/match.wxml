@@ -75,7 +75,7 @@
               <view class='match-text'>
                 <image class='match-mini-img' src='/image/match.png'></image>
                 <view class='text-level'>
-                  {{item.level}}
+                  校级
                 </view>
               </view>
               <view class='text-time'>

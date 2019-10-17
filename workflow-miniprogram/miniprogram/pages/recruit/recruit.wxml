@@ -12,7 +12,7 @@
     <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover" id="{{item.recruitId}}">
       <view class="top-item">
         <view class='info'>
-          <view catchtap='toOthersInfo'>
+          <view catchtap='toOthersInfo' data-id='{{item.organizer.userId}}'>
             <image class="msgbox_in_img" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
           </view>
           <view>

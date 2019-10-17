@@ -95,97 +95,22 @@
         </view>
 
         <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-
-          <view class="card">
-            <view>
-              <navigator url="/pages/othersInfo/othersInfos" hover-class="none">
-                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a1.jpg' class="msgbox_in_img" id="userinfo">
-                </image>
-              </navigator>
-            </view>
-            <view class='msg_right'>
-              <view class="msgbox_in_text_title">
-                Knight
+           <block wx:for="{{teamMember}}" wx:key="id"> 
+            <view class="card">
+              <view>
+                <navigator url="/pages/othersInfo/othersInfos" hover-class="none">
+                  <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class="msgbox_in_img" id="userinfo">
+                  </image>
+                </navigator>
               </view>
-              <view class="msgbox_in_text_desc">{{motto}}</view>
-            </view>
-          </view>
-
-          <view class="card">
-            <view>
-              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
-                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class="msgbox_in_img" id="userinfo">
-                </image>
-              </navigator>
-            </view>
-            <view class='msg_right'>
-              <view class="msgbox_in_text_title">
-                Fuhy
+              <view class='msg_right'>
+                <view class="msgbox_in_text_title">
+                  {{item.userName}}
+                </view>
+                <view class="msgbox_in_text_desc">{{item.userSpecialty}}</view>
               </view>
-              <view class="msgbox_in_text_desc">学习爱我</view>
             </view>
-          </view>
-
-          <view class="card">
-            <view>
-              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
-                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg' class="msgbox_in_img" id="userinfo">
-                </image>
-              </navigator>
-            </view>
-            <view class='msg_right'>
-              <view class="msgbox_in_text_title">
-                三眼皮猴子
-              </view>
-              <view class="msgbox_in_text_desc">我爱ECNU</view>
-            </view>
-          </view>
-
-          <view class="card">
-            <view>
-              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
-                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a4.jpg' class="msgbox_in_img" id="userinfo">
-                </image>
-              </navigator>
-            </view>
-            <view class='msg_right'>
-              <view class="msgbox_in_text_title">
-                布里
-              </view>
-              <view class="msgbox_in_text_desc">我爱JAVA</view>
-            </view>
-          </view>
-
-          <view class="card">
-            <view>
-              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
-                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a5.jpg' class="msgbox_in_img" id="userinfo">
-                </image>
-              </navigator>
-            </view>
-            <view class='msg_right'>
-              <view class="msgbox_in_text_title">
-                咕叽
-              </view>
-              <view class="msgbox_in_text_desc">认真吃饭</view>
-            </view>
-          </view>
-
-          <view class="card">
-            <view>
-              <navigator url="/pages/othersInfo/othersInfo" hover-class="none">
-                <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a6.jpg' class="msgbox_in_img" id="userinfo">
-                </image>
-              </navigator>
-            </view>
-            <view class='msg_right'>
-              <view class="msgbox_in_text_title">
-                Type1551 ASDIC⚓🦇
-              </view>
-              <view class="msgbox_in_text_desc">好好睡觉</view>
-            </view>
-          </view>
-
+           </block> 
 
           <view class='divider'></view>
           <navigator class='tia-btn' url='/pages/myFocus/myFocus'>

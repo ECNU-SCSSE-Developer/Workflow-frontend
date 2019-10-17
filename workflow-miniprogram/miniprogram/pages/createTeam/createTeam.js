@@ -5,14 +5,16 @@ Page({
    * Page initial data
    */
   data: {
-
+    teamName: ""
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    this.setData({
+      teamName: ""
+    })
   },
 
   /**
@@ -62,5 +64,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getTeamName: function(e){
+    var that = this;
+    // wx.request({
+    //   url: '',
+    // })
   }
 })

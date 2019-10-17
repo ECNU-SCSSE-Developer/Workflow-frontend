@@ -52,7 +52,7 @@
             <block wx:for="{{focusMatchs}}" wx:key="id">
               <navigator url='/pages/matchDetail/matchDetail' class='match-item' id='{{item.activityId}}' bindtap='matchClick'>
                  <view class='match-img-out'> 
-                  <image class='match-img' src='{{item.img}}'></image>
+                  <image class='match-img' src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg'></image>
                  </view> 
                  <view class='texts'>
                     <view class='text-title'>
@@ -61,7 +61,7 @@
                     <view class='match-text'>
                       <image class='match-mini-img' src='/image/match.png'></image>
                       <view class='text-level'>
-                        {{item.level}}
+                        校级
                       </view>
                     </view>
                     <view class='text-time'>

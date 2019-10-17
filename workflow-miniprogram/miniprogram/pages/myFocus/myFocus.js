@@ -1,5 +1,6 @@
 // pages/myFocus/myFocus.js
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -99,7 +100,13 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
-            console.log("matchs: " + res2.data.data);
+            // console.log("matchs: " + res2.data.data);
+            // 时间格式化
+            for (let i = 0; i < res.data.data.length; i++) {
+              res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
+              res.data.data[i].activityTime = util.formatTime(new Date(res.data.data[i].activityTime))
+            }
+
             that.setData({
               focusMatchs: res2.data.data
             });
