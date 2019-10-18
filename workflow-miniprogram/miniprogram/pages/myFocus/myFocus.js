@@ -63,7 +63,6 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        // console.log(res.data);
         wx.request({
           url: 'http://localhost:8081/user/' + res.data.data + '/followingUser',
           method: 'GET',

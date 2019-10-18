@@ -16,11 +16,11 @@
     </navigator>
     <navigator class='social-item' url='/pages/myFocus/myFocus' hover-class='none'>
       <view class='social-text'>关注</view>
-      <view class='social-num'>0</view>
+      <view class='social-num'>{{followingUserNum}}</view>
     </navigator>
     <navigator class='social-item' url='/pages/myFans/myFans' hover-class='none'>
       <view class='social-text'>粉丝</view>
-      <view class='social-num'>0</view>
+      <view class='social-num'>{{followedUserNum}}</view>
     </navigator>
   </view>
 
@@ -31,39 +31,39 @@
   <view class='info'>
     <view class='info-item'>
       <view class='info-title'>性别</view>
-      <view class='info-desc'>男</view>
+      <view class='info-desc'>{{genderArr[info.gender]}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>学号</view>
-      <view class='info-desc'>1234567</view>
+      <view class='info-desc'>{{info.userNumber}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>院系</view>
-      <view class='info-desc'>计软院</view>
+      <view class='info-desc'>{{collegeArr[info.college]}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>年级</view>
-      <view class='info-desc'>本16级</view>
+      <view class='info-desc'>{{gradeArr[info.userGrade]}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>电话</view>
-      <view class='info-desc'>1234567</view>
+      <view class='info-desc'>{{info.userPhone}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>邮箱</view>
-      <view class='info-desc'>1234567@126.com</view>
+      <view class='info-desc'>{{info.userEmail}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>专长</view>
-      <view class='info-desc'>吃饭</view>
+      <view class='info-desc'>{{info.userSpecialty}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>微信号</view>
-      <view class='info-desc'>1234567</view>
+      <view class='info-desc'>{{info.wxId}}</view>
     </view>
     <view class='info-item-intro'>
       <view class='info-title'>个人简介</view>
-      <view class='info-desc'>Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day </view>
+      <view class='info-desc'>{{info.userResume}}</view>
     </view>
   </view>
 </view>

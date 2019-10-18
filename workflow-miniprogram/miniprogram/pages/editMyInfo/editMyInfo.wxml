@@ -1,5 +1,6 @@
 <!--pages/editMyInfo/editMyInfo.wxml-->
 <view class='page'>
+  <form bindsubmit="formSubmit">
     <view class='form-info'>
       <view class='form-title'>个 人 信 息</view>
 
@@ -75,4 +76,5 @@
     <view class='tia-btn'>
       <button form-type='submit'>提交修改</button>
     </view>
+  </form>
 </view>

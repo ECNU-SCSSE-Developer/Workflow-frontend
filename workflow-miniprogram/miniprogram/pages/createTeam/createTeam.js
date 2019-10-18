@@ -5,16 +5,13 @@ Page({
    * Page initial data
    */
   data: {
-    teamName: ""
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.setData({
-      teamName: ""
-    })
+
   },
 
   /**
@@ -67,9 +64,31 @@ Page({
   },
 
   getTeamName: function(e){
+    console.log(e.detail.value);
+    wx.setStorageSync('teamName', e.detail.value);
+  },
+
+  createTeam: function(){
     var that = this;
-    // wx.request({
-    //   url: '',
-    // })
+    wx.request({
+      url: '',
+      method: '',
+      data: {
+        teamName: wx.getStorageSync('teamName')
+      },
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '创建成功！',
+          icon: 'success'
+        })
+      },
+      fail: function (res) {
+        console.log("create team fail!");
+      }
+    })
   }
 })

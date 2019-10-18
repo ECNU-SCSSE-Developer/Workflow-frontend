@@ -9,6 +9,6 @@
       </view>
     </view>
 
-    <view class='tia-btn'>创建</view>
+    <view class='tia-btn' bindtap='createTeam'>创建</view>
   <!-- </form> -->
 </view>

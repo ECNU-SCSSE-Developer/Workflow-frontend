@@ -86,4 +86,37 @@ Page({
       genderIndex: e.detail.value
     })
   },
+
+  formSubmit: function(e){
+    console.log(e.detail.value);
+    wx.request({
+      url: 'http://localhost:8081/user/self',
+      method: 'PUT',
+      data: {
+        username: e.detail.value.username,
+        gender: e.detail.value.gender,
+        userNumber: e.detail.value.userNumber,
+        college: e.detail.value.college,
+        userGrade: e.detail.value.userGrade,
+        userPhone: e.detail.value.userPhone,
+        userEmail: e.detail.value.userEmail,
+        userSpecialty: e.detail.value.userSpecialty,
+        wxId: e.detail.value.wxId,
+        userResume: e.detail.value.userResume
+      },
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        wx.showToast({
+          title: '修改成功！',
+          icon: 'success'
+        })
+      },
+      fail: function(res){
+        console.log("edit fail!");
+      }
+    })
+  }
 })

@@ -240,8 +240,10 @@ Page({
     this.onLoad();
   },
 
-  toOthersInfo: function () {
-    wx.setStorageSync('followedUserId', e.currentTarget.dataset.id);
+  toOthersInfo: function (e) {
+    console.log(e.currentTarget.id);
+    wx.setStorageSync('userId', e.currentTarget.id);
+    console.log(wx.getStorageSync('userId'));
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
     })

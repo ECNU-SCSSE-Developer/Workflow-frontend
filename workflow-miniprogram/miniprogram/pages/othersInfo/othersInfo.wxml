@@ -2,7 +2,7 @@
 <view class='page'>
   <view class='top-show'>
     <image class="top-avatar" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
-    <view class="top-name">Weird</view>
+    <view class="top-name">{{info.username}}</view>
     <button class="weui-btn" type="default" size="mini" class="top-btn" bindtap='follow'>关注</button>
   </view>
   <view class='social'>
@@ -12,50 +12,50 @@
     </view>
     <view class='social-item'>
       <view class='social-text'>关注</view>
-      <view class='social-num'>6</view>
+      <view class='social-num'>{{followingUserNum}}</view>
     </view>
     <view class='social-item'>
       <view class='social-text'>粉丝</view>
-      <view class='social-num'>26</view>
+      <view class='social-num'>{{followedUserNum}}</view>
     </view>
   </view>
   
   <view class='info'>
     <view class='info-item'>
       <view class='info-title'>性别</view>
-      <view class='info-desc'>男</view>
+      <view class='info-desc'>{{genderArr[info.gender]}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>学号</view>
-      <view class='info-desc'>1234567</view>
+      <view class='info-desc'>{{info.userNumber}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>院系</view>
-      <view class='info-desc'>计软院</view>
+      <view class='info-desc'>{{collegeArr[info.college]}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>年级</view>
-      <view class='info-desc'>本16级</view>
+      <view class='info-desc'>{{gradeArr[info.userGrade]}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>电话</view>
-      <view class='info-desc'>1234567</view>
+      <view class='info-desc'>{{info.userPhone}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>邮箱</view>
-      <view class='info-desc'>1234567@126.com</view>
+      <view class='info-desc'>{{info.userEmail}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>专长</view>
-      <view class='info-desc'>吃饭</view>
+      <view class='info-desc'>{{info.userSpecialty}}</view>
     </view>
     <view class='info-item'>
       <view class='info-title'>微信号</view>
-      <view class='info-desc'>1234567</view>
+      <view class='info-desc'>{{info.wxId}}</view>
     </view>
     <view class='info-item-intro'>
       <view class='info-title'>个人简介</view>
-      <view class='info-desc'>Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day Seize the day </view>
+      <view class='info-desc'>{{info.userResume}}</view>
     </view>
   </view>
 </view>

@@ -1,9 +1,9 @@
 <!--pages/createRecruit/createRecruit.wxml-->
 <view class='page'>
-  <form bindsubmit="formSubmit">
+<form bindsubmit="formSubmit">
     <view class='form-info'>
       <view class='form-title'>招 聘 信 息 📃</view>
-      <view class='form-item'>
+    <view class='form-item'>
         <view class='item-title'>名称:</view>
         <input name="name" placeholder="请输入该条招聘名称"></input>
       </view>
