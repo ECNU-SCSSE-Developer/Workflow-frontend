@@ -1,9 +1,39 @@
 <!--pages/myTeam/myTeam.wxml-->
-<view class='page container' bindtap='changeImg'>
-  <view class='none'>
-    <image src="{{imgFlag == 0 ? '/image/frown.png' : '/image/frown-fill.png'}}" class='none-img'></image>
-    <view class='none-text'>你还没任何团队哦</view>
-    <view class='none-text'>你可以选择：</view>
-    <navigator class='common-btn' url='/pages/createTeam/createTeam'>创建团队</navigator>
+  <view hidden="{{hasTeam != 0}}">
+  <view class='page container' bindtap='changeImg'>
+    <view class='none'>
+      <image src="{{imgFlag == 0 ? '/image/frown.png' : '/image/frown-fill.png'}}" class='none-img'></image>
+      <view class='none-text'>你还没任何团队哦</view>
+      <view class='none-text'>你可以选择：</view>
+      <navigator class='common-btn' url='/pages/createTeam/createTeam'>创建团队</navigator>
+    </view>
   </view>
+</view>  
+
+<view class="weui-tab__content" hidden="{{hasTeam == 0}}">
+  <block wx:for="{{myTeams}}" wx:key="id">
+    <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover" id='{{item.TeamId}}'>
+      <view class="top-item">
+        <view class='info'>
+          <view catchtap='toOthersInfo' data-id='{{item.manager.userId}}'>
+            <image class="msgbox_in_img" id="userinfo" src="https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg"></image>
+          </view>
+          <view>
+            <view class="username">{{item.manager.username}}</view>
+          </view>
+        </view>
+        <view>最近更新：刚刚</view>
+      </view>
+      <view class="weui-media-box__title weui-media-box__title_in-text">{{item.teamName}}</view>
+      <view class='footer'>
+        <view class='footer-text'>工作进展情况：5/6</view>
+        <image src='/image/more.png' class='more'></image>
+      </view>
+    </view>
+  </block>
+
+    <view class='divider'></view>
+  <navigator class='tia-btn' url='/pages/createTeam/createTeam'>
+    创建团队
+  </navigator>
 </view>

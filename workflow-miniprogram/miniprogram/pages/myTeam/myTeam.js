@@ -25,18 +25,10 @@ Page({
       success: function(res){
         console.log(res.data.data);
         that.setData({
-          myTeam: res.data.data
-        });
-        if(that.data.myTeam.length==0){
-          that.setData({
-            hasTeam: 0
-          })
-        }
-        else{
-          that.setData({
-            hasTeam: 1
-          })
-        }
+          myTeams: res.data.data,
+          hasTeam: res.data.data.length
+        })
+        //console.log(that.data.myTeams[0].manager.userId);
       },
       fail: function(res){
         console.log("fail!");
@@ -103,5 +95,12 @@ Page({
         imgFlag: 1
       });
     }
-  }
+  },
+
+  toOthersInfo: function (e) {
+    wx.setStorageSync('userId', e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: '/pages/othersInfo/othersInfo',
+    })
+  },
 })

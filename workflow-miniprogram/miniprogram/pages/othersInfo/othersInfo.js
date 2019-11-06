@@ -28,9 +28,16 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        that.setData({
-          followingUserNum: res.data.data.length
-        });
+        if(res.data.data==null){
+          that.setData({
+            followingUserNum: 0
+          });
+        }
+        else{
+          that.setData({
+            followingUserNum: res.data.data.length
+          });
+        }
       },
       fail: function (res2) {
         console.log("get followingUser fail!");
@@ -46,9 +53,16 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        that.setData({
-          followedUserNum: res.data.data.length
-        });
+        if(res.data.data==null){
+          that.setData({
+            followedUserNum: 0
+          });
+        }
+        else{
+          that.setData({
+            followedUserNum: res.data.data.length
+          });
+        }
       },
       fail: function (res2) {
         console.log("get followedUser fail!");

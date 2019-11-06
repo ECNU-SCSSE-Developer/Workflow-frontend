@@ -27,7 +27,7 @@
         <view class='item-title'>所属团队:</view>
         <picker name="team" bindchange="teamChange" value="{{teamIndex}}" range="{{teams}}">
           <view class="picker">
-            {{teams[teamIndex]}}
+            {{teams[teamIndex].teamName}}
           </view>
         </picker>
       </view>

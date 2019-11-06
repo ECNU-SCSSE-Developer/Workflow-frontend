@@ -152,8 +152,9 @@ Page({
       })
     }, 500)
   },
-
-  toOthersInfo: function () {
+ 
+  toOthersInfo: function (e) {
+    wx.setStorageSync('userId', e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
     })
