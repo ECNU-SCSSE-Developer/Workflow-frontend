@@ -71,8 +71,8 @@ Page({
   createTeam: function(){
     var that = this;
     wx.request({
-      url: '',
-      method: '',
+      url: 'http://localhost:8081/team',
+      method: 'POST',
       data: {
         teamName: wx.getStorageSync('teamName')
       },
