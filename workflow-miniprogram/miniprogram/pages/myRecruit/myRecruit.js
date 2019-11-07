@@ -6,13 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["应聘", "申请"],
+    tabs: ["我的申请", "应聘申请"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    hasRecruit: 0,
+    hasOthersApply: 0,
     hasApply: 0,
-    recruitList: [],
+    othersApplyList: [],
     applyList:[]
   },
 
@@ -29,6 +29,26 @@ Page({
         });
       }
     });
+
+    //我的申请
+    wx.request({
+      url: 'http://localhost:8081/recruit/appliedRecruit',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          applyList: res.data.data,
+          hasApply: that.data.applyList.length
+        })
+      },
+      fail: function (res) {
+        console.log("fail!");
+      }
+    })
 
     wx.request({
       url: 'http://localhost:8081/recruit/assignedRecruit',
@@ -58,34 +78,7 @@ Page({
       }
     })
 
-    wx.request({
-      url: 'http://localhost:8081/recruit/appliedRecruit',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json',
-        'openid': wx.getStorageSync('openid')
-      },
-      success: function (res) {
-        console.log(res.data.data);
-        that.setData({
-          applyList: res.data.data
-        });
-        if (that.data.applyList.length == 0) {
-          console.log("==0")
-          that.setData({
-            hasApply: 0
-          })
-        }
-        else {
-          that.setData({
-            hasApply: 1
-          })
-        }
-      },
-      fail: function (res) {
-        console.log("fail!");
-      }
-    })
+    
   },
 
   /**
@@ -158,5 +151,22 @@ Page({
     wx.navigateTo({
       url: '/pages/othersInfo/othersInfo',
     })
-  }
+  },
+
+  // acceptApply: function(e){
+  //   wx.request({
+  //     url: 'http://localhost/recruit/' + e.currentTarget.dataset.recruitId + '/user/' + e.currentTarget.dataset.userId,
+  //     method: 'PUT',
+  //     header: {
+  //       'content-type': 'application/json',
+  //       'openid': wx.getStorageSync('openid')
+  //     },
+  //     success: function(res){
+  //       console.log("success");
+  //     },
+  //     fail: function(res){
+  //       console.log("accept fail!");
+  //     }
+  //   })
+  // }
 })

@@ -30,7 +30,7 @@
       <textarea disabled='true'>{{recruit.recruitDescription}}</textarea>
     </view>
   </view>
-  <view class='tia-btn'>
+  <view class='tia-btn' bindtap='applyRecruit'>
     应 聘
   </view>
 </view>

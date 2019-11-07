@@ -24,11 +24,11 @@
             <view wx:for="{{focusPerson}}" wx:key="id">
               <view class='focus-item'>
                 <navigator class='focus-img-out' url='/pages/othersInfo/othersInfo' hover-class='none'>
-                  <image src='{{item.url}}' class='focus-img'></image>
+                  <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class='focus-img'></image>
                 </navigator>
                 <view class='focus-text'>
-                  <view class='focus-name'>{{item.name}}</view>
-                  <view class='focus-desc'>{{item.motto}}</view>
+                  <view class='focus-name'>{{item.username}}</view>
+                  <view class='focus-desc'>{{item.userResume}}</view>
                 </view>
                 <view class='focus-btn'>
                   <view class="focus-btn-in">已关注</view>
@@ -90,10 +90,10 @@
                   <view class="top-item">
                     <view class='info'>
                       <view catchtap='toOthersInfo'>
-                        <image class="msgbox_in_img" id="userinfo" src='{{item.img}}'></image>
+                        <image class="msgbox_in_img" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
                       </view>
                       <view>
-                        <view class="username">{{item.organizer.creator}}</view>
+                        <view class="username">{{item.organizer.username}}</view>
                       </view>
                     </view>
                   <view>

@@ -22,8 +22,8 @@
             </view>
           </view>
 
-          <view class="weui-tab__content" hidden="{{hasRecruit != 1}}">
-            <block wx:for="{{recruitList}}" wx:key="id">
+          <view class="weui-tab__content" hidden="{{hasApply != 1}}">
+            <block wx:for="{{applyList}}" wx:key="id">
               <view class="box recruit-item" bindtap='toDetail' hover-class="navigator-hover" id="{{item.recruitId}}">
                 <view class="top-item">
                   <view class='info'>
@@ -61,18 +61,18 @@
             </view>
           </view>
 
-          <view class='page' hidden="{{hasApply == 0}}">
-            <view wx:for="{{ApplyList}}" wx:key="id">
+          <view class='page' hidden="{{hasOthersApply == 0}}">
+            <view wx:for="{{othersApplyList}}" wx:key="id">
               <view class='focus-item'>
                 <navigator class='focus-img-out' url='/pages/othersInfo/othersInfo' hover-class='none'>
                   <image src='/image/tia.png' class='focus-img'></image>
                 </navigator>
                 <view class='focus-text'>
-                  <view class='focus-name'>{{item.name}}</view>
-                  <view class='focus-desc'>{{item.motto}}</view>
+                  <view class='focus-name'>{{item.username}}</view>
+                  <view class='focus-desc'>{{item.userResume}}</view>
                 </view>
-                <view class='focus-btn'>
-                  <view class="focus-btn-in">已关注</view>
+                <view class='focus-btn' data-userId='{{item.userId}}' data-recruitId='item.recruitId' bindtap='acceptAapply'>
+                  <view class="focus-btn-in">同意申请</view>
                 </view>
               </view>
             </view>

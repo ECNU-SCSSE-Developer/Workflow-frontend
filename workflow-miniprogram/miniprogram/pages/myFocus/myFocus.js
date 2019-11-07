@@ -55,6 +55,7 @@ Page({
       }
     });
 
+    //同学
     wx.request({
       url: 'http://localhost:8081/user/myself',
       method: 'GET',
@@ -71,12 +72,11 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
-            console.log("users: " + res2.data.data);
+            console.log(res2.data.data);
             that.setData({
               focusPerson: res2.data.data
             });
-            // if (that.data.focusPerson.length == 0) {
-            if (that.data.foocusPerson == null) {
+            if (that.data.focusPerson.length == 0) {
               that.setData({
                 hasFocusPerson: 0
               })
@@ -91,6 +91,7 @@ Page({
           }
         })
 
+        //比赛
         wx.request({
           url: 'http://localhost:8081/user/' + res.data.data + '/followedActivity',
           method: 'GET',
@@ -99,7 +100,7 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
-            // console.log("matchs: " + res2.data.data);
+            console.log(res2.data.data);
             // 时间格式化
             for (let i = 0; i < res.data.data.length; i++) {
               res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
@@ -107,24 +108,16 @@ Page({
             }
 
             that.setData({
-              focusMatchs: res2.data.data
-            });
-            // if (that.data.focusMatchs.length == 0) {
-            if (that.data.focusMatchs == null) {
-              that.setData({
-                hasFocusMatch: 0
-              })
-            } else {
-              that.setData({
-                hasFocusMatch: 1
-              })
-            }
+              focusMatchs: res2.data.data,
+              hasFocusMatch: res2.data.data.length
+            })
           },
           fail: function (res2) {
             console.log("fail!");
           }
         })
 
+        //招聘
         wx.request({
           url: 'http://localhost:8081/user/' + res.data.data + '/followedRecruit',
           method: 'GET',
@@ -133,19 +126,11 @@ Page({
             'openid': wx.getStorageSync('openid')
           },
           success: function (res2) {
+            console.log(res2.data.data);
             that.setData({
-              focusRecruits: res2.data.data
-            });
-            // if (that.data.focusRecruits.length == 0) {
-              if(that.data.focusRecruits==null){
-              that.setData({
-                hasFocusRecruit: 0
-              })
-            } else {
-              that.setData({
-                hasFocusRecruit: 1
-              })
-            }
+              focusRecruits: res2.data.data,
+              hasFocusRecruit: res2.data.data.length
+            })
           },
           fail: function (res2) {
             console.log("fail!");

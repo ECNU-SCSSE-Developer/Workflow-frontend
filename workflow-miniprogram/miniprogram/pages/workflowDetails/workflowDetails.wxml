@@ -105,9 +105,9 @@
               </view>
               <view class='msg_right'>
                 <view class="msgbox_in_text_title">
-                  {{item.userName}}
+                  {{item.username}}
                 </view>
-                <view class="msgbox_in_text_desc">{{item.userSpecialty}}</view>
+                <view class="msgbox_in_text_desc">{{item.userResume}}</view>
               </view>
             </view>
            </block> 

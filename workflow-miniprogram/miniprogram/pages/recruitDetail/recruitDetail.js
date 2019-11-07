@@ -79,5 +79,41 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  applyRecruit: function(){
+    wx.request({
+      url: 'http://localhost:8081/user/myself',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function (res) {
+        wx.request({
+          url: 'http://localhost:8081/recruit/' + wx.getStorageSync('recruitId') + '/appliedUser/' + res.data.data,
+          method: 'PUT',
+          header: {
+            'content-type': 'application/json',
+            'openid': wx.getStorageSync('openid')
+          },
+          success: function (res) {
+            wx.showToast({
+              title: '应聘成功！',
+              icon: 'success'
+            })
+          },
+          fail: function (res) {
+            wx.showToast({
+              title: '应聘失败！',
+              icon: 'loading'
+            })
+          }
+        })
+      },
+      fail: function(res){
+        console.log("get selfId fail!");
+      }
+    })
   }
 })
