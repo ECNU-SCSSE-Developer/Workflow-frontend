@@ -36,7 +36,7 @@
                   </view>
                   <view>
                     <image src='{{item.followed == true ? "/image/focus.png" : "/image/unfocus.png"}}' data-id='{{item}}' catchtap='changeFocus' hover-class="none" class='img'></image>
-                    <image src='/image/delete.png' class='img'></image>
+                    <image src='/image/delete.png' class='img' catchtap='cancelAppliedRecruit' data-recruit-id='{{item.recruitId}}'></image>
                   </view>
                 </view>
                 <view class="weui-media-box__title weui-media-box__title_in-text">{{item.recruitName}}</view>

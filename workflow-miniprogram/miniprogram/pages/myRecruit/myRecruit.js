@@ -210,4 +210,55 @@ Page({
     }
     this.onLoad();
   },
+
+  cancelAppliedRecruit: function(e){
+    var that = this;
+    wx.showModal({
+      title: '是否取消申请？',
+      showCancel: true,
+      cancelText: '取消',
+      success: function (res) {
+        wx.request({
+          url: 'http://localhost:8081/user/myself',
+          method: 'GET',
+          header: {
+            'content-type': 'application/json',
+            'openid': wx.getStorageSync('openid')
+          },
+          success: function (res) {
+            wx.request({
+              url: 'http://localhost:8081/recruit/' + e.currentTarget.dataset.recruitId + '/appliedUser/' + res.data.data,
+              method: 'DELETE',
+              header: {
+                'content-type': 'application/json',
+                'openid': wx.getStorageSync('openid')
+              },
+              success: function (res) {
+                wx.showToast({
+                  title: '取消申请成功！',
+                  icon: 'success'
+                })
+                that.onLoad();
+              },
+              fail: function (res) {
+                wx.showToast({
+                  title: '操作失败！',
+                  icon: 'loading'
+                })
+              }
+            })
+          },
+          fail: function (res) {
+            console.log("get selfId fail!");
+          }
+        })
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '操作失败！',
+          icon: 'loading'
+        })
+      }
+    })
+  }
 })
