@@ -102,3 +102,88 @@ page, .page, .page__bd {
   color: #707070;
   font-size: 30rpx;
 }
+
+.box:active {
+  top: 5rpx;
+  left: 5rpx;
+}
+
+.box {
+  z-index: 1;
+  padding: 10rpx 40rpx;
+}
+
+.recruit-item {
+  /* border-left: 20rpx solid #4a69bd; */
+  margin: 20rpx 20rpx;
+  border-radius: 10rpx;
+  background-color: white;
+  box-shadow:0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px 0 rgba(74, 105, 189, 0.2); */
+}
+
+.top-item {
+  margin: 20rpx auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 10rpx 0;
+  border-bottom: 0.1vh solid #999; */
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.msgbox_in_img {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  align-self: left;
+}
+
+.username {
+  font-size: 30rpx;
+  color: #999;
+  margin: 10rpx 15rpx;
+}
+
+.weui-media-box__title_in-text {
+  font-weight: bold;
+}
+
+.weui-media-box__desc {
+  font-size: 30rpx;
+  color: black;
+}
+
+.footer {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-text {
+  color: #999;
+  font-size: 25rpx;
+}
+
+.img {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  margin: 0 10rpx;
+}
+
+.more {
+  height: 30rpx;
+  width: 30rpx;
+  float: right;
+  margin-right: 20rpx;
+}

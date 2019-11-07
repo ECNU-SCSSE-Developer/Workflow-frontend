@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["我的申请", "应聘申请"],
+    tabs: ["我的申请", "处理申请"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -30,7 +30,7 @@ Page({
       }
     });
 
-    //我的申请
+    // 我的申请
     wx.request({
       url: 'http://localhost:8081/recruit/appliedRecruit',
       method: 'GET',
@@ -42,7 +42,7 @@ Page({
         console.log(res.data.data);
         that.setData({
           applyList: res.data.data,
-          hasApply: that.data.applyList.length
+          hasApply: res.data.data.length
         })
       },
       fail: function (res) {
@@ -50,8 +50,9 @@ Page({
       }
     })
 
+    // 待处理的提交的申请
     wx.request({
-      url: 'http://localhost:8081/recruit/assignedRecruit',
+      url: 'http://localhost:8081/recruit/myAppliedUsers',
       method: 'GET',
       header: {
         'content-type': 'application/json',
@@ -60,25 +61,14 @@ Page({
       success: function (res) {
         console.log(res.data.data);
         that.setData({
-          recruitList: res.data.data
-        });
-        if (that.data.recruitList.length == 0) {
-          that.setData({  
-            hasRecruit: 0
-          })
-        }
-        else {
-          that.setData({
-            hasRecruit: 1
-          })
-        }
+          othersApplyList: res.data.data,
+          hasOthersApply: res.data.data.length
+        })
       },
       fail: function (res) {
         console.log("fail!");
       }
     })
-
-    
   },
 
   /**
@@ -153,20 +143,71 @@ Page({
     })
   },
 
-  // acceptApply: function(e){
-  //   wx.request({
-  //     url: 'http://localhost/recruit/' + e.currentTarget.dataset.recruitId + '/user/' + e.currentTarget.dataset.userId,
-  //     method: 'PUT',
-  //     header: {
-  //       'content-type': 'application/json',
-  //       'openid': wx.getStorageSync('openid')
-  //     },
-  //     success: function(res){
-  //       console.log("success");
-  //     },
-  //     fail: function(res){
-  //       console.log("accept fail!");
-  //     }
-  //   })
-  // }
+  acceptApply: function(e){
+    // wx.request({
+    //   url: 'http://localhost/recruit/' + e.currentTarget.dataset.recruitId + '/user/' + e.currentTarget.dataset.userId,
+    //   method: 'PUT',
+    //   header: {
+    //     'content-type': 'application/json',
+    //     'openid': wx.getStorageSync('openid')
+    //   },
+    //   success: function(res){
+    //     console.log("success");
+    //   },
+    //   fail: function(res){
+    //     console.log("accept fail!");
+    //   }
+    // })
+  },
+
+  changeFocus: function (e) {
+    var that = this;
+    if (e.currentTarget.dataset.id.followed == true) {
+      wx.request({
+        url: 'http://localhost:8081/user/recruit/' + e.currentTarget.dataset.id.recruitId,
+        method: 'delete',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '取消收藏',
+            icon: 'success'
+          })
+          that.onLoad();
+        },
+        fail: function (res) {
+          wx.showToast({
+            title: '操作失败',
+            icon: 'success'
+          })
+        }
+      })
+    }
+    else {
+      wx.request({
+        url: 'http://localhost:8081/user/recruit/' + e.currentTarget.dataset.id.recruitId,
+        method: 'put',
+        header: {
+          'content-type': 'application/json',
+          'openid': wx.getStorageSync('openid')
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '收藏成功',
+            icon: 'success'
+          })
+          that.onLoad();
+        },
+        fail: function (res) {
+          wx.showToast({
+            title: '操作失败',
+            icon: 'success'
+          })
+        }
+      })
+    }
+    this.onLoad();
+  },
 })

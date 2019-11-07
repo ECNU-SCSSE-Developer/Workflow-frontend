@@ -11,12 +11,13 @@
             <view class="username">{{item.creator}}</view>
           </view>
         </view>
-        <view>最近更新：{{item.time}}</view>
+        <image src='/image/more.png' class='more'></image>
+        
       </view>
       <view class="weui-media-box__title weui-media-box__title_in-text">{{item.name}}</view>
       <view class='footer'>
         <view class='footer-text'>工作进展情况：{{item.now}}/{{item.total}}</view>
-        <image src='/image/more.png' class='more'></image>
+        <view>最近更新：{{item.time}}</view>
       </view>
     </view>
   </block>
