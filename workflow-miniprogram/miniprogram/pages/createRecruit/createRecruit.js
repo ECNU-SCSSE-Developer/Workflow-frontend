@@ -169,11 +169,9 @@ Page({
                 title: '发布成功',
                 icon: 'success'
               })
-              setTimeout(() => {
-                wx.navigateTo({
-                  url: '/pages/recruit/recruit',
-                })
-              }, 500)
+              wx.navigateTo({
+                url: '/pages/recruit/recruit',
+              })
             },
             fail: function (res2) {
               console.log("create fail");

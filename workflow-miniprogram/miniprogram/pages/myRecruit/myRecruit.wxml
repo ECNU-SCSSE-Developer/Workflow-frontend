@@ -71,7 +71,7 @@
                   <view class='focus-name'>{{item.username}}</view>
                   <view class='focus-desc'>{{item.userResume}}</view>
                 </view>
-                <view class='focus-btn' data-userId='{{item.userId}}' data-recruitId='item.recruitId' bindtap='acceptAapply'>
+                <view class='focus-btn' data-user-id='{{item.userId}}' data-recruit-id='{{item.recruitId}}' bindtap='acceptApply'>
                   <view class="focus-btn-in">同意申请</view>
                 </view>
               </view>

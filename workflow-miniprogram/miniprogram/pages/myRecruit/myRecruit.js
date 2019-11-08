@@ -144,20 +144,25 @@ Page({
   },
 
   acceptApply: function(e){
-    // wx.request({
-    //   url: 'http://localhost/recruit/' + e.currentTarget.dataset.recruitId + '/user/' + e.currentTarget.dataset.userId,
-    //   method: 'PUT',
-    //   header: {
-    //     'content-type': 'application/json',
-    //     'openid': wx.getStorageSync('openid')
-    //   },
-    //   success: function(res){
-    //     console.log("success");
-    //   },
-    //   fail: function(res){
-    //     console.log("accept fail!");
-    //   }
-    // })
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8081/recruit/' + e.currentTarget.dataset.recruitId + '/user/' + e.currentTarget.dataset.userId,
+      method: 'PUT',
+      header: {
+        'content-type': 'application/json',
+        'openid': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        wx.showToast({
+          title: '已同意',
+          icon: 'success'
+        })
+        that.onLoad();
+      },
+      fail: function(res){
+        console.log("accept fail!");
+      }
+    })
   },
 
   changeFocus: function (e) {

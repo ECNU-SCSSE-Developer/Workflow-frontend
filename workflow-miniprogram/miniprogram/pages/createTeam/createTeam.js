@@ -85,6 +85,9 @@ Page({
           title: '创建成功！',
           icon: 'success'
         })
+        wx.navigateTo({
+          url: '/pages/createRecruit/createRecruit',
+        })
       },
       fail: function (res) {
         console.log("create team fail!");
