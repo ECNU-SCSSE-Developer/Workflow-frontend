@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    positionArr:['前端', 'JAVA', 'C#', 'python', '美工', 'C/C++', '其他'],
+    positionArr:['请选择', '前端', 'JAVA', 'C#', 'python', '美工', 'C/C++', '其他'],
     matchs:['比赛1','比赛2','比赛3'],
-    teams: ['team1','team2'],
+    teams: [{teamName:'请选择'}],
     posIndex: 0,
     matchIndex: 0,
     teamIndex: 0
@@ -20,7 +20,7 @@ Page({
     var that = this;
     //获取比赛
     wx.request({
-      url: 'http://localhost:8081/activity/all?type=finish',
+      url: 'http://localhost:8081/activity/all?type=fresh',
       method: 'GET',
       header: {
         'content-type': 'application/json',
@@ -46,10 +46,10 @@ Page({
         'openid': wx.getStorageSync('openid')
       },
       success: function (res) {
-        console.log(res.data.data);
         that.setData({
-          teams: res.data.data
-        });
+          teams: that.data.teams.concat(res.data.data)
+        })
+        console.log(that.data.teams);        
       },
       fail: function (res) {
         console.log("fail!");
@@ -126,7 +126,7 @@ Page({
 
   formSubmit: function(e){
     console.log(e.detail.value);
-    if(e.detail.value.name==""||e.detail.value.personNum==""||e.detail.value.intro==""){
+    if(e.detail.value.name==""||e.detail.value.position==0||e.detail.value.team==0||e.detail.value.personNum==""||e.detail.value.intro==""){
       wx.showModal({
         title: '请补充完整招聘信息',
         showCancel: false
