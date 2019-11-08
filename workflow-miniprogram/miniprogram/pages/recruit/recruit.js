@@ -152,6 +152,7 @@ Page({
         success: function(res) {
           console.log(res.data.data);
           
+          //todo
           //mock image
           for (var i = 0; i < res.data.data.length; i++) {
             res.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res.data.data[i].organizer.userId + '.jpg'
@@ -319,6 +320,13 @@ Page({
       },
       success: function(res) {
         console.log(res.data.data);
+
+        //todo
+        //mock image
+        for (var i = 0; i < res.data.data.length; i++) {
+          res.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res.data.data[i].organizer.userId + '.jpg'
+        }
+
         that.setData({
           list: res.data.data,
           offset: 1

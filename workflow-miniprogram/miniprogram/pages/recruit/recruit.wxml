@@ -21,15 +21,17 @@
         </view>
         <view>
           <image src='{{item.followed == true ? "/image/focus.png" : "/image/unfocus.png"}}' data-id='{{item}}' catchtap='changeFocus' hover-class="none" class='img'></image>
-          <image src='/image/delete.png' class='img' catchtap='deleteRecruit' data-id='{{item}}'></image>
+          <!-- <image src='/image/delete.png' class='img' catchtap='deleteRecruit' data-id='{{item}}'></image> -->
         </view>
       </view>
       <view class="weui-media-box__title weui-media-box__title_in-text">{{item.recruitName}}</view>
+      <view class="name-and-pos">
       <view class="weui-media-box__desc">
         {{item.activityName}}
       </view>
       <view class="weui-media-box__desc recruit-pos">
         {{item.recruitPosition}}
+      </view>
       </view>
       <view class='footer'>
         <view class='footer-text'>申请情况：{{item.recruitRegisteredNumber}}/{{item.recruitWillingNumber}}名</view>

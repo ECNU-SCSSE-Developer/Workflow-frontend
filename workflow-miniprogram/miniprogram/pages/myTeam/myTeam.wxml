@@ -22,16 +22,17 @@
             <view class="username">{{item.manager.username}}</view>
           </view>
         </view>
-        <!-- 以下的if-else是模拟的数据！！！ -->
-        <view wx:if="{{ item.teamId <= 11}}"> 最近更新: 2小时前 </view>
-        <view wx:else> 最近更新: 刚刚 </view>
+        <image src='/image/more.png' class='more'></image>
       </view>
       <view class="weui-media-box__title weui-media-box__title_in-text">{{item.teamName}}</view>
       <view class='footer'>
         <!-- 以下的if-else是模拟的数据！！！ -->
         <view class='footer-text' wx:if="{{ item.teamId <= 11}}"> 工作进展情况：10/13 </view>
         <view class='footer-text' wx:else> 工作进展情况：0/0 </view>
-        <image src='/image/more.png' class='more'></image>
+        
+        <!-- 以下的if-else是模拟的数据！！！ -->
+        <view wx:if="{{ item.teamId <= 11}}"> 最近更新: 2小时前 </view>
+        <view wx:else> 最近更新: 刚刚 </view>
       </view>
     </view>
   </block>

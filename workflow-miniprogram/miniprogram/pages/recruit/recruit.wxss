@@ -198,6 +198,13 @@ input {
 }
 
 .recruit-pos{
-  margin-top: 8px;
   font-size: 25rpx;
+  margin-right: 10rpx;
+}
+
+.name-and-pos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
 }
