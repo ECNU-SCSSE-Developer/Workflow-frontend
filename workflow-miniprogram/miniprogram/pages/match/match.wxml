@@ -89,7 +89,7 @@
 
       <!-- tab3 -->
       <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
-        <!-- <view class="cal">
+        <view class="cal">
           <calendar cell-size="30" next="{{false}}" prev="{{false}}" show-more-days="{{false}}" calendar-style="cal-calendar" header-style="cal-header" board-style="cal-board" days-color="{{cal_style}}" />
         </view>
         <block wx:for="{{matchList}}" wx:key="id">
@@ -97,7 +97,7 @@
             <view class='act-img'></view>
             <view class='act-text'>{{item.time}}:{{item.name}}</view>
           </view>
-        </block> -->
+        </block>
       </view>
     </view>
   </view>

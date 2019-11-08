@@ -5,7 +5,7 @@
     <view class='form-item'>
       <view class='item-title-creator'>发布者:</view>
       <navigator url='/pages/othersInfo/othersInfo' hover-class='none'>
-        <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg' class="msgbox_in_img" id="userinfo"></image>
+        <image src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg' class="msgbox_in_img" id="userinfo"></image>
       </navigator>
       <view class='item-detail-creator'>{{recruit.organizer.username}}</view>
     </view>

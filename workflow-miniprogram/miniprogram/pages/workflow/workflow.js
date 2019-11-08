@@ -11,8 +11,8 @@ Page({
       creator: "Knight",
       name: "workflow小组",
       match: "第16届“大夏杯”大学生创业大赛",
-      now: 3,
-      total: 10,
+      now: 10,
+      total: 13,
       focus: 0,
       time: "5分钟前",
     }, {

@@ -155,11 +155,13 @@ page, .page, .page__bd {
 
 .weui-media-box__title_in-text {
   font-weight: bold;
+  text-align: left;
 }
 
 .weui-media-box__desc {
   font-size: 30rpx;
   color: black;
+  text-align: left;
 }
 
 .footer {
@@ -186,4 +188,9 @@ page, .page, .page__bd {
   width: 30rpx;
   float: right;
   margin-right: 20rpx;
+}
+
+.recruit-pos{
+  margin-top: 8px;
+  font-size: 25rpx;
 }

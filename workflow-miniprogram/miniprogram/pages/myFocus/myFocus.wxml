@@ -51,23 +51,23 @@
           <view class='page' hidden="{{hasFocusMatch == 0}}">
             <block wx:for="{{focusMatchs}}" wx:key="id">
               <navigator url='/pages/matchDetail/matchDetail' class='match-item' id='{{item.activityId}}' bindtap='matchClick'>
-                 <view class='match-img-out'> 
+                <view class='match-img-out'>
                   <image class='match-img' src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m3.jpg'></image>
-                 </view> 
-                 <view class='texts'>
-                    <view class='text-title'>
-                      {{item.actiityName}}
+                </view>
+                <view class='texts'>
+                  <view class='text-title'>
+                    {{item.activityName}}
+                  </view>
+                  <view class='match-text'>
+                    <image class='match-mini-img' src='/image/match.png'></image>
+                    <view class='text-level'>
+                      校级
                     </view>
-                    <view class='match-text'>
-                      <image class='match-mini-img' src='/image/match.png'></image>
-                      <view class='text-level'>
-                        校级
-                      </view>
-                    </view>
-                    <view class='text-time'>
-                      {{item.activityTime}}截止
-                    </view>
-                 </view>
+                  </view>
+                  <view class='text-time'>
+                    {{item.activityTime}}截止
+                  </view>
+                </view>
               </navigator>
             </block>
           </view>
@@ -82,7 +82,7 @@
               <navigator class='common-btn' url='/pages/recruit/recruit' open-type='switchTab'>去关注</navigator>
             </view>
           </view>
-          
+
           <view class='page' hidden='{{hasFocusRecruit == 0}}'>
             <view>
               <block wx:for="{{focusRecruits}}" wx:key="id">
@@ -96,17 +96,20 @@
                         <view class="username">{{item.organizer.username}}</view>
                       </view>
                     </view>
-                  <view>
-                    <image src='{{item.followed == true ? "/image/focus.png" : "/image/unfocus.png"}}' data-id='{{item}}' catchtap='changeFocus' hover-class="none" class='img'></image>
-                    <image src='/image/delete.png' class='img'></image>
+                    <view>
+                      <image src='{{item.followed == true ? "/image/focus.png" : "/image/unfocus.png"}}' data-id='{{item}}' catchtap='changeFocus' hover-class="none" class='img'></image>
+                      <image src='/image/delete.png' class='img'></image>
+                    </view>
                   </view>
-                </view>
-                <view class="weui-media-box__title weui-media-box__title_in-text">{{item.recruitName}}                </view>
-                <view class="weui-media-box__desc">
-                  {{item.activityName}}
-                </view>
-                <view class='footer'>
-                  <view class='footer-text'>申请情况：{{item.recruitRegisteredNumber}}/{{item.recruitWillingNumber}}名</view>
+                  <view class="weui-media-box__title weui-media-box__title_in-text">{{item.recruitName}} </view>
+                  <view class="weui-media-box__desc">
+                    {{item.activityName}}
+                  </view>
+                  <view class="weui-media-box__desc recruit-pos">
+                    {{item.recruitPosition}}
+                  </view>
+                  <view class='footer'>
+                    <view class='footer-text'>申请情况：{{item.recruitRegisteredNumber}}/{{item.recruitWillingNumber}}名</view>
                     <image src='/image/more.png' class='more'></image>
                   </view>
                 </view>
