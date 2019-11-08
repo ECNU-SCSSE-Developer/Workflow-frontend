@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    positionArr:['职位1', '职位2', '职位3', '职位4'],
+    positionArr:['前端', 'JAVA', 'C#', 'python', '美工', 'C/C++', '其他'],
     matchs:['比赛1','比赛2','比赛3'],
     teams: ['team1','team2'],
     posIndex: 0,

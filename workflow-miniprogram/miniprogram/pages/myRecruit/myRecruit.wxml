@@ -28,7 +28,7 @@
                 <view class="top-item">
                   <view class='info'>
                     <view catchtap='toOthersInfo' data-id='{{item.organizer.userId}}'>
-                      <image class="msgbox_in_img" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
+                      <image class="msgbox_in_img" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg'></image>
                     </view>
                     <view>
                       <view class="username">{{item.organizer.username}}</view>
@@ -43,6 +43,9 @@
                 <view class="weui-media-box__desc">
                   {{item.activityName}}
                 </view>
+                <view class="weui-media-box__desc recruit-pos">
+                  {{item.recruitPosition}}
+                </view>
                 <view class='footer'>
                   <view class='footer-text'>申请情况：{{item.recruitRegisteredNumber}}/{{item.recruitWillingNumber}}名</view>
                   <image src='/image/more.png' class='more'></image>
@@ -51,7 +54,7 @@
             </block>
           </view>
         </view>
-        
+
         <!-- tab2 -->
         <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
           <view class='page' hidden="{{hasOthersApply != 0}}">

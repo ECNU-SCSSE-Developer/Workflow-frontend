@@ -137,3 +137,7 @@
   height: 80rpx;
   transform: rotate(180deg);
 }
+
+textarea{
+  height: auto;
+}

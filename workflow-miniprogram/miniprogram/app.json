@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/mine/mine",
     "pages/workflowDetails/workflowDetails",
     "pages/match/match",
@@ -26,11 +26,11 @@
     "pages/matchCutoffDetail/matchCutoffDetail",
     "pages/createTeam/createTeam"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "学生工作",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#dddddd",
@@ -39,7 +39,7 @@
     "backgroudColor": "white",
     "list": [
       {
-        "pagePath": "pages/workflow/workflow",
+        "pagePath": "pages/myTeam/myTeam",
         "text": "工作流",
         "iconPath": "image/6.png",
         "selectedIconPath": "image/3.png"
@@ -69,5 +69,6 @@
       "version": "1.1.3",
       "provider": "wx92c68dae5a8bb046"
     }
-  }
+  },
+  "sitemapLocation": "sitemap62.json"
 }

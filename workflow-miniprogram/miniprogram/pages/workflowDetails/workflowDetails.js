@@ -252,7 +252,8 @@ Page({
       onInit: initChart
     },
     motto: "Seize the day",
-    teamMember: []
+    teamMember: [],
+    mockSwitchChecked: false
   },
 
   /**
@@ -342,5 +343,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  mockSwitchChange: function (e) {
+    var obj = {}
+    obj[`mockSwitchChecked`] = e.detail.value
+    this.setData(obj)
   }
 })

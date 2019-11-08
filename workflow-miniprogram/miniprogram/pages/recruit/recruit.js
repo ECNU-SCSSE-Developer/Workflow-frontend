@@ -24,7 +24,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log(this.data.time);
     var that = this;
     wx.request({
@@ -34,8 +34,13 @@ Page({
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data.data);
+
+        //mock image
+        for (var i = 0; i < res.data.data.length; i++) {
+          res.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res.data.data[i].organizer.userId + '.jpg'
+        }
         that.setData({
           list: res.data.data,
           offset: 1
@@ -44,15 +49,14 @@ Page({
           that.setData({
             hasRecruit: 1
           })
-        }
-        else {
+        } else {
           that.setData({
             hasRecruit: 0,
             offset: 0
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log("fail");
       }
     })
@@ -61,35 +65,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     var that = this;
     var nowTime = util.formatDateTime(new Date());
     console.log("fresh! Time: " + that.data.time);
@@ -100,8 +104,15 @@ Page({
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data.data);
+
+        //todo
+        //mock image
+        for (var i = 0; i < res.data.data.length; i++) {
+          res.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res.data.data[i].organizer.userId + '.jpg'
+        }
+
         that.setData({
           list: res.data.data,
           time: nowTime,
@@ -111,15 +122,14 @@ Page({
           that.setData({
             hasRecruit: 1
           })
-        }
-        else {
+        } else {
           that.setData({
             hasRecruit: 0,
             offset: 0
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log("fail");
       }
     })
@@ -128,10 +138,10 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     console.log("reach bottom! Time: " + this.data.time + ". offset: " + this.data.offset);
     var that = this;
-    if(that.data.recruitName==""){
+    if (that.data.recruitName == "") {
       wx.request({
         url: 'http://localhost:8081/recruit/all?' + that.data.recruitName + 'currentTime=' + that.data.time + '&&pageNum=' + that.data.offset,
         method: 'GET',
@@ -139,19 +149,23 @@ Page({
           'content-type': 'application/json',
           'openid': wx.getStorageSync('openid')
         },
-        success: function (res) {
+        success: function(res) {
           console.log(res.data.data);
+          
+          //mock image
+          for (var i = 0; i < res.data.data.length; i++) {
+            res.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res.data.data[i].organizer.userId + '.jpg'
+          }
           that.setData({
             list: that.data.list.concat(res.data.data),
             offset: that.data.offset + 1
           })
         },
-        fail: function (res) {
+        fail: function(res) {
           console.log("fail");
         }
       })
-    }
-    else{
+    } else {
       wx.request({
         url: 'http://localhost:8081/recruit/all?currentTime=' + that.data.time + '&&pageNum=' + that.data.offset,
         method: 'GET',
@@ -159,14 +173,14 @@ Page({
           'content-type': 'application/json',
           'openid': wx.getStorageSync('openid')
         },
-        success: function (res) {
+        success: function(res) {
           console.log(res.data.data);
           that.setData({
             list: that.data.list.concat(res.data.data),
             offset: that.data.offset + 1
           })
         },
-        fail: function (res) {
+        fail: function(res) {
           console.log("fail");
         }
       })
@@ -176,11 +190,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
-  toDetail: function (e) {
+  toDetail: function(e) {
     wx.setStorageSync('recruitId', e.currentTarget.id);
     setTimeout(() => {
       wx.navigateTo({
@@ -189,7 +203,7 @@ Page({
     }, 500)
   },
 
-  changeFocus: function (e) {
+  changeFocus: function(e) {
     var that = this;
     if (e.currentTarget.dataset.id.followed == true) {
       wx.request({
@@ -199,22 +213,21 @@ Page({
           'content-type': 'application/json',
           'openid': wx.getStorageSync('openid')
         },
-        success: function (res) {
+        success: function(res) {
           wx.showToast({
             title: '取消收藏',
             icon: 'success'
           })
           that.onLoad();
         },
-        fail: function (res) {
+        fail: function(res) {
           wx.showToast({
             title: '操作失败',
             icon: 'success'
           })
         }
       })
-    }
-    else {
+    } else {
       wx.request({
         url: 'http://localhost:8081/user/recruit/' + e.currentTarget.dataset.id.recruitId,
         method: 'put',
@@ -222,14 +235,14 @@ Page({
           'content-type': 'application/json',
           'openid': wx.getStorageSync('openid')
         },
-        success: function (res) {
+        success: function(res) {
           wx.showToast({
             title: '收藏成功',
             icon: 'success'
           })
           that.onLoad();
         },
-        fail: function (res) {
+        fail: function(res) {
           wx.showToast({
             title: '操作失败',
             icon: 'success'
@@ -240,7 +253,7 @@ Page({
     this.onLoad();
   },
 
-  toOthersInfo: function (e) {
+  toOthersInfo: function(e) {
     wx.setStorageSync('userId', e.currentTarget.dataset.id);
     console.log(wx.getStorageSync('userId'));
     wx.navigateTo({
@@ -248,13 +261,13 @@ Page({
     })
   },
 
-  deleteRecruit: function (e) {
+  deleteRecruit: function(e) {
     var that = this;
     wx.showModal({
       title: '是否确认删除？',
       showCancel: true,
       cancelText: '取消',
-      success: function(res){
+      success: function(res) {
         wx.request({
           url: 'http://localhost:8081/recruit/' + e.currentTarget.dataset.id.recruitId,
           method: 'delete',
@@ -262,8 +275,8 @@ Page({
             'content-type': 'application/json',
             'openid': wx.getStorageSync('openid')
           },
-          success: function (res) {
-            if(res.confirm){
+          success: function(res) {
+            if (res.confirm) {
               wx.showToast({
                 title: '删除成功！',
                 icon: 'success'
@@ -271,7 +284,7 @@ Page({
               that.onLoad();
             }
           },
-          fail: function (res) {
+          fail: function(res) {
             wx.showToast({
               title: '操作失败！',
               icon: 'success'
@@ -279,7 +292,7 @@ Page({
           }
         })
       },
-      fail: function(res){
+      fail: function(res) {
         wx.showToast({
           title: '操作失败！',
           icon: 'success'
@@ -288,14 +301,14 @@ Page({
     })
   },
 
-  getRecruitName: function(e){
+  getRecruitName: function(e) {
     console.log(e.detail.value);
     this.setData({
       recruitName: e.detail.value
     })
   },
 
-  screen: function (e) {
+  screen: function(e) {
     var that = this;
     wx.request({
       url: 'http://localhost:8081/recruit/all?recruitName=' + that.data.recruitName + '&currentTime=' + that.data.time + '&pageNum=0',
@@ -304,7 +317,7 @@ Page({
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data.data);
         that.setData({
           list: res.data.data,
@@ -314,21 +327,20 @@ Page({
           that.setData({
             hasRecruit: 1
           })
-        }
-        else {
+        } else {
           that.setData({
             hasRecruit: 0,
             offset: 0
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log("fail");
       }
     })
   },
 
-  createRecruit: function (e) {
+  createRecruit: function(e) {
     // 判断是否已经有团队
     wx.request({
       url: 'http://localhost:8081/team/joinedTeam',
@@ -337,7 +349,7 @@ Page({
         'content-type': 'application/json',
         'openid': wx.getStorageSync('openid')
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.data.length == 0) {
           wx.navigateTo({
             url: '/pages/createTeam/createTeam',
@@ -348,7 +360,7 @@ Page({
           })
         }
       },
-      fail: function (res) {
+      fail: function(res) {
         console.log("fail");
       }
     })

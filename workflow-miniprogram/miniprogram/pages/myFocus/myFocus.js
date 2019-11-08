@@ -102,9 +102,9 @@ Page({
           success: function (res2) {
             console.log(res2.data.data);
             // 时间格式化
-            for (let i = 0; i < res.data.data.length; i++) {
-              res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
-              res.data.data[i].activityTime = util.formatTime(new Date(res.data.data[i].activityTime))
+            for (let i = 0; i < res2.data.data.length; i++) {
+              res2.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res2.data.data[i].activitySignUpDeadline))
+              res2.data.data[i].activityTime = util.formatTime(new Date(res2.data.data[i].activityTime))
             }
 
             that.setData({
@@ -127,6 +127,12 @@ Page({
           },
           success: function (res2) {
             console.log(res2.data.data);
+            
+            //todo
+            //mock image
+            for (var i = 0; i < res2.data.data.length; i++) {
+              res2.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res2.data.data[i].organizer.userId + '.jpg'
+            }
             that.setData({
               focusRecruits: res2.data.data,
               hasFocusRecruit: res2.data.data.length

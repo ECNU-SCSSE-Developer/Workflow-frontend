@@ -47,6 +47,7 @@ swiper {
 .text-title {
   font-size: 30rpx;
   margin: 0 10rpx;
+  height: 70rpx;
 }
 
 .text-time {

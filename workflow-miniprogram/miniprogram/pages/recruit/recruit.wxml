@@ -3,8 +3,8 @@
     <view class='search' bindsubmit="screen">
       <image class="search-img" src='/image/search.png'></image>
       <input placeholder='请输入具体招聘信息' class='serch-item' placeholder-class='iconfont icon-sousuo mid-font ' placeholder-style='color:#999999;font-size:14px' name='recruitName' bindinput='getRecruitName'></input>
-        <view class="filter" bindtap='screen'>筛选</view> 
-       <!-- <button class="filter" form-type='submit'>筛选</button> -->
+      <view class="filter" bindtap='screen'>筛选</view>
+      <!-- <button class="filter" form-type='submit'>筛选</button> -->
     </view>
   </view>
 
@@ -13,7 +13,7 @@
       <view class="top-item">
         <view class='info'>
           <view catchtap='toOthersInfo' data-id='{{item.organizer.userId}}'>
-            <image class="msgbox_in_img" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
+            <image class="msgbox_in_img" id="userinfo" src='{{item.image}}'></image>
           </view>
           <view>
             <view class="username">{{item.organizer.username}}</view>
@@ -27,6 +27,9 @@
       <view class="weui-media-box__title weui-media-box__title_in-text">{{item.recruitName}}</view>
       <view class="weui-media-box__desc">
         {{item.activityName}}
+      </view>
+      <view class="weui-media-box__desc recruit-pos">
+        {{item.recruitPosition}}
       </view>
       <view class='footer'>
         <view class='footer-text'>申请情况：{{item.recruitRegisteredNumber}}/{{item.recruitWillingNumber}}名</view>

@@ -40,11 +40,20 @@
               工作流
               <view class='bg-color'></view>
             </view>
-            <view class="cu-timeline">
-              <view class="cu-time">03-20</view>
+            <view class="cu-timeline" hidden="{{mockSwitchChecked != true}}">
+              <view class="cu-time">11-08</view>
               <view class="cu-item cur icon-noticefill">
                 <view class="content">
-                  <text>01:30</text> 【Knight】 PPT制作
+                  <text>19:23</text> 【山坡羊】 Alpha版本测试
+                  <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
+                </view>
+              </view>
+            </view>
+            <view class="cu-timeline">
+              <view class="cu-time">11-08</view>
+              <view class="cu-item cur icon-noticefill">
+                <view class="content">
+                  <text>11:37</text> 【Knight】 PPT制作
                   <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
                 </view>
               </view>
@@ -53,7 +62,7 @@
               <view class="cu-time">03-19</view>
               <view class="cu-item cur icon-noticefill">
                 <view class="content">
-                  <text>05:30</text> 【咕叽】 开题报告
+                  <text>12:34</text> 【咕叽】 开题报告
                   <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
                 </view>
               </view>
@@ -62,7 +71,7 @@
               <view class="cu-time">03-18</view>
               <view class="cu-item cur icon-noticefill">
                 <view class="content">
-                  <text>09:30</text> 【系统】 前期准备
+                  <text>09:31</text> 【系统】 前期准备
                   <text style='color:rgb(120, 224, 143);font-weight:bold'>完成</text>
                 </view>
               </view>
@@ -84,7 +93,7 @@
             </view>
             <view class="cu-form-group">
               <view class='title'>Alpha版本测试</view>
-              <switch class='orange radius sm' unchecked></switch>
+              <switch class='orange radius sm' checked="{{mockSwitchChecked}}" bindchange="mockSwitchChange"></switch>
             </view>
           </view>
 

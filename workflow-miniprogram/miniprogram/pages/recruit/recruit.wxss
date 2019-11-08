@@ -196,3 +196,8 @@ input {
 .divider{
   height: 100rpx;
 }
+
+.recruit-pos{
+  margin-top: 8px;
+  font-size: 25rpx;
+}

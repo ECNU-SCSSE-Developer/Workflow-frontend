@@ -1,7 +1,7 @@
 <!--pages/othersInfo/othersInfo.wxml-->
 <view class='page'>
   <view class='top-show'>
-    <image class="top-avatar" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a2.jpg'></image>
+    <image class="top-avatar" id="userinfo" src='https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a3.jpg'></image>
     <view class="top-name">{{info.username}}</view>
     <button class="weui-btn" type="default" size="mini" class="top-btn" bindtap='follow'>关注</button>
   </view>
