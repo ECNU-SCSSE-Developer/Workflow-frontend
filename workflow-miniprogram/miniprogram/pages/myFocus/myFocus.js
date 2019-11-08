@@ -127,6 +127,12 @@ Page({
           },
           success: function (res2) {
             console.log(res2.data.data);
+            
+            //todo
+            //mock image
+            for (var i = 0; i < res2.data.data.length; i++) {
+              res2.data.data[i].image = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/a' + res2.data.data[i].organizer.userId + '.jpg'
+            }
             that.setData({
               focusRecruits: res2.data.data,
               hasFocusRecruit: res2.data.data.length

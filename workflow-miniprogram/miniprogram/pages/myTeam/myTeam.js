@@ -103,4 +103,14 @@ Page({
       url: '/pages/othersInfo/othersInfo',
     })
   },
+  
+  toDetail: function (e) {
+    wx.setStorageSync('teamId', e.currentTarget.id)
+    console.log(wx.getStorageSync('teamId'));
+    setTimeout(() => {
+      wx.navigateTo({
+        url: '/pages/workflowDetails/workflowDetails',
+      })
+    }, 500)
+  }
 })

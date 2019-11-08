@@ -127,7 +127,11 @@ Page({
         for (let i = 0; i < res.data.data.length; i++) {
           res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
           res.data.data[i].activityTime = util.formatTime(new Date(res.data.data[i].activityTime))
+          // todo
+          // mock image
+          res.data.data[i].activityUrl = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m' + res.data.data[i].activityId % 7 + '.jpg'
         }
+
         that.setData({
           matchs: res.data.data
         })
@@ -161,6 +165,10 @@ Page({
         for (let i = 0; i < res.data.data.length; i++){
           res.data.data[i].activitySignUpDeadline = util.formatTime(new Date(res.data.data[i].activitySignUpDeadline))
           res.data.data[i].activityTime = util.formatTime(new Date(res.data.data[i].activityTime))
+
+          // todo
+          // mock image
+          res.data.data[i].activityUrl = 'https://workflow-1258575893.cos.ap-shanghai.myqcloud.com/m' + (res.data.data[i].activityId % 5 + 1) + '.jpg'
         }
         that.setData({
           cutoffMatchs: res.data.data
