@@ -102,6 +102,11 @@ Page({
               title: '应聘成功！',
               icon: 'success'
             })
+            setTimeout(()=>{
+              wx.switchTab({
+                url: '/pages/recruit/recruit'
+              })
+            }, 1000)
           },
           fail: function (res) {
             wx.showToast({

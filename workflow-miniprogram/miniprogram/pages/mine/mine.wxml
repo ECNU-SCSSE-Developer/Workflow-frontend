@@ -43,7 +43,7 @@
         我的关注
       </view>
     </navigator>
-    <navigator class='info-module-detail' url='/pages/myTeam/myTeam'>
+    <navigator class='info-module-detail' url='/pages/myTeam/myTeam' open-type='switchTab'>
       <image src='/image/create.png' class='info-module-img'></image>
       <view class='info-module-text'>
         我的团队

@@ -113,6 +113,11 @@ Page({
           title: '修改成功！',
           icon: 'success'
         })
+        setTimeout(() => {
+          wx.redirectTo({
+            url: '/pages/selfInfo/selfInfo'
+          })
+        }, 1000)
       },
       fail: function(res){
         console.log("edit fail!");
